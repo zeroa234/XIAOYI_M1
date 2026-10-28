@@ -1,56 +1,103 @@
-# YI M1 firmware investigation
+<div align="center">
 
-目标：研究小蚁 M1 最终官方固件中用户报告的随机卡死、操作卡顿及对焦慢问题。
+![YI M1 Firmware Research](assets/yi-m1-research.svg)
 
-用户明确的交付方向：以官方 **3.2-cn** 为基线保留现有功能，优先定位并修复完全挂死/响应问题，补充曝光亮度预览。3.1 作为对照和恢复备用；用户确认可以回退，回退本身不替代这些修复。
+**小蚁 M1 固件逆向研究 · 让每一个结论都能回到证据**
 
-状态（2026-10-27 下午）：已产出第一个测试样机固件 `canary-3.2cn`（只把版本串改为 `3.2-cm`，不改代码，离线验证通过，**尚未刷写**）。远程命令越界修复有补丁清单和模拟器验证，M 档曝光预览只有实验候选，二者都还没打进固件；完全挂死、卡顿、对焦慢仍未定位。当前入口：`docs/project-status.md`。
+![Research](https://img.shields.io/badge/status-research-18b7a0?style=flat-square)
+![Baseline](https://img.shields.io/badge/baseline-3.2--cn-366bdc?style=flat-square)
+![ARM](https://img.shields.io/badge/architecture-ARMv5TE-64748b?style=flat-square)
 
-- 当前设备：YI M1，12-40mm f/3.5-5.6 镜头。
-- 版本：用户确认机身及镜头均为官方最新版；待需要时独立读取设备版本。
-- 存储：闪迪 64 GB SD 卡；USB 存储卷为 exFAT。用户确认卡内资料已有备份。
-- 症状：卡死时机随机，可在不同操作中发生；对焦慢。不能据此认定是 CPU 性能或算法缺陷。
-- 最新复测：用户认为参数有记忆，撤回“参数普遍不保存”的初步判断；M 档、固定 ISO、闪光关闭时，光圈/ISO/快门影响成片却不改变照片及视频取景亮度，小蚁与松下镜头均复现。
-- 稳定性优先：用户测试期间报告完全挂死 5 次，电源开关无效、必须拔电池恢复，多种操作均可能触发；已停止要求反复真机测试。根因仍未定位。
-- 输入：用户提供的三个官方发布包，仅使用项目内副本分析，保留原包。
+[研究进展](#研究进展) · [快速开始](#快速开始) · [代码地图](#阅读导航) · [参与研究](#参与研究)
 
-调查记录见 `docs/research.md`；结果放 `reports/`。固件副本、拆包产物和第三方工具不提交到本仓库，哈希和工具版本记录在报告中。
+</div>
 
-当前研发状态见 `reports/status-2026-10-26.md`；第一轮事实核实见 `reports/findings-2026-10-26.md`；真机复现步骤见 `docs/reproduction.md`。
+---
 
-其他功能的分层可行性见 `reports/feature-feasibility-2026-10-26.md`：区分已有局部修补、国际版实测但 CN 待验证的录像模式、待逆向的机身 UI 功能，以及可复用现成实现的外部辅助。
+这是一份面向逆向研究者的 **YI / XIAOYI M1 微单相机研究资料库**。以官方 **3.2-cn** 为主要输入、**3.1-cn** 为对照，整理固件容器、启动与升级路径、取景曝光链、远程协议、函数地址和可复现实验。
 
-取得运行期证据的分阶段路线见 `docs/deeper-debug-plan.md`，包括免拆机调查、主板识别、UART 日志与条件满足后的 JTAG 调试；当前没有已验证的 M1 调试口针脚。
+研究目标是为随机挂死、响应迟缓、对焦慢和 M 档曝光预览问题积累可核查的证据。**目前没有经过真机验证的修复固件，也不提供刷机包。**
 
-用户现选择免拆机路线。当前软件调查新增了曝光属性/内部消息调用链、24个分派隔离用例及5个消息错误尾部用例；范围和未证实的因果关系见 `reports/software-only-investigation.md`。尚无整机挂死或曝光预览修复。
+> **For reverse engineers:** an evidence-driven research archive for the YI M1, covering firmware containers, boot/update paths, ARM code maps, live-view exposure and offline experiments. Most notes are in Chinese. Static addresses refer to candidate decoded images; no hardware-validated fix is available.
 
-已在真机建立直接HTTP/UDP取景链路，第二次3秒采集保存13帧且启停回复正常。工具与限制见 `docs/direct-liveview-capture.md`；实测记录见 `reports/liveview-baseline-2026-10-26.md`。这不是机身性能或曝光预览修复。
+## 研究进展
 
-另测得：每次成功进入遥控后约68秒，相机的 USB 大容量存储会从主机消失，三次复现；取景链路不使用 USB 也不受影响，但读卡需在抓取前完成或改用读卡器。记录见 `reports/usb-storage-teardown-2026-10-26.md`。
+公开整理：**2026-10-28**。主要研究记录：2026-10-26 至 2026-10-27。
 
-已做两轮ISO 100→200→100对照。拉窗帘并用室内灯的那轮，三阶段取景JPEG亮度几乎相同，参数头确认ISO切换；结果及退出状态见 `reports/exposure-probe-results-2026-10-26.md`。快门/光圈尚未由脚本变化测试。用户提出的照片/取景标定及相对曝光模型见 `docs/exposure-simulation-model.md`；没有据此宣称机内功能已经实现。
+| 方向 | 已有结果 | 仍待解决 |
+| :--- | :--- | :--- |
+| 固件容器与解码 | 段表、`SUM=` 字节累加、独立解码器对照与 token 往返检查 | 主程序由 SoC 硬件解压；尚无硬件原生对照 |
+| 启动、升级与恢复 | IPL、主程序升级器及 FIRM / BOOT 路径 | 未证实可依赖的外部救砖入口；解码失败不能假定自动回退 |
+| 代码地图 | 本地导出 **27,107 个函数 / 107,849 条字符串**；提供重建脚本与已知地址种子表 | 全量导出不代表全量审阅；需核对原始指令 |
+| 远程命令边界 | **106 个 Unicorn 隔离用例**与补丁清单 | 未证明是日常挂死根因；未做真机补丁验证 |
+| M 档曝光预览 | 真机对照、AE / 快门 / 增益线索与实验补丁 | 完整功能尚未经真机验证 |
+| 稳定性与对焦 | 症状、消息/队列与等待路径线索 | 随机挂死、卡顿和对焦慢的根因仍未定位 |
 
-显示入口调查已定位LCD设备描述关联的命令分派，以及上层成像配置到7项下层处理函数的调用；部分下层函数有寄存器写入。尚未连通到实时取景增益或可独立修改的帧处理接口，详见 `reports/display-entry-investigation.md`。
+**证据等级：** 真机观察、原始指令核对、模拟器隔离验证、统计/结构证据和推断应分别理解。模拟器通过不能证明整机稳定，候选解码地址不能直接作为安全补丁地址。较早报告中的结论可能已被后续报告纠正，见 [当前状态](docs/project-status.md)。
 
-2026-10-27 下午，用户授权产出测试样机固件，固件工作改由 codex 子代理完成、主代理审查。主程序由 SoC 硬件模块解压（IPL `0x107ac`，无超时），无法在模拟器里证明 token 格式，因此打包采用"官方 token 原样保留、改动处只用字面量"的方法，不依赖硬件未知细节（`scripts/repack.py`、`scripts/verify-build.py`、`tests/test-repack.py`）。零补丁构建与官方包逐字节相同；canary 与官方包只差 4 字节。真机对照证实 P/A/S 已有曝光补偿预览、只有 M 档缺失（`reports/exposure-matrix-2026-10-27.md`），取景快门/增益施加链已定位（`reports/exposure-apply-path-2026-10-27.md`），候选补丁及其未完成部分见 `reports/exposure-preview-patch-2026-10-27.md`。机身上报的镜头识别状态时有时无，与电量下降同步，见 `reports/lens-status-observations-2026-10-27.md`。刷写步骤、风险和下一步见 `docs/project-status.md`。
+## 阅读导航
 
-2026-10-27 起由 Claude 接手离线定位（暂不生成刷机镜像）。已核实：头中 `SUM=` 为段体字节简单累加；两种 LZSS 复制语义在差异处的统计明确支持顺序复制（`reports/pipeline-foundation-2026-10-27.md`，`scripts/check-container-and-decode.py`）。官方升级器在主程序 UI 内，会重写包内列出的 IPL/PTBL；IPL 只在 NAND 的 FIRM 与独立 BOOT 分区间选择启动，外层查不到 FIRM 描述符时回退 BOOT（后经 `reports/repack-pipeline-2026-10-27.md` 收窄：内层解码错误被吞掉、不回退），没有 SD/USB 启动分支（`reports/update-recovery-path-2026-10-27.md`）。取景 AE 核心、档位枚举与 M 档分支已定位，传感器施加路径未找到（`reports/monitor-ae-locate-2026-10-27.md`）。
+| 研究方向 | 建议入口 |
+| :--- | :--- |
+| 函数、全局地址和证据来源 | [已知函数与地址种子表](reports/code-map/known-functions.md) |
+| 函数目录、调用关系、代码分片 | [代码地图流水线](docs/code-map-pipeline.md) |
+| 解码歧义、重打包与校验 | [编解码调查](reports/codec-investigation.md) · [打包链复核](reports/repack-pipeline-2026-10-27.md) |
+| IPL、升级器与恢复 | [升级和恢复路径](reports/update-recovery-path-2026-10-27.md) |
+| AE 与曝光施加 | [取景 AE 定位](reports/monitor-ae-locate-2026-10-27.md) · [曝光施加路径](reports/exposure-apply-path-2026-10-27.md) |
+| 曝光预览实验补丁 | [候选补丁与限制](reports/exposure-preview-patch-2026-10-27.md) |
+| 远程命令表搜索边界 | [命令越界调查](reports/command-bounds-investigation.md) |
+| HTTP / UDP 取景采集 | [直接取景采集](docs/direct-liveview-capture.md) · [曝光实验](docs/exposure-preview-probe.md) |
+| 上游成果与工具来源 | [研究来源](docs/research.md) · [复现指南与第三方工具](docs/getting-started.md) |
 
-离线拆包使用现成的 `protyposis/yi-mirrorless-firmware-tools`。自写的 `scripts/unpack.cjs` 只负责固定输入哈希核对、在内存补充已核实的 CN 版本标识和收集分析产物，没有实现新的压缩算法或修改相机程序。安装该工具的锁定依赖后，从项目目录运行：
+## 快速开始
+
+克隆后可以先读报告、运行合成数据测试，无需连接相机或准备固件。
 
 ```powershell
-node scripts/unpack.cjs 3.2-cn
-node scripts/unpack.cjs 3.1-cn
+git clone https://github.com/zeroa234/XIAOYI_M1.git
+cd XIAOYI_M1
+
+# Python 3.11+；这两项不需要安装第三方依赖。
+python -B tests/test-liveview-metadata.py
+python -B tests/test-repack.py TokenTests
 ```
 
-第三方工具源码固定于 `b90b96c124a3b076fa0283404e6595a4a40d20d0`，唯一运行依赖为 `string@3.3.3`。它的重压缩验证存在未解决问题，输出仅供研究。
+重建固件分析输入时，自行取得官方文件并放到下面的路径。脚本会核对哈希，版本或哈希不匹配时应停止分析。
 
-后续独立审计见 `reports/codec-investigation.md`。另复用了未经修改的 `cebix/ff7tools` 编解码实现；运行 `python -B scripts/reference-decode.py` 可按原厂表长生成单独的候选分析输入，完整尾部明确记录。说明见 `reports/reference-decode-notes.md`。这些候选文件均不是相机更新包。
+| 输入 | 项目内路径 | SHA-256（firmware.bin） |
+| :--- | :--- | :--- |
+| 官方 3.2-cn | `data/input/body-3-2-cn/firmware.bin` | `92b3f1fda39e37351432d19d0167879f477eb71713a8fbc94b3ba2141ca404e4` |
+| 官方 3.1-cn | `data/input/body-3-1-cn/firmware.bin` | `97dfa394efc91f8643c3b1a0673be2dd96590754b29080ce60d3498ebe3d15be` |
 
-ARM 静态分析使用项目内 Capstone，固定发行版本见 `config/analysis-requirements.txt`；安装与模块自报版本的区别见 `reports/disassembly-environment.json`。
+完整步骤见 **[复现指南](docs/getting-started.md)**。官方固件、第三方工具、Ghidra 工程和全量反编译输出需要在本地准备，不随仓库分发。
 
-进一步使用项目内 Ghidra 12.2 / Java 25，来源及摘要记录在 `reports/toolchain-sources.json`。`scripts/analyze-candidate.py` 装载候选并导出重点函数，`--export-only` 复用现有分析数据库。所有偏好、缓存和产物保留在项目内；反编译文本不能代替指令核对。曝光路径复核见 `reports/exposure-decompile-review.md`。
+## 项目结构
 
-复用 Unicorn 2.1.4 对远程命令搜索循环执行 106 个隔离用例，说明见 `reports/command-bounds-investigation.md`。`scripts/check-command-bounds.py` 只修改模拟器 RAM，不输出修改版固件；此结果尚未与用户日常卡死关联。
+```text
+config/       分析地址、依赖版本与实验补丁清单
+docs/         复现指南、研究方法与代码地图说明
+reports/      调查报告、脱敏实验数据与已知函数种子表
+scripts/      拆包适配、独立校验、Ghidra 导出与离线实验
+src/          取景元数据解析与实验汇编
+tests/        合成数据与本地协议测试
+assets/       项目展示资源
+```
 
-USB 大容量存储连接提供的是 SD 卡文件访问，不能由此推定可以访问运行中的相机内存或故障日志。任何修复必须有定位证据、离线验证和真机测试。
+运行时的 `data/input/`、`vendor/`、`output/`、`logs/`、`temp/` 已排除提交。公开版使用独立历史，详见 [公开范围与脱敏说明](docs/publication.md)。
+
+## 参与研究
+
+欢迎通过 [Issues](https://github.com/zeroa234/XIAOYI_M1/issues) 或 Pull Request 提交分析和修正。请附上：
+
+- **输入身份：** 固件区域、版本及 SHA-256。
+- **定位依据：** 映像、地址类型、原始字节/指令和调用关系。
+- **验证方式：** 复现命令、预期与实际结果、证据等级及未覆盖条件。
+- **设备实验：** 匿名化的环境和步骤，去掉序列号、Wi-Fi 信息和私人画面。
+
+优先需要协助：故障时的运行期证据、硬件解码对照、M 档 AE 到传感器/ISP 的完整数据流，以及恢复路径的独立确认。实验候选尚无证据支持直接用于日常刷机。
+
+## 致谢与使用范围
+
+研究复用了 [protyposis 的固件工具](https://github.com/protyposis/yi-mirrorless-firmware-tools)、[cebix 的 LZSS 实现](https://github.com/cebix/ff7tools)、[bullbin 的取景研究](https://github.com/bullbin/xiaoyi_m1_re_liveview)，以及 Ghidra、Capstone、Unicorn 等现成工具。锁定版本见 [复现指南](docs/getting-started.md)，自写适配和实验代码的范围在源码与报告中说明。
+
+非官方研究项目，与相机厂商无隶属关系。固件和第三方代码的权利归原权利人；本仓库尚未指定统一开源许可证。

@@ -1,0 +1,10 @@
+title = "YI M1 public research scan"
+[extend]
+useDefault = true
+
+# Exact SHA-256 of pinned upstream source, not an API key.
+[[allowlists]]
+description = "Pinned upstream BLE source SHA-256"
+condition = "AND"
+paths = ['reports/software-collection-source[.]json$']
+regexes = ['be361f65e2cc35289900f6611f0004d180bda21d4eecbf16ccb2267e174d4bab']

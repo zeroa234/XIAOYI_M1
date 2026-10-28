@@ -5,3 +5,17 @@
 /node_modules/
 __pycache__/
 *.pyc
+
+/logs/
+/reports/toolchain-installed.json
+.env
+.env.*
+*.pem
+*.key
+.vscode/
+.idea/
+.claude/
+.codex/
+.pi/
+Thumbs.db
+.DS_Store
