@@ -1,0 +1,25 @@
+{
+  "patches": [
+    {
+      "section": ".rodata",
+      "va": "0x61ce80",
+      "orig_hex": "332e322d636e00",
+      "new_hex": "332e322d636d00",
+      "note": "版本常量副本；静态未发现直接/内部指针引用，未见用于升级校验；n 改 m"
+    },
+    {
+      "section": ".rodata",
+      "va": "0x6b7f54",
+      "orig_hex": "332e322d636e00",
+      "new_hex": "332e322d636d00",
+      "note": "0x1509dc 用于 Ver: %s 屏幕文本绘制；n 改 m"
+    },
+    {
+      "section": ".rodata",
+      "va": "0x834674",
+      "orig_hex": "332e322d636e00",
+      "new_hex": "332e322d636d00",
+      "note": "0x17904c 版本文本绘制，固定拷贝 7 字节含 NUL；n 改 m"
+    }
+  ]
+}

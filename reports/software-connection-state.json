@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-26",
+  "cameraDevices": [
+    {
+      "Class": "DiskDrive",
+      "FriendlyName": "YI YI-M1 USB Device",
+      "Status": "OK"
+    }
+  ],
+  "bluetoothRadioCandidates": [],
+  "limits": [
+    "Bluetooth result is a filtered name match, not proof that Bluetooth hardware is absent.",
+    "No SD access, BLE pairing, network switch or camera command performed."
+  ],
+  "query": "Present-only Windows PnP inspection; sandbox CIM access failed, approved elevated read succeeded."
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "command-bounds",
+  "base_version": "3.2-cn",
+  "status": "offline-validated",
+  "description": "远程命令表搜索以45条为上限；未与用户日常完全挂死建立因果关系。",
+  "patches": [
+    {
+      "new_hex": "2d0056e3",
+      "section": ".text",
+      "va": "0x00156910",
+      "orig_hex": "5a0f56e3",
+      "note": "cmp r6,#0x168 改为 cmp r6,#45。表共360字节、45条；限制搜索索引，保留全部合法命令。只在远程HTTP命令分派运行时执行。"
+    }
+  ]
+}

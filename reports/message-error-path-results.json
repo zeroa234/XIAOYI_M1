@@ -1,0 +1,49 @@
+{
+  "qualification": "Isolated candidate error-tail behavior; not a reproduced camera failure or a fix.",
+  "engine": "Unicorn 2.1.4 ARM926",
+  "textSha256": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+  "entry": "0x126de8",
+  "selfBranch": "0x126df8",
+  "passedCases": 5,
+  "results": [
+    {
+      "suppliedKernelStatus": 0,
+      "returned": true,
+      "trapVisits": 0,
+      "resultR0": 0
+    },
+    {
+      "suppliedKernelStatus": -43,
+      "returned": true,
+      "trapVisits": 0,
+      "resultR0": 2
+    },
+    {
+      "suppliedKernelStatus": -18,
+      "returned": false,
+      "trapVisits": 8,
+      "resultR0": 4294967278
+    },
+    {
+      "suppliedKernelStatus": -42,
+      "returned": false,
+      "trapVisits": 8,
+      "resultR0": 4294967254
+    },
+    {
+      "suppliedKernelStatus": -17,
+      "returned": false,
+      "trapVisits": 8,
+      "resultR0": 4294967279
+    }
+  ],
+  "limits": [
+    "Kernel statuses and a saved return frame are supplied; the kernel and message queue are not executed.",
+    "No evidence yet that these errors occur in the user's camera or explain its full freezes.",
+    "Candidate decoder compatibility and runtime address mapping are not camera verified.",
+    "No code bytes changed, no error ignored, no camera access or firmware image output."
+  ],
+  "threeOneIdenticalTailMatches": [
+    "0x126db0"
+  ]
+}

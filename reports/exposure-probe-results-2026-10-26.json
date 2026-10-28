@@ -1,0 +1,288 @@
+{
+  "date": "2026-10-26",
+  "qualification": "Actual one-stop ISO preview observations, not a camera firmware modification.",
+  "runs": [
+    {
+      "capture": "output/live-captures/20261026-081140-iso-probe-0dcbbe",
+      "startedUtc": "2026-10-26T08:11:40.772194+00:00",
+      "original": {
+        "ExposureMode": "M",
+        "ISOSetting": "100",
+        "ColorMode": "HContrastBW",
+        "Fnumber": "3.5",
+        "ShutterSpeed": "1.3s"
+      },
+      "settings": [
+        {
+          "field": "ColorMode",
+          "value": "Standard",
+          "purpose": "temporary-neutral-style",
+          "sentSeconds": 0.9266595999943092,
+          "reply": {
+            "httpStatus": 200,
+            "body": {
+              "code": 200
+            }
+          },
+          "error": null
+        },
+        {
+          "field": "ISO",
+          "value": "200",
+          "purpose": "one-stop-comparison",
+          "sentSeconds": 2.5058364999713376,
+          "reply": {
+            "httpStatus": 200,
+            "body": {
+              "code": 200
+            }
+          },
+          "error": null
+        },
+        {
+          "field": "ISO",
+          "value": "100",
+          "purpose": "restore-original-iso",
+          "sentSeconds": 4.13927279994823,
+          "reply": {
+            "httpStatus": 200,
+            "body": {
+              "code": 200
+            }
+          },
+          "error": null
+        },
+        {
+          "field": "ColorMode",
+          "value": "HContrastBW",
+          "purpose": "restore-original-style",
+          "sentSeconds": 5.677192999981344,
+          "reply": {
+            "httpStatus": 200,
+            "body": {
+              "code": 200
+            }
+          },
+          "error": null
+        }
+      ],
+      "restoration": {
+        "ISO": "metadata-confirmed",
+        "ColorMode": "metadata-confirmed"
+      },
+      "commands": [
+        {
+          "command": "GetCameraStatus",
+          "httpStatus": 200,
+          "body": {
+            "code": 200,
+            "data": {
+              "batteryLevel": "75",
+              "SurplusPhotoCnts": "492",
+              "lenVer": "1.1",
+              "lenType": "YI_12-40_3.5-5.6"
+            }
+          }
+        },
+        {
+          "command": "RCStartRemoteCtl",
+          "httpStatus": 200,
+          "body": {
+            "code": 200
+          }
+        },
+        {
+          "command": "RCStopRemoteCtl",
+          "httpStatus": 200,
+          "body": {
+            "code": 200
+          }
+        }
+      ],
+      "stopError": null,
+      "completeJpegsValidated": 102,
+      "metadataPrefixes": 112,
+      "selectedPixelFraction": 0.40103125,
+      "phases": [
+        {
+          "label": "baseline-standard",
+          "ISOSetting": "100",
+          "ColorMode": "Standard",
+          "jpegCount": 25,
+          "medianMeanLuma": 83.94891815371828,
+          "firstMeanLuma": 85.84402192264734,
+          "lastMeanLuma": 81.66788228265669,
+          "startSeconds": 1.302749399910681,
+          "endSeconds": 2.5030825999565423
+        },
+        {
+          "label": "higher-iso",
+          "ISOSetting": "200",
+          "ColorMode": "Standard",
+          "jpegCount": 23,
+          "medianMeanLuma": 78.05141432244993,
+          "firstMeanLuma": 79.65419361541858,
+          "lastMeanLuma": 77.31141588093197,
+          "startSeconds": 2.9644713000161573,
+          "endSeconds": 4.115816399920732
+        },
+        {
+          "label": "restored-iso-standard",
+          "ISOSetting": "100",
+          "ColorMode": "Standard",
+          "jpegCount": 17,
+          "medianMeanLuma": 77.14347905140393,
+          "firstMeanLuma": 77.1476194186862,
+          "lastMeanLuma": 77.347894750513,
+          "startSeconds": 4.514437899924815,
+          "endSeconds": 5.675296299974434
+        }
+      ],
+      "sha256": {
+        "session.json": "c61d16783afa7488f62f18ed696ee294e818e9f3f0b5ab2b572d5e4085a38ba3",
+        "probe-progress.json": "de99aaa84140df65dd8c3a23874121633b773dbbe08d67d2b67b2698fe87ef3f",
+        "brightness-analysis.json": "61573f5b09724f673aa948022e8863418729ada65cb9d8621630a9b3e8c9dd93",
+        "datagrams.zip": "a9a5087d3288f70ef1ced605b33a0db395c121fc294b72d615dab34c56f2772f"
+      }
+    },
+    {
+      "capture": "output/live-captures/20261026-081435-iso-probe-b53817",
+      "startedUtc": "2026-10-26T08:14:35.628371+00:00",
+      "original": {
+        "ExposureMode": "M",
+        "ISOSetting": "100",
+        "ColorMode": "HContrastBW",
+        "Fnumber": "3.5",
+        "ShutterSpeed": "1.3s"
+      },
+      "settings": [
+        {
+          "field": "ColorMode",
+          "value": "Standard",
+          "purpose": "temporary-neutral-style",
+          "sentSeconds": 0.8820745999692008,
+          "reply": {
+            "httpStatus": 200,
+            "body": {
+              "code": 200
+            }
+          },
+          "error": null
+        },
+        {
+          "field": "ISO",
+          "value": "200",
+          "purpose": "one-stop-comparison",
+          "sentSeconds": 2.5202056999551132,
+          "reply": {
+            "httpStatus": 200,
+            "body": {
+              "code": 200
+            }
+          },
+          "error": null
+        },
+        {
+          "field": "ISO",
+          "value": "100",
+          "purpose": "restore-original-iso",
+          "sentSeconds": 4.147215000004508,
+          "reply": {
+            "httpStatus": 200,
+            "body": {
+              "code": 200
+            }
+          },
+          "error": null
+        },
+        {
+          "field": "ColorMode",
+          "value": "HContrastBW",
+          "purpose": "restore-original-style",
+          "sentSeconds": 5.639881899929605,
+          "reply": null,
+          "error": "TimeoutError: timed out"
+        }
+      ],
+      "restoration": {
+        "ISO": "metadata-confirmed",
+        "ColorMode": "not-confirmed: timed out"
+      },
+      "commands": [
+        {
+          "command": "GetCameraStatus",
+          "httpStatus": 200,
+          "body": {
+            "code": 200,
+            "data": {
+              "batteryLevel": "75",
+              "SurplusPhotoCnts": "492",
+              "lenVer": "1.1",
+              "lenType": "YI_12-40_3.5-5.6"
+            }
+          }
+        },
+        {
+          "command": "RCStartRemoteCtl",
+          "httpStatus": 200,
+          "body": {
+            "code": 200
+          }
+        }
+      ],
+      "stopError": "<urlopen error timed out>",
+      "completeJpegsValidated": 75,
+      "metadataPrefixes": 87,
+      "selectedPixelFraction": 0.7976625,
+      "phases": [
+        {
+          "label": "baseline-standard",
+          "ISOSetting": "100",
+          "ColorMode": "Standard",
+          "jpegCount": 18,
+          "medianMeanLuma": 120.01418206321596,
+          "firstMeanLuma": 120.39863089548106,
+          "lastMeanLuma": 120.00905249191649,
+          "startSeconds": 1.3401499999454245,
+          "endSeconds": 2.519387200009078
+        },
+        {
+          "label": "higher-iso",
+          "ISOSetting": "200",
+          "ColorMode": "Standard",
+          "jpegCount": 20,
+          "medianMeanLuma": 119.98623060087024,
+          "firstMeanLuma": 119.98100178124625,
+          "lastMeanLuma": 119.98398445457822,
+          "startSeconds": 2.924062000005506,
+          "endSeconds": 4.145749400020577
+        },
+        {
+          "label": "restored-iso-standard",
+          "ISOSetting": "100",
+          "ColorMode": "Standard",
+          "jpegCount": 12,
+          "medianMeanLuma": 120.05459833158343,
+          "firstMeanLuma": 120.00082010457639,
+          "lastMeanLuma": 120.0849330596169,
+          "startSeconds": 4.523093699943274,
+          "endSeconds": 5.638964299927466
+        }
+      ],
+      "sha256": {
+        "session.json": "4a7d77d14f17ef8a89abc56857739284e587c8084b269c2bb7a777c37f9af146",
+        "probe-progress.json": "e573afec370a50d8abde79910a33100e1628caecd47d0835470538930ceb0f6b",
+        "brightness-analysis.json": "353687f1e7f1249fe3a6ea9890f549569eea32936ab82e27d1a9abfcd1c0afee",
+        "datagrams.zip": "b77d5db789fe216067e3428b0e49e0371809c9ad4e43779689748ed7e2301fe3"
+      }
+    }
+  ],
+  "latestPreference": "User says high-contrast BW was accidental and need not be restored; use Standard for future work.",
+  "currentRestorationLimit": "ISO 100 confirmed in the indoor run; final color and remote-stop response not confirmed there. A later one-shot status read succeeded. Authorized restoration check 20261026-081919-restore-check timed out on its first status request, before any setting or remote-start request.",
+  "interpretation": [
+    "Window-light run darkened gradually across all phases and did not return to the initial level at ISO 100. User reports changing cloud cover; it is not a reliable isolated ISO brightness comparison.",
+    "Curtains-closed indoor-light run has near-identical preview JPEG luma for ISO 100, 200, and restored 100 while M/f3.5/1.3s stayed fixed. Supports absence of ISO brightness simulation in this tested remote-view path.",
+    "Reported ISO/ISOAutoValue updates do not independently prove actual sensor gain. Shutter and aperture were not varied by these tools.",
+    "No actual final photo or RAW was captured; no response calibration, motion-blur simulation, CPU performance conclusion, or firmware fix is claimed."
+  ]
+}

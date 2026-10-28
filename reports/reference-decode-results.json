@@ -1,0 +1,194 @@
+{
+  "referenceSource": "reports/reference-codec-source.json",
+  "referenceSha256": "ee3b65e055231164d29ac53a67da1dd047c2e761b932c6a3efb27e6d7f102f84",
+  "fixturesPassed": 3,
+  "smallRoundtripsPassed": 5,
+  "limitations": [
+    "Independent existing codec; candidate sequential-copy interpretation, not proven camera compatibility.",
+    "Encoded lengths and mapped lengths come from exact names in the raw load/section table, not zero-padding heuristics.",
+    "Full outputs are preserved. Mapped views explicitly retain only the declared section range; trailer sizes and hashes are recorded, not silently ignored.",
+    "No repack, firmware byte changes, device commands or camera access."
+  ],
+  "results": [
+    {
+      "version": "3.2-cn",
+      "section": ".text",
+      "loadRecord": {
+        "nameOffset": 268,
+        "address": "0x2000",
+        "bytes": 4445240,
+        "flags": 33,
+        "reserved": 0
+      },
+      "packedRecord": {
+        "nameOffset": 564,
+        "address": "0x10002000",
+        "bytes": 3117324,
+        "flags": 1,
+        "reserved": 4340
+      },
+      "compressedFile": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192",
+      "payloadSha256": "2ec5ac9377fd5d8cd602ce462c1a956dbc8a9e13361ea2be297ef49e1581fdfa",
+      "decodedBytes": 4445241,
+      "decodedSha256": "4e3a577067472d20e614d658a2ff5b81a260660085fa88615d02364280027c4e",
+      "mappedBytes": 4445240,
+      "mappedSha256": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+      "trailerBytes": 1,
+      "trailerHeadHex": "ff",
+      "trailerSha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "differentFromUpstreamAtSameOffsets": 7064,
+      "fullCandidate": "output\\reference-decoded\\body-3-2-cn\\text.full.candidate.bin",
+      "mappedCandidate": "output\\reference-decoded\\body-3-2-cn\\text.mapped.candidate.bin"
+    },
+    {
+      "version": "3.2-cn",
+      "section": ".rodata",
+      "loadRecord": {
+        "nameOffset": 300,
+        "address": "0x43f800",
+        "bytes": 5703192,
+        "flags": 34,
+        "reserved": 0
+      },
+      "packedRecord": {
+        "nameOffset": 600,
+        "address": "0x102fb800",
+        "bytes": 4124532,
+        "flags": 2,
+        "reserved": 4372
+      },
+      "compressedFile": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296",
+      "payloadSha256": "e4e5b9a77246b61a4c3b2de469ca101e3075f66df7995d53d38f9ad882c7c983",
+      "decodedBytes": 5703192,
+      "decodedSha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+      "mappedBytes": 5703192,
+      "mappedSha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+      "trailerBytes": 0,
+      "trailerHeadHex": "",
+      "trailerSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "differentFromUpstreamAtSameOffsets": 795745,
+      "fullCandidate": "output\\reference-decoded\\body-3-2-cn\\rodata.full.candidate.bin",
+      "mappedCandidate": "output\\reference-decoded\\body-3-2-cn\\rodata.mapped.candidate.bin"
+    },
+    {
+      "version": "3.2-cn",
+      "section": ".data",
+      "loadRecord": {
+        "nameOffset": 932,
+        "address": "0xc09b0000",
+        "bytes": 339536,
+        "flags": 42,
+        "reserved": 0
+      },
+      "packedRecord": {
+        "nameOffset": 636,
+        "address": "0x106ea800",
+        "bytes": 116761,
+        "flags": 2,
+        "reserved": 5004
+      },
+      "compressedFile": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.07251968",
+      "payloadSha256": "9cc950fbe0a727a8cb3fe43726379f62e6c798a7ed5fe79fc2f0445c1a4b39b8",
+      "decodedBytes": 339537,
+      "decodedSha256": "feb66ec825095891cdf8efedcce81fdb36d5d8bc593a5ddb7b7ca14eeb5f49fc",
+      "mappedBytes": 339536,
+      "mappedSha256": "0c7bc4e420b8b24ad6ca36f0c931d415add9a56a23cf70537e9b79e545c5df98",
+      "trailerBytes": 1,
+      "trailerHeadHex": "ff",
+      "trailerSha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "differentFromUpstreamAtSameOffsets": 175206,
+      "fullCandidate": "output\\reference-decoded\\body-3-2-cn\\data.full.candidate.bin",
+      "mappedCandidate": "output\\reference-decoded\\body-3-2-cn\\data.mapped.candidate.bin"
+    },
+    {
+      "version": "3.1-cn",
+      "section": ".text",
+      "loadRecord": {
+        "nameOffset": 268,
+        "address": "0x2000",
+        "bytes": 4445200,
+        "flags": 33,
+        "reserved": 0
+      },
+      "packedRecord": {
+        "nameOffset": 564,
+        "address": "0x10002000",
+        "bytes": 3117559,
+        "flags": 1,
+        "reserved": 4340
+      },
+      "compressedFile": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin.0.00008192",
+      "payloadSha256": "7debc51cfb246666c3b08a1cd12f6ce9ec2b2864cc262f9837c27249b9279245",
+      "decodedBytes": 4445200,
+      "decodedSha256": "cc4924c30507e1b31fcf6cc4149922c02245626ebc11a236285414410f0f66cb",
+      "mappedBytes": 4445200,
+      "mappedSha256": "cc4924c30507e1b31fcf6cc4149922c02245626ebc11a236285414410f0f66cb",
+      "trailerBytes": 0,
+      "trailerHeadHex": "",
+      "trailerSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "differentFromUpstreamAtSameOffsets": 6760,
+      "fullCandidate": "output\\reference-decoded\\body-3-1-cn\\text.full.candidate.bin",
+      "mappedCandidate": "output\\reference-decoded\\body-3-1-cn\\text.mapped.candidate.bin"
+    },
+    {
+      "version": "3.1-cn",
+      "section": ".rodata",
+      "loadRecord": {
+        "nameOffset": 300,
+        "address": "0x43f800",
+        "bytes": 5703196,
+        "flags": 34,
+        "reserved": 0
+      },
+      "packedRecord": {
+        "nameOffset": 600,
+        "address": "0x102fb800",
+        "bytes": 4124550,
+        "flags": 2,
+        "reserved": 4372
+      },
+      "compressedFile": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin.0.03127296",
+      "payloadSha256": "7dd8ffe0e82c7ae66306bbfba766f49be2e5c6e67579086130855d7ee2fcb473",
+      "decodedBytes": 5703197,
+      "decodedSha256": "62cb8913bed07e5c9085546dbeb35bdc4b8def6f9aa5619cc44fc038277e5181",
+      "mappedBytes": 5703196,
+      "mappedSha256": "232c720660ff1253161be05d969a5aa473130202bdaf47ff09250d805808bdbe",
+      "trailerBytes": 1,
+      "trailerHeadHex": "ff",
+      "trailerSha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "differentFromUpstreamAtSameOffsets": 795315,
+      "fullCandidate": "output\\reference-decoded\\body-3-1-cn\\rodata.full.candidate.bin",
+      "mappedCandidate": "output\\reference-decoded\\body-3-1-cn\\rodata.mapped.candidate.bin"
+    },
+    {
+      "version": "3.1-cn",
+      "section": ".data",
+      "loadRecord": {
+        "nameOffset": 932,
+        "address": "0xc09b0000",
+        "bytes": 339536,
+        "flags": 42,
+        "reserved": 0
+      },
+      "packedRecord": {
+        "nameOffset": 636,
+        "address": "0x106ea800",
+        "bytes": 116784,
+        "flags": 2,
+        "reserved": 5004
+      },
+      "compressedFile": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin.0.07251968",
+      "payloadSha256": "3d7aeac53275b175b8a948c290603803462dec0599e88b5921c0a6bed1695b26",
+      "decodedBytes": 339537,
+      "decodedSha256": "25ad024111031085e3b73819fe8994525b5455ea1e67af515e5413ff7f20d85b",
+      "mappedBytes": 339536,
+      "mappedSha256": "895fc87dc320d70786b9136aff3a1ceea455b807f878f4bfa3f58d17d4f70ac1",
+      "trailerBytes": 1,
+      "trailerHeadHex": "ff",
+      "trailerSha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "differentFromUpstreamAtSameOffsets": 177044,
+      "fullCandidate": "output\\reference-decoded\\body-3-1-cn\\data.full.candidate.bin",
+      "mappedCandidate": "output\\reference-decoded\\body-3-1-cn\\data.mapped.candidate.bin"
+    }
+  ]
+}

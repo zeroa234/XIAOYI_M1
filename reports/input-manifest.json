@@ -1,0 +1,106 @@
+[
+  {
+    "kind": "archive",
+    "label": "lens-42-5",
+    "source": "external-downloads\\42.5mm F1.8 Lens FirmwareV1.1-cn.zip",
+    "project_path": "data\\input\\lens-42-5\\42.5mm F1.8 Lens FirmwareV1.1-cn.zip",
+    "size": 1046056,
+    "sha256": "dd034453418f5b7b240e4f7e3e793d726c3a3258a327fcd81400d22d5a6f5aa5"
+  },
+  {
+    "kind": "entry",
+    "label": "lens-42-5",
+    "archive_entry": "42.5mm F1.8 Lens FirmwareV1.1-cn/LENS_FW.lin",
+    "project_path": "data\\input\\lens-42-5\\LENS_FW.lin",
+    "size": 262208,
+    "sha256": "1b2f10ad20f4cb30e4b21b30b869cd6b962990ca5921d4bd91c697b6f6f6758a"
+  },
+  {
+    "kind": "entry",
+    "label": "lens-42-5",
+    "archive_entry": "42.5mm F1.8 Lens FirmwareV1.1-cn/YI 42.5mm F1.8镜头固件v1.1_Release Note.pdf",
+    "project_path": "data\\input\\lens-42-5\\YI 42.5mm F1.8镜头固件v1.1_Release Note.pdf",
+    "size": 460129,
+    "sha256": "ab269585ba1189cd2f9b827c1dc6b954b41729a5731ac6a6bf2125b66740e86d"
+  },
+  {
+    "kind": "entry",
+    "label": "lens-42-5",
+    "archive_entry": "42.5mm F1.8 Lens FirmwareV1.1-cn/小蚁微单相机M1使用SD卡升级镜头固件方法.pdf",
+    "project_path": "data\\input\\lens-42-5\\小蚁微单相机M1使用SD卡升级镜头固件方法.pdf",
+    "size": 543494,
+    "sha256": "3579321684eca506326df5b718b11acd7e58dc2e802205302e8a7e35b2a22136"
+  },
+  {
+    "kind": "archive",
+    "label": "lens-12-40",
+    "source": "external-downloads\\12-40mmF3.5-5.6lensFirmwareV1.1_2017-04-19_cn.zip",
+    "project_path": "data\\input\\lens-12-40\\12-40mmF3.5-5.6lensFirmwareV1.1_2017-04-19_cn.zip",
+    "size": 909964,
+    "sha256": "ce22dc9b0d3a2f1c27d2deffb3c98812e0387d32f4629171a0c5f50aadb6c558"
+  },
+  {
+    "kind": "entry",
+    "label": "lens-12-40",
+    "archive_entry": "12-40mm F3.5-5.6 lens Firmware V1.1_cn/LENS_FW.lin",
+    "project_path": "data\\input\\lens-12-40\\LENS_FW.lin",
+    "size": 327744,
+    "sha256": "5d472041913897ee9ede60b81abf154720f10e8d90bf970efa51708dd938b8bd"
+  },
+  {
+    "kind": "entry",
+    "label": "lens-12-40",
+    "archive_entry": "12-40mm F3.5-5.6 lens Firmware V1.1_cn/YI 12-40mm F3.5-5.6镜头使用SD卡升级固件方法.pdf",
+    "project_path": "data\\input\\lens-12-40\\YI 12-40mm F3.5-5.6镜头使用SD卡升级固件方法.pdf",
+    "size": 559738,
+    "sha256": "b0ede53d80bc85a69dad52879cd73a2ae843ad2060608e20211a83ed2ede1191"
+  },
+  {
+    "kind": "entry",
+    "label": "lens-12-40",
+    "archive_entry": "12-40mm F3.5-5.6 lens Firmware V1.1_cn/YI 12-40mm f3.5-5.6变焦镜头固件升级说明.pdf",
+    "project_path": "data\\input\\lens-12-40\\YI 12-40mm f3.5-5.6变焦镜头固件升级说明.pdf",
+    "size": 284323,
+    "sha256": "9e91a82729e50555aecd44fe371aabbc80e5ec4acf2d877057779603f529a5f6"
+  },
+  {
+    "kind": "archive",
+    "label": "body-3-2-cn",
+    "source": "external-downloads\\3.2-cn.zip",
+    "project_path": "data\\input\\body-3-2-cn\\3.2-cn.zip",
+    "size": 10378672,
+    "sha256": "7e0cdc1b9d49a087c29372c550f7e6e40f37846134c31d91506699071c8ef348"
+  },
+  {
+    "kind": "entry",
+    "label": "body-3-2-cn",
+    "archive_entry": "3.2-cn/firmware.bin",
+    "project_path": "data\\input\\body-3-2-cn\\firmware.bin",
+    "size": 11704832,
+    "sha256": "92b3f1fda39e37351432d19d0167879f477eb71713a8fbc94b3ba2141ca404e4"
+  },
+  {
+    "kind": "entry",
+    "label": "body-3-2-cn",
+    "archive_entry": "3.2-cn/YI-M1 视频功能使用说明.pdf",
+    "project_path": "data\\input\\body-3-2-cn\\YI-M1 视频功能使用说明.pdf",
+    "size": 1652321,
+    "sha256": "8bfe0467a2759699f8021e12d0517848b3755ef4f71e8586e1d2e5aadb8bb449"
+  },
+  {
+    "kind": "entry",
+    "label": "body-3-2-cn",
+    "archive_entry": "3.2-cn/固件v3.2-cn_Release Note.pdf",
+    "project_path": "data\\input\\body-3-2-cn\\固件v3.2-cn_Release Note.pdf",
+    "size": 210866,
+    "sha256": "8b2d94acafed7cc3b6855b6d158c2e124a61db64810f8f59e30d1f03763a9ebc"
+  },
+  {
+    "kind": "entry",
+    "label": "body-3-2-cn",
+    "archive_entry": "3.2-cn/小蚁微单相机M1使用SD卡升级固件方法.pdf",
+    "project_path": "data\\input\\body-3-2-cn\\小蚁微单相机M1使用SD卡升级固件方法.pdf",
+    "size": 469255,
+    "sha256": "e6c5e559674ce60d28f2007f478eb9da0a9532446fba2e1c1f78114622155814"
+  }
+]

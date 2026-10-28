@@ -1,0 +1,160 @@
+{
+  "inputSha256": "92b3f1fda39e37351432d19d0167879f477eb71713a8fbc94b3ba2141ca404e4",
+  "upstreamCommit": "b90b96c124a3b076fa0283404e6595a4a40d20d0",
+  "adapter": "Runtime version identity only; upstream source and firmware unchanged",
+  "limitation": "Upstream decompression is experimental. Checksums do not prove runtime correctness.",
+  "sections": [
+    {
+      "filename": "m1-3.2-cn.analysis.bin.0",
+      "rawHeader": "LENGTH=7370752 C59Y1 VER=M1CN DVR=Ver1.42 SUM=937552776 ND1 IPL PTBL",
+      "parsedHeader": {
+        "sectionLength": 7370752,
+        "deviceId": "C59Y1",
+        "deviceVersion": "M1CN",
+        "dvr": "Ver1.42",
+        "sectionSum": 937552776,
+        "followingSectionIds": [
+          "ND1",
+          "IPL",
+          "PTBL"
+        ]
+      },
+      "subsections": [
+        {
+          "filename": "m1-3.2-cn.analysis.bin.0.00000000",
+          "compressed": false
+        },
+        {
+          "filename": "m1-3.2-cn.analysis.bin.0.00004096",
+          "compressed": false
+        },
+        {
+          "filename": "m1-3.2-cn.analysis.bin.0.00008192",
+          "compressed": true,
+          "filenameDecompressed": "m1-3.2-cn.analysis.bin.0.00008192.decompressed"
+        },
+        {
+          "filename": "m1-3.2-cn.analysis.bin.0.03127296",
+          "compressed": true,
+          "filenameDecompressed": "m1-3.2-cn.analysis.bin.0.03127296.decompressed"
+        },
+        {
+          "filename": "m1-3.2-cn.analysis.bin.0.07251968",
+          "compressed": true,
+          "filenameDecompressed": "m1-3.2-cn.analysis.bin.0.07251968.decompressed"
+        }
+      ]
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.1.ND1",
+      "rawHeader": "ND1 LENGTH=4197888 C59Y1 VER=M1CN DVR=Ver1.42 SUM=299791776 OFFSET=23068672",
+      "parsedHeader": {
+        "sectionId": "ND1",
+        "sectionLength": 4197888,
+        "deviceId": "C59Y1",
+        "deviceVersion": "M1CN",
+        "dvr": "Ver1.42",
+        "sectionSum": 299791776,
+        "sectionOffset": 23068672
+      },
+      "subsections": []
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.2.IPL",
+      "rawHeader": "IPL LENGTH=131072 C59Y1 VER=M1CN DVR=Ver1.42 SUM=5714438",
+      "parsedHeader": {
+        "sectionId": "IPL",
+        "sectionLength": 131072,
+        "deviceId": "C59Y1",
+        "deviceVersion": "M1CN",
+        "dvr": "Ver1.42",
+        "sectionSum": 5714438
+      },
+      "subsections": []
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.3.PTBL",
+      "rawHeader": "PTBL LENGTH=4096  C59Y1 VER=M1CN SUM=5181",
+      "parsedHeader": {
+        "sectionId": "PTBL",
+        "sectionLength": 4096,
+        "deviceId": "C59Y1",
+        "deviceVersion": "M1CN",
+        "sectionSum": 5181
+      },
+      "subsections": []
+    }
+  ],
+  "files": [
+    {
+      "filename": "m1-3.2-cn.analysis.bin",
+      "bytes": 11704832,
+      "sha256": "92b3f1fda39e37351432d19d0167879f477eb71713a8fbc94b3ba2141ca404e4"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.0",
+      "bytes": 7370752,
+      "sha256": "c57a83a6f99896b514d0dde8d4a8d3d037cff71c4470511a7295a0b23a13c950"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.0.00000000",
+      "bytes": 4096,
+      "sha256": "c90e6cb73c65f6a54e260b169eb511a3a32268af194c69086bdfebecfb8a5bc7"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.0.00004096",
+      "bytes": 4096,
+      "sha256": "d84cd8d1da041f09cc3acff9e4f76dcd3813abf42169458c87589065f4900810"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.0.00008192",
+      "bytes": 3119104,
+      "sha256": "69b41f508bfb2d14a8dce446ec267617f347f77ee44133acf71a1a64d189a1d3"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.0.00008192.decompressed",
+      "bytes": 4445245,
+      "sha256": "c6342036374e97ace58101e220924f25d2ca322aa7caba35f196827de50af676"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.0.03127296",
+      "bytes": 4124672,
+      "sha256": "0507731bcc743013345061ac149e4fa14aed7d2f72b57357fb1c826bd7225b38"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.0.03127296.decompressed",
+      "bytes": 5703200,
+      "sha256": "ce3ecce58634a3798882aabed7ed3db9622d6264a59f1ec5cee3abbc3b78f58d"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.0.07251968",
+      "bytes": 118784,
+      "sha256": "82735a54f784e3024020b02ba3bf8a9e4541e35fa33ea719343166447d792cff"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.0.07251968.decompressed",
+      "bytes": 339543,
+      "sha256": "476912e6698cabba404e7fef2374f374c518eb21dec2e7a60e0cd2fa36456b0e"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.1.ND1",
+      "bytes": 4197888,
+      "sha256": "5531485908144b6198a022d6e7733aec2aeeef54219b380839add5dbdc0760e8"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.2.IPL",
+      "bytes": 131072,
+      "sha256": "3513946d8068f6a03706bc5ec142fe45122773b2163ef688806afa7e03012dc4"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.3.PTBL",
+      "bytes": 4096,
+      "sha256": "ce36f28794bfb9e9de99e3aecf717ca8c2badf07f1206d9a9da282f7de0cb20a"
+    },
+    {
+      "filename": "m1-3.2-cn.analysis.bin.unpack",
+      "bytes": 2486,
+      "sha256": "9f3f5af5c5731cd7c46d918f34030c5e2ecfb7abc4df9c4d26e1f35c912f06c4"
+    }
+  ]
+}

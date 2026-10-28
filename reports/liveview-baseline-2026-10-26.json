@@ -1,0 +1,275 @@
+{
+  "date": "2026-10-26",
+  "qualification": "First real on-camera network observations; not CPU profiling or a firmware fix.",
+  "captures": [
+    {
+      "capture": "output\\live-captures\\20261026-064350-62e724",
+      "mode": "bounded-remote-view",
+      "datagrams": 511,
+      "bytes": 743925,
+      "firstDatagramSeconds": 0.489953099982813,
+      "lastDatagramSeconds": 7.670882899896242,
+      "validJpegs": [
+        {
+          "file": "output\\live-captures\\20261026-064350-62e724\\packet_967.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "4d84f937d7a8b152bd428e583a14ee8cf7bc4ef3a1d1bc7dec1e442d0d11c9b3"
+        },
+        {
+          "file": "output\\live-captures\\20261026-064350-62e724\\packet_969.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "632043d78230b726a4d008cee4e402807bad899c9d7368884beb39a7711876e1"
+        },
+        {
+          "file": "output\\live-captures\\20261026-064350-62e724\\packet_970.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "4ee035726feaf177cd713c74a22ce49a766d68f37898538ad0884750716b0ac7"
+        },
+        {
+          "file": "output\\live-captures\\20261026-064350-62e724\\packet_971.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "81f066a391d1c4e3dd3b6cf2caf13387b6388700531b9b230435da238fca9208"
+        }
+      ],
+      "settingsObserved": {
+        "ExposureMode": [
+          "M"
+        ],
+        "Fnumber": [
+          "5.0"
+        ],
+        "ShutterSpeed": [
+          "1.3s"
+        ],
+        "EV": [
+          "1.3"
+        ],
+        "ISOSetting": [
+          "100"
+        ],
+        "ISOAutoValue": [
+          "100"
+        ],
+        "FocusMode": [
+          "C-AF"
+        ],
+        "DriveMode": [
+          "Continuous"
+        ],
+        "FileFormat": [
+          "RAW"
+        ],
+        "ColorMode": [
+          "HContrastBW"
+        ],
+        "VideoFormat": [
+          "4K_30"
+        ]
+      },
+      "receiveBufferBytes": null,
+      "drainedAfterLimit": null,
+      "stopReplyReceived": false,
+      "stopError": "<urlopen error timed out>"
+    },
+    {
+      "capture": "output\\live-captures\\20261026-064926-passive-motion",
+      "mode": "passive-only",
+      "datagrams": 0,
+      "bytes": 0,
+      "firstDatagramSeconds": null,
+      "lastDatagramSeconds": null,
+      "validJpegs": [],
+      "settingsObserved": {
+        "ExposureMode": [],
+        "Fnumber": [],
+        "ShutterSpeed": [],
+        "EV": [],
+        "ISOSetting": [],
+        "ISOAutoValue": [],
+        "FocusMode": [],
+        "DriveMode": [],
+        "FileFormat": [],
+        "ColorMode": [],
+        "VideoFormat": []
+      },
+      "receiveBufferBytes": null,
+      "drainedAfterLimit": null,
+      "stopReplyReceived": false,
+      "stopError": null
+    },
+    {
+      "capture": "output\\live-captures\\20261026-065211-cdc31e",
+      "mode": "bounded-remote-view",
+      "datagrams": 745,
+      "bytes": 1078108,
+      "firstDatagramSeconds": 0.48095380002632737,
+      "lastDatagramSeconds": 3.002116800053045,
+      "validJpegs": [
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1162.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "4cfb4191ee28cf237a996483d1e2efcae2a9cb7eeaee2a2ea310ef19a44c03e1"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1163.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "ac17fe837484a4f3d74505f836c6d162f50d25b4a6b154075edaef2deb64da63"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1164.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "f9d272f5a1fcab830fa1cbfe2dd0688e01e7443602e9885cb16e109cfe17b4ad"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1165.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "f1b1b29e54d52892656385a55cdb7b846d5dacadad01c1e8ec2aba6e44ce9e76"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1166.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "f6463d981394c8ffacc3c8ca125fb95c287e66e5fa21198e50a40894bec22d1f"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1167.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "b0c24f243af867178b5cecebc7c0e91d263793868cc7678f71ca5b91f4bb64ef"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1168.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "c478823360d599531898e3914a9129a8f771f74187c265d478cd0e7283ed2654"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1169.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "0774a625027ed52dd267319e767f1babf272c5e025f5512399cd923ba587f9ce"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1171.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "1ebf64a8d951cdde28c0662ac9f219eefe64a62dbd7303cadac8bf937dc6c813"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1172.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "b66830227cc42695f333478013879ef8ab2dce39a8793ee89ac58b6b7518be46"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1177.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "9c34f87cc5e507a537fb438b652b93eecca61013f7362f82d9131d3a2b580953"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1193.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "9b281e4a2f12a4195c4431ef97a3516c57a76d1b287dfbd1b0fcc967cbfb31b9"
+        },
+        {
+          "file": "output\\live-captures\\20261026-065211-cdc31e\\packet_1194.jpg",
+          "size": [
+            800,
+            600
+          ],
+          "sha256": "414d007e21703f0b42439b5ed7e3eb017a3a44d021aad5d1e45a04ea6557070a"
+        }
+      ],
+      "settingsObserved": {
+        "ExposureMode": [
+          "M"
+        ],
+        "Fnumber": [
+          "5.0"
+        ],
+        "ShutterSpeed": [
+          "1.3s"
+        ],
+        "EV": [
+          "1.7",
+          "2.0"
+        ],
+        "ISOSetting": [
+          "100"
+        ],
+        "ISOAutoValue": [
+          "100"
+        ],
+        "FocusMode": [
+          "C-AF"
+        ],
+        "DriveMode": [
+          "Continuous"
+        ],
+        "FileFormat": [
+          "RAW"
+        ],
+        "ColorMode": [
+          "HContrastBW"
+        ],
+        "VideoFormat": [
+          "4K_30"
+        ]
+      },
+      "receiveBufferBytes": 4194304,
+      "drainedAfterLimit": 222,
+      "stopReplyReceived": true,
+      "stopError": null
+    }
+  ],
+  "visualObservation": "First capture shows connectors/cables close-up; second active capture shows a moved view under the desk/frame with a large near obstruction.",
+  "limits": [
+    "Scenes differ between captures. No exposure parameter was deliberately changed, so this is not an exposure-simulation test.",
+    "No firmware body version was independently read; 3.2-cn remains user-confirmed. Lens 1.1 was read via GetCameraStatus.",
+    "No camera photos/video were triggered; remaining photo count was 492 in status replies.",
+    "Raw streams and personal scene images remain in ignored output, not Git.",
+    "No Wi-Fi password is recorded in this report or capture scripts."
+  ]
+}

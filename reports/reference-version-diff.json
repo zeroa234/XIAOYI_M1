@@ -1,0 +1,251 @@
+{
+  "method": "Git histogram diff of explicit little-endian 4-byte-word views, no textconv or external diff. Candidate decode only; changed ranges may be address relocation, not behavioral changes.",
+  "results": [
+    {
+      "section": "text",
+      "hunks": 93838,
+      "removedBytes": 503700,
+      "addedBytes": 503740,
+      "diffFile": "output\\reference-version-diff\\text.diff",
+      "largestRanges": [
+        {
+          "oldWordLine": 366441,
+          "oldWords": 76,
+          "newWordLine": 366456,
+          "newWords": 76
+        },
+        {
+          "oldWordLine": 190164,
+          "oldWords": 52,
+          "newWordLine": 190179,
+          "newWords": 52
+        },
+        {
+          "oldWordLine": 1108710,
+          "oldWords": 43,
+          "newWordLine": 1108720,
+          "newWords": 43
+        },
+        {
+          "oldWordLine": 794292,
+          "oldWords": 26,
+          "newWordLine": 794307,
+          "newWords": 31
+        },
+        {
+          "oldWordLine": 864653,
+          "oldWords": 0,
+          "newWordLine": 864670,
+          "newWords": 31
+        },
+        {
+          "oldWordLine": 189279,
+          "oldWords": 30,
+          "newWordLine": 189294,
+          "newWords": 28
+        },
+        {
+          "oldWordLine": 101345,
+          "oldWords": 27,
+          "newWordLine": 101371,
+          "newWords": 0
+        },
+        {
+          "oldWordLine": 188412,
+          "oldWords": 26,
+          "newWordLine": 188427,
+          "newWords": 26
+        },
+        {
+          "oldWordLine": 187752,
+          "oldWords": 23,
+          "newWordLine": 187765,
+          "newWords": 25
+        },
+        {
+          "oldWordLine": 977847,
+          "oldWords": 25,
+          "newWordLine": 977848,
+          "newWords": 0
+        },
+        {
+          "oldWordLine": 190133,
+          "oldWords": 24,
+          "newWordLine": 190148,
+          "newWords": 24
+        },
+        {
+          "oldWordLine": 319029,
+          "oldWords": 0,
+          "newWordLine": 319015,
+          "newWords": 24
+        }
+      ],
+      "allRangesFile": "output\\reference-version-diff\\ranges.json"
+    },
+    {
+      "section": "rodata",
+      "hunks": 1843,
+      "removedBytes": 11548,
+      "addedBytes": 11544,
+      "diffFile": "output\\reference-version-diff\\rodata.diff",
+      "largestRanges": [
+        {
+          "oldWordLine": 648108,
+          "oldWords": 90,
+          "newWordLine": 648107,
+          "newWords": 90
+        },
+        {
+          "oldWordLine": 1078988,
+          "oldWords": 1,
+          "newWordLine": 1078911,
+          "newWords": 77
+        },
+        {
+          "oldWordLine": 1078592,
+          "oldWords": 61,
+          "newWordLine": 1078573,
+          "newWords": 1
+        },
+        {
+          "oldWordLine": 1078910,
+          "oldWords": 61,
+          "newWordLine": 1078867,
+          "newWords": 1
+        },
+        {
+          "oldWordLine": 1078448,
+          "oldWords": 49,
+          "newWordLine": 1078447,
+          "newWords": 1
+        },
+        {
+          "oldWordLine": 1040798,
+          "oldWords": 40,
+          "newWordLine": 1040797,
+          "newWords": 40
+        },
+        {
+          "oldWordLine": 1078816,
+          "oldWords": 1,
+          "newWordLine": 1078755,
+          "newWords": 38
+        },
+        {
+          "oldWordLine": 1078706,
+          "oldWords": 1,
+          "newWordLine": 1078615,
+          "newWords": 37
+        },
+        {
+          "oldWordLine": 1084428,
+          "oldWords": 35,
+          "newWordLine": 1084427,
+          "newWords": 35
+        },
+        {
+          "oldWordLine": 1078210,
+          "oldWords": 1,
+          "newWordLine": 1078179,
+          "newWords": 31
+        },
+        {
+          "oldWordLine": 1078874,
+          "oldWords": 31,
+          "newWordLine": 1078861,
+          "newWords": 1
+        },
+        {
+          "oldWordLine": 1078976,
+          "oldWords": 1,
+          "newWordLine": 1078873,
+          "newWords": 31
+        }
+      ],
+      "allRangesFile": "output\\reference-version-diff\\ranges.json"
+    },
+    {
+      "section": "data",
+      "hunks": 854,
+      "removedBytes": 9852,
+      "addedBytes": 9852,
+      "diffFile": "output\\reference-version-diff\\data.diff",
+      "largestRanges": [
+        {
+          "oldWordLine": 52391,
+          "oldWords": 198,
+          "newWordLine": 52452,
+          "newWords": 7
+        },
+        {
+          "oldWordLine": 52772,
+          "oldWords": 7,
+          "newWordLine": 52612,
+          "newWords": 167
+        },
+        {
+          "oldWordLine": 52632,
+          "oldWords": 132,
+          "newWordLine": 52592,
+          "newWords": 12
+        },
+        {
+          "oldWordLine": 31937,
+          "oldWords": 98,
+          "newWordLine": 31938,
+          "newWords": 124
+        },
+        {
+          "oldWordLine": 32873,
+          "oldWords": 36,
+          "newWordLine": 32873,
+          "newWords": 72
+        },
+        {
+          "oldWordLine": 18825,
+          "oldWords": 70,
+          "newWordLine": 18826,
+          "newWords": 69
+        },
+        {
+          "oldWordLine": 52608,
+          "oldWords": 1,
+          "newWordLine": 52470,
+          "newWords": 70
+        },
+        {
+          "oldWordLine": 19511,
+          "oldWords": 0,
+          "newWordLine": 19513,
+          "newWords": 69
+        },
+        {
+          "oldWordLine": 19513,
+          "oldWords": 69,
+          "newWordLine": 19583,
+          "newWords": 35
+        },
+        {
+          "oldWordLine": 52371,
+          "oldWords": 18,
+          "newWordLine": 52381,
+          "newWords": 69
+        },
+        {
+          "oldWordLine": 19063,
+          "oldWords": 55,
+          "newWordLine": 19063,
+          "newWords": 55
+        },
+        {
+          "oldWordLine": 19583,
+          "oldWords": 35,
+          "newWordLine": 19619,
+          "newWords": 55
+        }
+      ],
+      "allRangesFile": "output\\reference-version-diff\\ranges.json"
+    }
+  ]
+}

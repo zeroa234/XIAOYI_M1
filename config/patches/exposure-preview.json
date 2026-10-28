@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "exposure-preview",
+  "base_version": "3.2-cn",
+  "status": "experimental-partially-validated-disabled",
+  "description": "实验性M档测光偏差注入，尚无补丁真机结果；不等同于已证明绝对曝光精度。P/A/S不修改。",
+  "patches": [
+    {
+      "new_hex": "371f00eb",
+      "section": ".text",
+      "va": "0x00362084",
+      "orig_hex": "92feffeb",
+      "note": "仅替换取景 AE 步进中的配置填充调用，转入保留原填充器的 M 档包装。"
+    },
+    {
+      "new_hex": "10402de90040a0e157dfffeb0f102de900300fe1080094e5010050e30900001a040094e5000050e30600001a20c09fe500009ce5320050e33200a0c3320070e33100e0b3300084e503f028e10f10bde81080bde8f4f950c1",
+      "section": ".text",
+      "va": "0x00369d68",
+      "orig_hex": "c496f2eb04431fe53c0194e565f1ffeb0600000aed8bf8eb74f1ffeb6b8df8eb315102eb7ff1ffeb0b8cf8eb9e2901ebe4521fe5b400c5e14c7194e53edbffeb690500eb0100009a3bdbffeb016040e20700b0e177f1ffeb",
+      "note": "占用已检查的死区前88字节；模式=1且kind=0时将M测光缓存钳到±50后写原取景补偿字段，其他模式与kind保持原值；恢复原返回寄存器和CPSR标志。"
+    }
+  ],
+  "limits": [
+    "kind=0的业务含义尚未完全核实；非零kind保持原厂行为。",
+    "M档缓存量纲及动态闭环仍需真机标定；有一帧或更多缓存延迟。",
+    "帧周期/传感器/ISP范围由原AE钳位，未验证全部模式下的实际输出。",
+    "未验证AF、闪光、录像切换及LCD/遥控通道一致性。",
+    "未证明整个AE闭环下三项用户设定到最终取景输出的正确映射；此清单只能显式选择用于后续研究，不能默认为已完成修复。"
+  ],
+  "enabled_by_default": false,
+  "requires_camera_validation": true
+}

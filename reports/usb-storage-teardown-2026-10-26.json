@@ -1,0 +1,179 @@
+{
+  "title": "Remote-control session followed by USB mass-storage removal",
+  "generatedAtLocal": "2026-10-27T00:12:00+08:00",
+  "timezone": "UTC+08:00",
+  "qualification": "Host-side observation only. Windows PnP records have one-second resolution. No camera-side log, no USB wire capture, no firmware claim.",
+  "usbIdentity": {
+    "serial": "REDACTED-DEVICE-ID",
+    "instances": [
+      {
+        "product": "YI-M1",
+        "instanceId": "USB\\VID_2DBD&PID_0001\\REDACTED-DEVICE-ID",
+        "storageInstance": "USBSTOR\\DISK&VEN_YI&PROD_YI-M1&REV_1.00\\REDACTED-DEVICE-ID&0",
+        "capacityBytes": 63864569856
+      },
+      {
+        "product": "ASDK00",
+        "instanceId": "USB\\VID_2DBD&PID_012E\\REDACTED-DEVICE-ID",
+        "storageInstance": "USBSTOR\\DISK&VEN_YI&PROD_ASDK00&REV_1.00\\REDACTED-DEVICE-ID&0",
+        "capacityBytes": 63864569856
+      }
+    ],
+    "sharedEvidence": {
+      "sameSerial": true,
+      "sameCapacityBytes": true,
+      "volumeEntries": [
+        "DCIM",
+        "MISC",
+        "PRIVATE",
+        "XIAOYI"
+      ],
+      "conclusion": "Both identities expose the same SD card; this is not a second or internal store."
+    },
+    "location": "Port_#0002.Hub_#0001 under USB\\ROOT_HUB30\\5&19c782b&0&0"
+  },
+  "runs": [
+    {
+      "sessionDirectory": "output/live-captures/20261026-154544-25bfaf",
+      "startedUtc": "2026-10-26T15:45:44.442747+00:00",
+      "startedLocal": "2026-10-26T23:45:44.442+08:00",
+      "orderedFrames": 20,
+      "http": {
+        "GetCameraStatus": "200/200",
+        "RCStartRemoteCtl": "200/200",
+        "RCStopRemoteCtl": "200/200"
+      },
+      "usbEvent": {
+        "kind": "removal",
+        "product": "ASDK00",
+        "localTime": "2026-10-26T23:46:52+08:00",
+        "deltaSecondsRange": [
+          67.557,
+          68.557
+        ]
+      }
+    },
+    {
+      "sessionDirectory": "output/live-captures/20261026-155406-69ee53",
+      "startedUtc": "2026-10-26T15:54:06.120620+00:00",
+      "startedLocal": "2026-10-26T23:54:06.120+08:00",
+      "orderedFrames": 3,
+      "http": {
+        "GetCameraStatus": "200/200",
+        "RCStartRemoteCtl": "200/200",
+        "RCStopRemoteCtl": "timeout (recorded as stopError)"
+      },
+      "usbEvent": {
+        "kind": "removal",
+        "product": "YI-M1",
+        "localTime": "2026-10-26T23:55:14+08:00",
+        "deltaSecondsRange": [
+          67.879,
+          68.879
+        ]
+      }
+    },
+    {
+      "sessionDirectory": "output/live-captures/20261026-160722-53de40",
+      "startedUtc": "2026-10-26T16:07:22.031907+00:00",
+      "startedLocal": "2026-10-27T00:07:22.031+08:00",
+      "orderedFrames": 61,
+      "http": {
+        "GetCameraStatus": "200/200",
+        "RCStartRemoteCtl": "200/200",
+        "RCStopRemoteCtl": "200/200"
+      },
+      "usbEvent": {
+        "kind": "removal",
+        "product": "ASDK00",
+        "localTime": "2026-10-27T00:08:29+08:00",
+        "detectedAtLocal": "2026-10-27T00:08:29.940+08:00",
+        "detectionMethod": "3 s PnP presence poll; PnP LastRemovalDate records 00:08:29",
+        "deltaSecondsRange": [
+          66.968,
+          67.908
+        ]
+      }
+    },
+    {
+      "sessionDirectory": "output/live-captures/20261026-160454-370f53",
+      "startedUtc": "2026-10-26T16:04:54.470329+00:00",
+      "startedLocal": "2026-10-27T00:04:54.470+08:00",
+      "orderedFrames": 0,
+      "http": {},
+      "error": "URLError: <urlopen error timed out>",
+      "note": "First GetCameraStatus timed out after 2 s; RCStartRemoteCtl was never sent, so this run is not a timing sample."
+    }
+  ],
+  "deltaIntersectionSeconds": [
+    67.879,
+    67.908
+  ],
+  "deltaStatement": "All three removal events are consistent with approximately 68 s after session start; the one-second PnP resolution prevents a tighter claim.",
+  "controls": {
+    "idleWatch": {
+      "arrivalLocal": "2026-10-26T23:59:41+08:00",
+      "windowLocal": [
+        "2026-10-27T00:01:08+08:00",
+        "2026-10-27T00:04:09+08:00"
+      ],
+      "durationSeconds": 181,
+      "method": "Get-PnpDevice presence poll every 10 s; no disk I/O; no camera commands",
+      "usbPresentThroughout": true,
+      "removals": 0
+    },
+    "keepalive": {
+      "windowLocal": [
+        "2026-10-27T00:07:22+08:00",
+        "2026-10-27T00:09:49+08:00"
+      ],
+      "intervalSeconds": 15,
+      "beatsLocal": [
+        "00:07:38",
+        "00:07:52",
+        "00:08:07",
+        "00:08:25",
+        "00:08:40",
+        "00:08:55",
+        "00:09:09",
+        "00:09:24",
+        "00:09:39"
+      ],
+      "allResponsesHttp200": true,
+      "usbRemovalDuringWindow": "2026-10-27T00:08:29+08:00",
+      "conclusion": "Status polling did not postpone the removal; the timer is not reset by client commands."
+    }
+  },
+  "recovery": [
+    {
+      "removalLocal": "2026-10-26T23:55:14+08:00",
+      "nextArrivalLocal": "2026-10-26T23:59:41+08:00",
+      "downtimeSeconds": 267,
+      "recoveryCause": "manual cable replug by the user",
+      "automaticRecoveryObserved": false
+    },
+    {
+      "removalLocal": "2026-10-27T00:08:29+08:00",
+      "observedUntilLocal": "2026-10-27T00:09:49+08:00",
+      "stillAbsentAtEndOfWatch": true,
+      "automaticRecoveryObserved": false
+    }
+  ],
+  "hostSideSettings": {
+    "usbSelectiveSuspend": "enabled (power scheme SCHEME_BALANCED, AC and DC index 1)",
+    "unexcluded": true,
+    "note": "Idle control of 4 min 28 s showed no removal, so selective suspend is not the leading explanation. A disabled-suspend control run has not been performed."
+  },
+  "limits": [
+    "One body, one evening, three timing samples; not reproduced on another firmware version or another M1.",
+    "Approximately 68 s is an empirical host-side constant; no evidence that it is a firmware timer, and no firmware constant search has been performed.",
+    "No camera-side log and no USB wire-level capture; PnP timestamps have one-second resolution.",
+    "Cable and power delivery were not controlled for; Wi-Fi and HTTP stayed healthy through every removal.",
+    "Long-term automatic recovery beyond 4 min 27 s and 80 s was not observed."
+  ],
+  "operationalConsequences": [
+    "The liveview capture path does not require USB and keeps working while the volume is absent (GetCameraStatus returned 200 during both removals).",
+    "Read the card before starting a remote session, or use a card reader; do not rely on the drive letter after a capture.",
+    "A manual replug is required after a removal."
+  ]
+}

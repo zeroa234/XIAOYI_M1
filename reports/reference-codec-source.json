@@ -1,0 +1,9 @@
+{
+  "project": "cebix/ff7tools",
+  "commit": "6bf1fbcec2c88c1856cffd4a371719b406fee654",
+  "url": "https://raw.githubusercontent.com/cebix/ff7tools/6bf1fbcec2c88c1856cffd4a371719b406fee654/ff7/lzss.py",
+  "bytes": 5704,
+  "sha256": "ee3b65e055231164d29ac53a67da1dd047c2e761b932c6a3efb27e6d7f102f84",
+  "license": "Use/copy/modify/distribute permission retained in the unmodified source header",
+  "purpose": "Independent candidate decoder for offline comparison; camera compatibility is not established"
+}

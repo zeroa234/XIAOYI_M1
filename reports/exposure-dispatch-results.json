@@ -1,0 +1,277 @@
+{
+  "qualification": "Candidate static dispatch resolution only; no target handler or camera hardware executed.",
+  "engine": "Unicorn 2.1.4 ARM926; boundaries checked with Capstone",
+  "passedCases": 24,
+  "propertyNameBasis": "HTTP action IDs -> 23-entry table -> internal property IDs; not sensor register names.",
+  "limits": [
+    "Dispatch role names are analysis labels; handler behavior must be verified separately.",
+    "Candidate decoding and runtime mapping remain unverified on camera.",
+    "Does not test true ISO/shutter values, exposure simulation, performance or stability."
+  ],
+  "results": [
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "ISO",
+      "propertyId": 5,
+      "testValue": 0,
+      "stopped": true,
+      "instructions": 90,
+      "target": "0x15a840"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "ISO",
+      "propertyId": 5,
+      "testValue": 3,
+      "stopped": true,
+      "instructions": 90,
+      "target": "0x15a840"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "ISO",
+      "propertyId": 5,
+      "testValue": 13,
+      "stopped": true,
+      "instructions": 90,
+      "target": "0x15a840"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "EV",
+      "propertyId": 18,
+      "testValue": 0,
+      "stopped": true,
+      "instructions": 76,
+      "target": "0x15abcc"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "EV",
+      "propertyId": 18,
+      "testValue": 3,
+      "stopped": true,
+      "instructions": 76,
+      "target": "0x15abcc"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "EV",
+      "propertyId": 18,
+      "testValue": 13,
+      "stopped": true,
+      "instructions": 76,
+      "target": "0x15abcc"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "shutter",
+      "propertyId": 19,
+      "testValue": 0,
+      "stopped": true,
+      "instructions": 90,
+      "target": "0x15abe0"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "shutter",
+      "propertyId": 19,
+      "testValue": 3,
+      "stopped": true,
+      "instructions": 90,
+      "target": "0x15abe0"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "shutter",
+      "propertyId": 19,
+      "testValue": 13,
+      "stopped": true,
+      "instructions": 90,
+      "target": "0x15abe0"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "aperture",
+      "propertyId": 20,
+      "testValue": 0,
+      "stopped": true,
+      "instructions": 104,
+      "target": "0x15ac10"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "aperture",
+      "propertyId": 20,
+      "testValue": 3,
+      "stopped": true,
+      "instructions": 104,
+      "target": "0x15ac10"
+    },
+    {
+      "role": "property-store",
+      "start": "0x15a7e0",
+      "stop": "0x15a808",
+      "property": "aperture",
+      "propertyId": 20,
+      "testValue": 13,
+      "stopped": true,
+      "instructions": 104,
+      "target": "0x15ac10"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "ISO",
+      "propertyId": 5,
+      "testValue": 0,
+      "stopped": true,
+      "instructions": 93,
+      "target": "0x15c670"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "ISO",
+      "propertyId": 5,
+      "testValue": 3,
+      "stopped": true,
+      "instructions": 93,
+      "target": "0x15c670"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "ISO",
+      "propertyId": 5,
+      "testValue": 13,
+      "stopped": true,
+      "instructions": 93,
+      "target": "0x15c670"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "EV",
+      "propertyId": 18,
+      "testValue": 0,
+      "stopped": true,
+      "instructions": 79,
+      "target": "0x15c77c"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "EV",
+      "propertyId": 18,
+      "testValue": 3,
+      "stopped": true,
+      "instructions": 79,
+      "target": "0x15c77c"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "EV",
+      "propertyId": 18,
+      "testValue": 13,
+      "stopped": true,
+      "instructions": 79,
+      "target": "0x15c77c"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "shutter",
+      "propertyId": 19,
+      "testValue": 0,
+      "stopped": true,
+      "instructions": 107,
+      "target": "0x15c920"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "shutter",
+      "propertyId": 19,
+      "testValue": 3,
+      "stopped": true,
+      "instructions": 107,
+      "target": "0x15c920"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "shutter",
+      "propertyId": 19,
+      "testValue": 13,
+      "stopped": true,
+      "instructions": 107,
+      "target": "0x15c920"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "aperture",
+      "propertyId": 20,
+      "testValue": 0,
+      "stopped": true,
+      "instructions": 93,
+      "target": "0x15c6b4"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "aperture",
+      "propertyId": 20,
+      "testValue": 3,
+      "stopped": true,
+      "instructions": 93,
+      "target": "0x15c6b4"
+    },
+    {
+      "role": "property-apply",
+      "start": "0x15c5bc",
+      "stop": "0x15c5f0",
+      "property": "aperture",
+      "propertyId": 20,
+      "testValue": 13,
+      "stopped": true,
+      "instructions": 93,
+      "target": "0x15c6b4"
+    }
+  ]
+}

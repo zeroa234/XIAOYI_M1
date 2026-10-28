@@ -1,0 +1,10 @@
+{
+  "qualification": "Analysis-only ELF envelope of original uncompressed IPL; no instruction modifications. Base and entry are caller-selected analysis coordinates, not measured boot mapping.",
+  "source": "output/body-3-2-cn/m1-3.2-cn.analysis.bin.2.IPL",
+  "sourceSha256": "3513946d8068f6a03706bc5ec142fe45122773b2163ef688806afa7e03012dc4",
+  "sourceBytes": 131072,
+  "base": "0x0",
+  "analysisEntry": "0x100",
+  "elfSha256": "287c2f72d7de4d222128eef9ce314131d2ef537633b732633d4a04885c473f7b",
+  "elfBytes": 196828
+}

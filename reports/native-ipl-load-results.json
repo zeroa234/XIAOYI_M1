@@ -1,0 +1,1307 @@
+{
+  "inputSha256": "92b3f1fda39e37351432d19d0167879f477eb71713a8fbc94b3ba2141ca404e4",
+  "iplSha256": "3513946d8068f6a03706bc5ec142fe45122773b2163ef688806afa7e03012dc4",
+  "evidenceType": "官方 ARM 指令在 Unicorn ARM926 执行；无相机访问",
+  "nativeDecodeVerified": false,
+  "nativeDecodeFailure": "解码由 MMIO 硬件执行，Unicorn 不提供此 SoC 外设",
+  "descriptor": {
+    "entry": "0x6740",
+    "result": 0,
+    "descriptor": [
+      "0x10000012",
+      "0x0",
+      "0x1",
+      "0x0",
+      "0x10200",
+      "0x23600"
+    ],
+    "evidence": "Unicorn 原指令；官方 PTBL，无调用桩"
+  },
+  "sections": {
+    ".dtcm": {
+      "recordOffset": 4096,
+      "next": 4128,
+      "nameOffset": 4120,
+      "address": 671088640,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".picbase": {
+      "recordOffset": 4128,
+      "next": 4164,
+      "nameOffset": 4152,
+      "address": 0,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".vector": {
+      "recordOffset": 4164,
+      "next": 4196,
+      "nameOffset": 4188,
+      "address": 0,
+      "size": 68,
+      "flags": 33,
+      "associated": 0
+    },
+    ".itcm": {
+      "recordOffset": 4196,
+      "next": 4228,
+      "nameOffset": 4220,
+      "address": 128,
+      "size": 236,
+      "flags": 33,
+      "associated": 0
+    },
+    ".secinfo": {
+      "recordOffset": 4228,
+      "next": 4264,
+      "nameOffset": 4252,
+      "address": 4096,
+      "size": 1956,
+      "flags": 34,
+      "associated": 0
+    },
+    ".hardware_imple": {
+      "recordOffset": 4264,
+      "next": 4304,
+      "nameOffset": 4288,
+      "address": 6052,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".syscall": {
+      "recordOffset": 4304,
+      "next": 4340,
+      "nameOffset": 4328,
+      "address": 6144,
+      "size": 12,
+      "flags": 33,
+      "associated": 0
+    },
+    ".text": {
+      "recordOffset": 4340,
+      "next": 4372,
+      "nameOffset": 4364,
+      "address": 8192,
+      "size": 4445240,
+      "flags": 33,
+      "associated": 0
+    },
+    ".rodata": {
+      "recordOffset": 4372,
+      "next": 4404,
+      "nameOffset": 4396,
+      "address": 4454400,
+      "size": 5703192,
+      "flags": 34,
+      "associated": 0
+    },
+    ".rodata_end": {
+      "recordOffset": 4404,
+      "next": 4440,
+      "nameOffset": 4428,
+      "address": 10157600,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".ROM.vector": {
+      "recordOffset": 4440,
+      "next": 4476,
+      "nameOffset": 4464,
+      "address": 268435456,
+      "size": 68,
+      "flags": 33,
+      "associated": 4164
+    },
+    ".ROM.itcm": {
+      "recordOffset": 4476,
+      "next": 4512,
+      "nameOffset": 4500,
+      "address": 268435584,
+      "size": 236,
+      "flags": 33,
+      "associated": 4196
+    },
+    ".ROM.secinfo": {
+      "recordOffset": 4512,
+      "next": 4552,
+      "nameOffset": 4536,
+      "address": 268439552,
+      "size": 1956,
+      "flags": 34,
+      "associated": 4228
+    },
+    ".ROM.hardware_imple": {
+      "recordOffset": 4552,
+      "next": 4596,
+      "nameOffset": 4576,
+      "address": 268441508,
+      "size": 0,
+      "flags": 4,
+      "associated": 4264
+    },
+    ".ROM.syscall": {
+      "recordOffset": 4596,
+      "next": 4636,
+      "nameOffset": 4620,
+      "address": 268441600,
+      "size": 12,
+      "flags": 33,
+      "associated": 4304
+    },
+    ".ROM.text": {
+      "recordOffset": 4636,
+      "next": 4672,
+      "nameOffset": 4660,
+      "address": 268443648,
+      "size": 3117324,
+      "flags": 1,
+      "associated": 4340
+    },
+    ".ROM.rodata": {
+      "recordOffset": 4672,
+      "next": 4708,
+      "nameOffset": 4696,
+      "address": 271562752,
+      "size": 4124532,
+      "flags": 2,
+      "associated": 4372
+    },
+    ".ROM.data": {
+      "recordOffset": 4708,
+      "next": 4744,
+      "nameOffset": 4732,
+      "address": 275687424,
+      "size": 116761,
+      "flags": 2,
+      "associated": 5004
+    },
+    ".ROM.prog": {
+      "recordOffset": 4744,
+      "next": 4780,
+      "nameOffset": 4768,
+      "address": 275806208,
+      "size": 0,
+      "flags": 4,
+      "associated": 5036
+    },
+    ".ROM.dataend": {
+      "recordOffset": 4780,
+      "next": 4820,
+      "nameOffset": 4804,
+      "address": 278933504,
+      "size": 0,
+      "flags": 4,
+      "associated": 5068
+    },
+    ".codelimit": {
+      "recordOffset": 4820,
+      "next": 4856,
+      "nameOffset": 4844,
+      "address": 278933504,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".ovlbegin": {
+      "recordOffset": 4856,
+      "next": 4892,
+      "nameOffset": 4880,
+      "address": 278933504,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".romovltext_LIB": {
+      "recordOffset": 4892,
+      "next": 4932,
+      "nameOffset": 4916,
+      "address": 278933504,
+      "size": 0,
+      "flags": 4,
+      "associated": 6008
+    },
+    ".ovlend": {
+      "recordOffset": 4932,
+      "next": 4964,
+      "nameOffset": 4956,
+      "address": 278933504,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".mirrorbegin": {
+      "recordOffset": 4964,
+      "next": 5004,
+      "nameOffset": 4988,
+      "address": 3231383072,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".data": {
+      "recordOffset": 5004,
+      "next": 5036,
+      "nameOffset": 5028,
+      "address": 3231383552,
+      "size": 339536,
+      "flags": 42,
+      "associated": 0
+    },
+    ".prog": {
+      "recordOffset": 5036,
+      "next": 5068,
+      "nameOffset": 5060,
+      "address": 3231723520,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".dataend": {
+      "recordOffset": 5068,
+      "next": 5104,
+      "nameOffset": 5092,
+      "address": 3231723520,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".ver_table": {
+      "recordOffset": 5104,
+      "next": 5140,
+      "nameOffset": 5128,
+      "address": 3231723520,
+      "size": 4096,
+      "flags": 12,
+      "associated": 0
+    },
+    ".bss": {
+      "recordOffset": 5140,
+      "next": 5172,
+      "nameOffset": 5164,
+      "address": 3242196992,
+      "size": 1819132,
+      "flags": 12,
+      "associated": 0
+    },
+    ".noinit": {
+      "recordOffset": 5172,
+      "next": 5204,
+      "nameOffset": 5196,
+      "address": 3244016128,
+      "size": 113044,
+      "flags": 12,
+      "associated": 0
+    },
+    ".heap": {
+      "recordOffset": 5204,
+      "next": 5236,
+      "nameOffset": 5228,
+      "address": 3244129184,
+      "size": 1048576,
+      "flags": 12,
+      "associated": 0
+    },
+    ".rtosmem": {
+      "recordOffset": 5236,
+      "next": 5272,
+      "nameOffset": 5260,
+      "address": 3245177760,
+      "size": 1287424,
+      "flags": 12,
+      "associated": 0
+    },
+    ".stack": {
+      "recordOffset": 5272,
+      "next": 5304,
+      "nameOffset": 5296,
+      "address": 3246465184,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    },
+    ".stack_usr": {
+      "recordOffset": 5304,
+      "next": 5340,
+      "nameOffset": 5328,
+      "address": 3246465184,
+      "size": 4096,
+      "flags": 12,
+      "associated": 0
+    },
+    ".stack_fiq": {
+      "recordOffset": 5340,
+      "next": 5376,
+      "nameOffset": 5364,
+      "address": 3246469280,
+      "size": 4096,
+      "flags": 12,
+      "associated": 0
+    },
+    ".stack_irq": {
+      "recordOffset": 5376,
+      "next": 5412,
+      "nameOffset": 5400,
+      "address": 3246473376,
+      "size": 4096,
+      "flags": 12,
+      "associated": 0
+    },
+    ".stack_svc": {
+      "recordOffset": 5412,
+      "next": 5448,
+      "nameOffset": 5436,
+      "address": 3246477472,
+      "size": 4096,
+      "flags": 12,
+      "associated": 0
+    },
+    ".stack_abt": {
+      "recordOffset": 5448,
+      "next": 5484,
+      "nameOffset": 5472,
+      "address": 3246481568,
+      "size": 4096,
+      "flags": 12,
+      "associated": 0
+    },
+    ".stack_und": {
+      "recordOffset": 5484,
+      "next": 5520,
+      "nameOffset": 5508,
+      "address": 3246485664,
+      "size": 4096,
+      "flags": 12,
+      "associated": 0
+    },
+    ".stack_sys": {
+      "recordOffset": 5520,
+      "next": 5556,
+      "nameOffset": 5544,
+      "address": 3246489760,
+      "size": 4096,
+      "flags": 12,
+      "associated": 0
+    },
+    ".stack_rsv": {
+      "recordOffset": 5556,
+      "next": 5592,
+      "nameOffset": 5580,
+      "address": 3246493856,
+      "size": 4096,
+      "flags": 12,
+      "associated": 0
+    },
+    ".log_save": {
+      "recordOffset": 5592,
+      "next": 5628,
+      "nameOffset": 5616,
+      "address": 3250585600,
+      "size": 2097152,
+      "flags": 12,
+      "associated": 0
+    },
+    ".user_data": {
+      "recordOffset": 5628,
+      "next": 5664,
+      "nameOffset": 5652,
+      "address": 3252682752,
+      "size": 2097152,
+      "flags": 12,
+      "associated": 0
+    },
+    ".data0": {
+      "recordOffset": 5664,
+      "next": 5696,
+      "nameOffset": 5688,
+      "address": 3254779904,
+      "size": 10485760,
+      "flags": 12,
+      "associated": 0
+    },
+    ".data1": {
+      "recordOffset": 5696,
+      "next": 5728,
+      "nameOffset": 5720,
+      "address": 3265265664,
+      "size": 1048576,
+      "flags": 12,
+      "associated": 0
+    },
+    ".data2": {
+      "recordOffset": 5728,
+      "next": 5760,
+      "nameOffset": 5752,
+      "address": 3266314240,
+      "size": 1048576,
+      "flags": 12,
+      "associated": 0
+    },
+    ".data3": {
+      "recordOffset": 5760,
+      "next": 5792,
+      "nameOffset": 5784,
+      "address": 3267362816,
+      "size": 1048576,
+      "flags": 12,
+      "associated": 0
+    },
+    ".subcpu_OEM": {
+      "recordOffset": 5792,
+      "next": 5828,
+      "nameOffset": 5816,
+      "address": 3747151872,
+      "size": 4194304,
+      "flags": 12,
+      "associated": 0
+    },
+    ".lens_cpu": {
+      "recordOffset": 5828,
+      "next": 5864,
+      "nameOffset": 5852,
+      "address": 3751346176,
+      "size": 3145728,
+      "flags": 12,
+      "associated": 0
+    },
+    ".xc_subcpu": {
+      "recordOffset": 5864,
+      "next": 5900,
+      "nameOffset": 5888,
+      "address": 3754491904,
+      "size": 3145728,
+      "flags": 12,
+      "associated": 0
+    },
+    ".media_init_data": {
+      "recordOffset": 5900,
+      "next": 5944,
+      "nameOffset": 5924,
+      "address": 3757637632,
+      "size": 65536,
+      "flags": 12,
+      "associated": 0
+    },
+    ".camadj": {
+      "recordOffset": 5944,
+      "next": 5976,
+      "nameOffset": 5968,
+      "address": 3757703168,
+      "size": 262144,
+      "flags": 12,
+      "associated": 0
+    },
+    ".camdef": {
+      "recordOffset": 5976,
+      "next": 6008,
+      "nameOffset": 6000,
+      "address": 3757965312,
+      "size": 262144,
+      "flags": 12,
+      "associated": 0
+    },
+    ".ovltext_LIB": {
+      "recordOffset": 6008,
+      "next": 0,
+      "nameOffset": 6032,
+      "address": 3250585600,
+      "size": 0,
+      "flags": 4,
+      "associated": 0
+    }
+  },
+  "hardwareAttempts": {
+    "text": {
+      "entry": "0x10714 → 0x107ac → 0x108d0",
+      "callStubs": [],
+      "packedBytes": 3117324,
+      "packedSha256": "2ec5ac9377fd5d8cd602ce462c1a956dbc8a9e13361ea2be297ef49e1581fdfa",
+      "expectedBytes": 4445240,
+      "expectedSha256": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+      "destinationUnchanged": true,
+      "decodedBytesProduced": 0,
+      "nativeDecodeVerified": false,
+      "stopPc": "0x108e0",
+      "instructionLimit": 1000,
+      "waitReads": [
+        {
+          "pc": "0x108d8",
+          "address": "0x30140280",
+          "bytes": 4
+        },
+        {
+          "pc": "0x108d8",
+          "address": "0x30140280",
+          "bytes": 4
+        },
+        {
+          "pc": "0x108d8",
+          "address": "0x30140280",
+          "bytes": 4
+        }
+      ],
+      "mmioWrites": [
+        {
+          "pc": "0x1072c",
+          "address": "0x30002214",
+          "bytes": 4,
+          "value": "0x1"
+        },
+        {
+          "pc": "0x10738",
+          "address": "0x30001190",
+          "bytes": 4,
+          "value": "0x2"
+        },
+        {
+          "pc": "0x10748",
+          "address": "0x30002210",
+          "bytes": 4,
+          "value": "0x1011"
+        },
+        {
+          "pc": "0x10754",
+          "address": "0x30140100",
+          "bytes": 4,
+          "value": "0x3"
+        },
+        {
+          "pc": "0x1075c",
+          "address": "0x301402c4",
+          "bytes": 2,
+          "value": "0x80"
+        },
+        {
+          "pc": "0x10764",
+          "address": "0x30140000",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x107dc",
+          "address": "0x301402cc",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x107ec",
+          "address": "0x301402c8",
+          "bytes": 2,
+          "value": "0x60"
+        },
+        {
+          "pc": "0x107fc",
+          "address": "0x301402d4",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x1080c",
+          "address": "0x301402d0",
+          "bytes": 2,
+          "value": "0xa0"
+        },
+        {
+          "pc": "0x10818",
+          "address": "0x301402e8",
+          "bytes": 2,
+          "value": "0xd438"
+        },
+        {
+          "pc": "0x10824",
+          "address": "0x301402e4",
+          "bytes": 2,
+          "value": "0x43"
+        },
+        {
+          "pc": "0x10828",
+          "address": "0x301402c0",
+          "bytes": 4,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x10830",
+          "address": "0x301402c0",
+          "bytes": 2,
+          "value": "0x1"
+        },
+        {
+          "pc": "0x1083c",
+          "address": "0x3014031c",
+          "bytes": 2,
+          "value": "0xfee"
+        },
+        {
+          "pc": "0x10844",
+          "address": "0x30140320",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x1084c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10854",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1085c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10864",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1086c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10874",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1087c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10884",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1088c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10890",
+          "address": "0x301402c0",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x1089c",
+          "address": "0x30140318",
+          "bytes": 2,
+          "value": "0x5000"
+        },
+        {
+          "pc": "0x108a4",
+          "address": "0x30140320",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x108b0",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x3"
+        },
+        {
+          "pc": "0x108c0",
+          "address": "0x301402c0",
+          "bytes": 4,
+          "value": "0xa"
+        }
+      ],
+      "qualification": "仅执行硬件配置/等待；未实现 SoC 解码器，未伪造完成位/解码输出"
+    },
+    "rodata": {
+      "entry": "0x10714 → 0x107ac → 0x108d0",
+      "callStubs": [],
+      "packedBytes": 4124532,
+      "packedSha256": "e4e5b9a77246b61a4c3b2de469ca101e3075f66df7995d53d38f9ad882c7c983",
+      "expectedBytes": 5703192,
+      "expectedSha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+      "destinationUnchanged": true,
+      "decodedBytesProduced": 0,
+      "nativeDecodeVerified": false,
+      "stopPc": "0x108e0",
+      "instructionLimit": 1000,
+      "waitReads": [
+        {
+          "pc": "0x108d8",
+          "address": "0x30140280",
+          "bytes": 4
+        },
+        {
+          "pc": "0x108d8",
+          "address": "0x30140280",
+          "bytes": 4
+        },
+        {
+          "pc": "0x108d8",
+          "address": "0x30140280",
+          "bytes": 4
+        }
+      ],
+      "mmioWrites": [
+        {
+          "pc": "0x1072c",
+          "address": "0x30002214",
+          "bytes": 4,
+          "value": "0x1"
+        },
+        {
+          "pc": "0x10738",
+          "address": "0x30001190",
+          "bytes": 4,
+          "value": "0x2"
+        },
+        {
+          "pc": "0x10748",
+          "address": "0x30002210",
+          "bytes": 4,
+          "value": "0x1011"
+        },
+        {
+          "pc": "0x10754",
+          "address": "0x30140100",
+          "bytes": 4,
+          "value": "0x3"
+        },
+        {
+          "pc": "0x1075c",
+          "address": "0x301402c4",
+          "bytes": 2,
+          "value": "0x80"
+        },
+        {
+          "pc": "0x10764",
+          "address": "0x30140000",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x107dc",
+          "address": "0x301402cc",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x107ec",
+          "address": "0x301402c8",
+          "bytes": 2,
+          "value": "0x60"
+        },
+        {
+          "pc": "0x107fc",
+          "address": "0x301402d4",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x1080c",
+          "address": "0x301402d0",
+          "bytes": 2,
+          "value": "0xa0"
+        },
+        {
+          "pc": "0x10818",
+          "address": "0x301402e8",
+          "bytes": 2,
+          "value": "0x618"
+        },
+        {
+          "pc": "0x10824",
+          "address": "0x301402e4",
+          "bytes": 2,
+          "value": "0x57"
+        },
+        {
+          "pc": "0x10828",
+          "address": "0x301402c0",
+          "bytes": 4,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x10830",
+          "address": "0x301402c0",
+          "bytes": 2,
+          "value": "0x1"
+        },
+        {
+          "pc": "0x1083c",
+          "address": "0x3014031c",
+          "bytes": 2,
+          "value": "0xfee"
+        },
+        {
+          "pc": "0x10844",
+          "address": "0x30140320",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x1084c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10854",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1085c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10864",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1086c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10874",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1087c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10884",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1088c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10890",
+          "address": "0x301402c0",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x1089c",
+          "address": "0x30140318",
+          "bytes": 2,
+          "value": "0x5000"
+        },
+        {
+          "pc": "0x108a4",
+          "address": "0x30140320",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x108b0",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x3"
+        },
+        {
+          "pc": "0x108c0",
+          "address": "0x301402c0",
+          "bytes": 4,
+          "value": "0xa"
+        }
+      ],
+      "qualification": "仅执行硬件配置/等待；未实现 SoC 解码器，未伪造完成位/解码输出"
+    },
+    "data": {
+      "entry": "0x10714 → 0x107ac → 0x108d0",
+      "callStubs": [],
+      "packedBytes": 116761,
+      "packedSha256": "9cc950fbe0a727a8cb3fe43726379f62e6c798a7ed5fe79fc2f0445c1a4b39b8",
+      "expectedBytes": 339536,
+      "expectedSha256": "0c7bc4e420b8b24ad6ca36f0c931d415add9a56a23cf70537e9b79e545c5df98",
+      "destinationUnchanged": true,
+      "decodedBytesProduced": 0,
+      "nativeDecodeVerified": false,
+      "stopPc": "0x108e0",
+      "instructionLimit": 1000,
+      "waitReads": [
+        {
+          "pc": "0x108d8",
+          "address": "0x30140280",
+          "bytes": 4
+        },
+        {
+          "pc": "0x108d8",
+          "address": "0x30140280",
+          "bytes": 4
+        },
+        {
+          "pc": "0x108d8",
+          "address": "0x30140280",
+          "bytes": 4
+        }
+      ],
+      "mmioWrites": [
+        {
+          "pc": "0x1072c",
+          "address": "0x30002214",
+          "bytes": 4,
+          "value": "0x1"
+        },
+        {
+          "pc": "0x10738",
+          "address": "0x30001190",
+          "bytes": 4,
+          "value": "0x2"
+        },
+        {
+          "pc": "0x10748",
+          "address": "0x30002210",
+          "bytes": 4,
+          "value": "0x1011"
+        },
+        {
+          "pc": "0x10754",
+          "address": "0x30140100",
+          "bytes": 4,
+          "value": "0x3"
+        },
+        {
+          "pc": "0x1075c",
+          "address": "0x301402c4",
+          "bytes": 2,
+          "value": "0x80"
+        },
+        {
+          "pc": "0x10764",
+          "address": "0x30140000",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x107dc",
+          "address": "0x301402cc",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x107ec",
+          "address": "0x301402c8",
+          "bytes": 2,
+          "value": "0x60"
+        },
+        {
+          "pc": "0x107fc",
+          "address": "0x301402d4",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x1080c",
+          "address": "0x301402d0",
+          "bytes": 2,
+          "value": "0xa0"
+        },
+        {
+          "pc": "0x10818",
+          "address": "0x301402e8",
+          "bytes": 2,
+          "value": "0x2e50"
+        },
+        {
+          "pc": "0x10824",
+          "address": "0x301402e4",
+          "bytes": 2,
+          "value": "0x5"
+        },
+        {
+          "pc": "0x10828",
+          "address": "0x301402c0",
+          "bytes": 4,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x10830",
+          "address": "0x301402c0",
+          "bytes": 2,
+          "value": "0x1"
+        },
+        {
+          "pc": "0x1083c",
+          "address": "0x3014031c",
+          "bytes": 2,
+          "value": "0xfee"
+        },
+        {
+          "pc": "0x10844",
+          "address": "0x30140320",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x1084c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10854",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1085c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10864",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1086c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10874",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1087c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10884",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x1088c",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x4"
+        },
+        {
+          "pc": "0x10890",
+          "address": "0x301402c0",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x1089c",
+          "address": "0x30140318",
+          "bytes": 2,
+          "value": "0x5000"
+        },
+        {
+          "pc": "0x108a4",
+          "address": "0x30140320",
+          "bytes": 2,
+          "value": "0x0"
+        },
+        {
+          "pc": "0x108b0",
+          "address": "0x30140324",
+          "bytes": 2,
+          "value": "0x3"
+        },
+        {
+          "pc": "0x108c0",
+          "address": "0x301402c0",
+          "bytes": 4,
+          "value": "0xa"
+        }
+      ],
+      "qualification": "仅执行硬件配置/等待；未实现 SoC 解码器，未伪造完成位/解码输出"
+    }
+  },
+  "loadPath": {
+    "entry": "0x7ff8",
+    "callStubs": [
+      "0x702c",
+      "0x6ab4",
+      "0x6b28",
+      "0x6e08",
+      "0x7b64",
+      "0x832c"
+    ],
+    "nandReads": [
+      {
+        "sector": "0x10200",
+        "count": 10,
+        "destination": "0x40000000",
+        "bodyOffset": "0x0"
+      },
+      {
+        "sector": "0x1020a",
+        "count": 2,
+        "destination": "0x40001400",
+        "bodyOffset": "0x1400"
+      },
+      {
+        "sector": "0x1020c",
+        "count": 4,
+        "destination": "0x40001800",
+        "bodyOffset": "0x1800"
+      },
+      {
+        "sector": "0x10210",
+        "count": 4,
+        "destination": "0x43000000",
+        "bodyOffset": "0x2000"
+      },
+      {
+        "sector": "0x10214",
+        "count": 6086,
+        "destination": "0x43000800",
+        "bodyOffset": "0x2800"
+      }
+    ],
+    "decoderArguments": [
+      [
+        "0x8",
+        "0x43000000",
+        "0x40002000",
+        "0x43d438"
+      ]
+    ],
+    "prints": [
+      "loading [%08lx:%8s] ...... "
+    ],
+    "stopPc": "0x108d8",
+    "nativeTableParsingVerified": true,
+    "qualification": "NAND 以 PTBL FIRM 起始为基准提供官方段体；跳过独立 BSS 清零 DMA 0x7b64；不证明 NAND 物理映射/实际解码"
+  },
+  "errorCases": [
+    {
+      "entry": "0x7ff8",
+      "inputCase": "NAND 返回缺少 .picbase 的无效装载表",
+      "callStubs": [
+        "0x702c",
+        "0x6ab4",
+        "0x6b28",
+        "0x6e08",
+        "0x6c7c",
+        "0x832c"
+      ],
+      "prints": [
+        "loading [%08lx:%8s] ...... ",
+        "Decode Error!\n"
+      ],
+      "result": 0,
+      "evidence": "Unicorn 原指令：错误打印后 0x8184 无条件将返回值置 0"
+    },
+    {
+      "entry": "0x7ff8",
+      "inputCase": "注入内部 -1",
+      "callStubs": [
+        "0x702c",
+        "0x6ab4",
+        "0x6b28",
+        "0x6e08",
+        "0x6c7c",
+        "0x832c",
+        "0x7c48"
+      ],
+      "prints": [
+        "loading [%08lx:%8s] ...... ",
+        "Decode Error!\n"
+      ],
+      "result": 0,
+      "evidence": "Unicorn 原指令：错误打印后 0x8184 无条件将返回值置 0"
+    }
+  ],
+  "fallbackCases": [
+    {
+      "entry": "0x40cc",
+      "inputCase": "LoadData 返回 1",
+      "callStubs": [
+        "0x8194",
+        "0x7834",
+        "0x702c",
+        "0x7ff8"
+      ],
+      "loadedPartitions": [
+        "0x10000012",
+        "0x10000010"
+      ],
+      "prints": [
+        "Instead, I'll load BOOT for you.\n"
+      ],
+      "bootFallback": true,
+      "stopPc": "0x41c4"
+    },
+    {
+      "entry": "0x40cc",
+      "inputCase": "内部 0x7c48 返回 -1",
+      "callStubs": [
+        "0x8194",
+        "0x7834",
+        "0x702c",
+        "0x6ab4",
+        "0x6b28",
+        "0x6e08",
+        "0x6c7c",
+        "0x7c48"
+      ],
+      "loadedPartitions": [
+        "0x10000012"
+      ],
+      "prints": [
+        "loading [%08lx:%8s] ...... ",
+        "Decode Error!\n"
+      ],
+      "bootFallback": false,
+      "stopPc": "0x41c4"
+    }
+  ],
+  "versionCopy": {
+    "entry": "0x4b84",
+    "result": 65,
+    "copiedBytes": 65,
+    "copiedSha256": "974b769eeb725b991d946ef8dada04378b23d19ee6e9434b31f804bb271068c7",
+    "callStubs": [],
+    "evidence": "Unicorn 原指令：IPL 的 65 字节版本表复制到传入地址，无版本比较"
+  },
+  "firmwareProduced": false
+}

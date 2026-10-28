@@ -1,0 +1,126 @@
+{
+  "qualification": "Candidate ARM execution with synthetic queue descriptors and no waiting tasks; not a camera trace.",
+  "entry": "0x199874",
+  "textSha256": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+  "externalCallStubs": 0,
+  "validIdRangeInclusive": [
+    1,
+    150
+  ],
+  "returnCases": [
+    {
+      "id": 0,
+      "initialized": true,
+      "flags": 0,
+      "nodeKey": 524,
+      "return": -18
+    },
+    {
+      "id": 151,
+      "initialized": true,
+      "flags": 0,
+      "nodeKey": 524,
+      "return": -18
+    },
+    {
+      "id": -1,
+      "initialized": true,
+      "flags": 0,
+      "nodeKey": 524,
+      "return": -18
+    },
+    {
+      "id": 1,
+      "initialized": false,
+      "flags": 0,
+      "nodeKey": 524,
+      "return": -42
+    },
+    {
+      "id": 150,
+      "initialized": false,
+      "flags": 0,
+      "nodeKey": 524,
+      "return": -42
+    },
+    {
+      "id": 1,
+      "initialized": true,
+      "flags": 2,
+      "nodeKey": 0,
+      "return": -17
+    },
+    {
+      "id": 1,
+      "initialized": true,
+      "flags": 2,
+      "nodeKey": -1,
+      "return": -17
+    },
+    {
+      "id": 1,
+      "initialized": true,
+      "flags": 2,
+      "nodeKey": 1,
+      "return": 0
+    },
+    {
+      "id": 150,
+      "initialized": true,
+      "flags": 2,
+      "nodeKey": 524,
+      "return": 0
+    },
+    {
+      "id": 1,
+      "initialized": true,
+      "flags": 0,
+      "nodeKey": 0,
+      "return": 0
+    },
+    {
+      "id": 1,
+      "initialized": true,
+      "flags": 0,
+      "nodeKey": -1,
+      "return": 0
+    }
+  ],
+  "orderingCases": [
+    {
+      "flags": 0,
+      "keys": [
+        524,
+        256,
+        1024,
+        256
+      ],
+      "order": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "flags": 2,
+      "keys": [
+        524,
+        256,
+        1024,
+        256
+      ],
+      "order": [
+        1,
+        3,
+        0,
+        2
+      ]
+    }
+  ],
+  "limits": [
+    "No real initialization/lifetime, scheduling, concurrent tasks or camera values are observed.",
+    "524 is the wrapper's fixed 0x20c input in the traced command; payload tag 0x15 is not a kernel queue ID.",
+    "This does not locate a user freeze or justify dropping a failed message."
+  ]
+}

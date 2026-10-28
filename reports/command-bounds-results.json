@@ -1,0 +1,1127 @@
+{
+  "qualification": "固定候选 ARM 搜索循环隔离验证；不是整机挂死诊断或真机刷写验证。补丁直接读取清单。",
+  "patchManifest": "config/patches/command-bounds.json",
+  "patchManifestSha256": "f995453b3c94d5e365bd1fdcebd5d2c6e4ed780405489844227b610b4fe814da",
+  "existingEngines": {
+    "disassembly": "Capstone",
+    "execution": "Unicorn 2.1.4 ARM926"
+  },
+  "loop": {
+    "start": "0x1568b4",
+    "read": "0x1568bc",
+    "end": "0x15691c"
+  },
+  "tableAddress": "0x6b86a8",
+  "tableBytes": 360,
+  "records": 45,
+  "originalCompare": {
+    "address": "0x156910",
+    "bytes": "5a0f56e3",
+    "assembly": "r6, #0x168"
+  },
+  "emulatorOnlyCompare": {
+    "bytes": "2d0056e3",
+    "assembly": "r6, #0x2d"
+  },
+  "passedCases": 106,
+  "results": [
+    {
+      "command": "GetFileList",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 1,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x154d34",
+      "lastIndex": 0
+    },
+    {
+      "command": "GetFileInfo",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 2,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x154fd0",
+      "lastIndex": 1
+    },
+    {
+      "command": "GetFile",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 3,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1550f0",
+      "lastIndex": 2
+    },
+    {
+      "command": "DeleteFile",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 4,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155298",
+      "lastIndex": 3
+    },
+    {
+      "command": "DeleteMLFile",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 5,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155388",
+      "lastIndex": 4
+    },
+    {
+      "command": "CheckPreUpdate",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 6,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1554a8",
+      "lastIndex": 5
+    },
+    {
+      "command": "UpdateFW",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 7,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1554c4",
+      "lastIndex": 6
+    },
+    {
+      "command": "UpdateLenFW",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 8,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1554e4",
+      "lastIndex": 7
+    },
+    {
+      "command": "GetCameraStatus",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 9,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155500",
+      "lastIndex": 8
+    },
+    {
+      "command": "GetMLFileList",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 10,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155514",
+      "lastIndex": 9
+    },
+    {
+      "command": "UploadML",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 11,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15554c",
+      "lastIndex": 10
+    },
+    {
+      "command": "CloseAP",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 12,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1555f8",
+      "lastIndex": 11
+    },
+    {
+      "command": "RCStartRemoteCtl",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 13,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155608",
+      "lastIndex": 12
+    },
+    {
+      "command": "RCStopRemoteCtl",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 14,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15561c",
+      "lastIndex": 13
+    },
+    {
+      "command": "RCMeteringModeSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 15,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155628",
+      "lastIndex": 14
+    },
+    {
+      "command": "RCFocusModeSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 16,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155690",
+      "lastIndex": 15
+    },
+    {
+      "command": "RCImageQualitySet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 17,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1556f4",
+      "lastIndex": 16
+    },
+    {
+      "command": "RCImageAspect",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 18,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15575c",
+      "lastIndex": 17
+    },
+    {
+      "command": "RCFileFormatSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 19,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1557c4",
+      "lastIndex": 18
+    },
+    {
+      "command": "RCDriveModeSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 20,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155830",
+      "lastIndex": 19
+    },
+    {
+      "command": "RCFNSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 21,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155894",
+      "lastIndex": 20
+    },
+    {
+      "command": "RCShutterSpeedSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 22,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155940",
+      "lastIndex": 21
+    },
+    {
+      "command": "RCEVSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 23,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1559a8",
+      "lastIndex": 22
+    },
+    {
+      "command": "RCISOSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 24,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155a10",
+      "lastIndex": 23
+    },
+    {
+      "command": "RCWBSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 25,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155a78",
+      "lastIndex": 24
+    },
+    {
+      "command": "RCChooseColorMode",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 26,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155b94",
+      "lastIndex": 25
+    },
+    {
+      "command": "RCSwitchDialMode",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 27,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155bf8",
+      "lastIndex": 26
+    },
+    {
+      "command": "RCDoFocus",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 28,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155c64",
+      "lastIndex": 27
+    },
+    {
+      "command": "RCDoShooting",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 29,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155e14",
+      "lastIndex": 28
+    },
+    {
+      "command": "RCCancelShooting",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 30,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155e24",
+      "lastIndex": 29
+    },
+    {
+      "command": "RCCancelShooting1",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 31,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155f30",
+      "lastIndex": 30
+    },
+    {
+      "command": "StartMovieStream",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 32,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155f90",
+      "lastIndex": 31
+    },
+    {
+      "command": "StopMovieStream",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 33,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156120",
+      "lastIndex": 32
+    },
+    {
+      "command": "PauseMovieStream",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 34,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156148",
+      "lastIndex": 33
+    },
+    {
+      "command": "ResumeMovieStream",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 35,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156168",
+      "lastIndex": 34
+    },
+    {
+      "command": "ChangeCurrentFrame",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 36,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156188",
+      "lastIndex": 35
+    },
+    {
+      "command": "RCMFAdjust",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 37,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1562a8",
+      "lastIndex": 36
+    },
+    {
+      "command": "RCDShootCntSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 38,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156380",
+      "lastIndex": 37
+    },
+    {
+      "command": "VideoRecordingStart",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 39,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156414",
+      "lastIndex": 38
+    },
+    {
+      "command": "VideoRecordingStop",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 40,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15641c",
+      "lastIndex": 39
+    },
+    {
+      "command": "RCVideoFormatSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 41,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156424",
+      "lastIndex": 40
+    },
+    {
+      "command": "RCVASwitchSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 42,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15648c",
+      "lastIndex": 41
+    },
+    {
+      "command": "RCVAVolSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 43,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156590",
+      "lastIndex": 42
+    },
+    {
+      "command": "RCVANoiseReduceSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 44,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15661c",
+      "lastIndex": 43
+    },
+    {
+      "command": "RCEisSwitchSet",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 45,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1566b8",
+      "lastIndex": 44
+    },
+    {
+      "command": "NoSuchCommand",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 46,
+      "firstOutsideTable": {
+        "index": 45,
+        "address": "0x2001019c",
+        "size": 4
+      },
+      "finished": false,
+      "resultHandler": "0x20001001",
+      "lastIndex": 45
+    },
+    {
+      "command": "RCISOSet-unknown",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 46,
+      "firstOutsideTable": {
+        "index": 45,
+        "address": "0x2001019c",
+        "size": 4
+      },
+      "finished": false,
+      "resultHandler": "0x20001003",
+      "lastIndex": 45
+    },
+    {
+      "command": "GetCameraStatus-unknown",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 46,
+      "firstOutsideTable": {
+        "index": 45,
+        "address": "0x2001019c",
+        "size": 4
+      },
+      "finished": false,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "",
+      "emulatorChange": false,
+      "stack": "0x20010000",
+      "reads": 46,
+      "firstOutsideTable": {
+        "index": 45,
+        "address": "0x2001019c",
+        "size": 4
+      },
+      "finished": false,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "NoSuchCommand",
+      "emulatorChange": false,
+      "stack": "0x20020000",
+      "reads": 46,
+      "firstOutsideTable": {
+        "index": 45,
+        "address": "0x2002019c",
+        "size": 4
+      },
+      "finished": false,
+      "resultHandler": "0x20001001",
+      "lastIndex": 45
+    },
+    {
+      "command": "RCISOSet-unknown",
+      "emulatorChange": false,
+      "stack": "0x20020000",
+      "reads": 46,
+      "firstOutsideTable": {
+        "index": 45,
+        "address": "0x2002019c",
+        "size": 4
+      },
+      "finished": false,
+      "resultHandler": "0x20001003",
+      "lastIndex": 45
+    },
+    {
+      "command": "GetCameraStatus-unknown",
+      "emulatorChange": false,
+      "stack": "0x20020000",
+      "reads": 46,
+      "firstOutsideTable": {
+        "index": 45,
+        "address": "0x2002019c",
+        "size": 4
+      },
+      "finished": false,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "",
+      "emulatorChange": false,
+      "stack": "0x20020000",
+      "reads": 46,
+      "firstOutsideTable": {
+        "index": 45,
+        "address": "0x2002019c",
+        "size": 4
+      },
+      "finished": false,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "GetFileList",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 1,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x154d34",
+      "lastIndex": 0
+    },
+    {
+      "command": "GetFileInfo",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 2,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x154fd0",
+      "lastIndex": 1
+    },
+    {
+      "command": "GetFile",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 3,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1550f0",
+      "lastIndex": 2
+    },
+    {
+      "command": "DeleteFile",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 4,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155298",
+      "lastIndex": 3
+    },
+    {
+      "command": "DeleteMLFile",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 5,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155388",
+      "lastIndex": 4
+    },
+    {
+      "command": "CheckPreUpdate",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 6,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1554a8",
+      "lastIndex": 5
+    },
+    {
+      "command": "UpdateFW",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 7,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1554c4",
+      "lastIndex": 6
+    },
+    {
+      "command": "UpdateLenFW",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 8,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1554e4",
+      "lastIndex": 7
+    },
+    {
+      "command": "GetCameraStatus",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 9,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155500",
+      "lastIndex": 8
+    },
+    {
+      "command": "GetMLFileList",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 10,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155514",
+      "lastIndex": 9
+    },
+    {
+      "command": "UploadML",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 11,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15554c",
+      "lastIndex": 10
+    },
+    {
+      "command": "CloseAP",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 12,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1555f8",
+      "lastIndex": 11
+    },
+    {
+      "command": "RCStartRemoteCtl",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 13,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155608",
+      "lastIndex": 12
+    },
+    {
+      "command": "RCStopRemoteCtl",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 14,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15561c",
+      "lastIndex": 13
+    },
+    {
+      "command": "RCMeteringModeSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 15,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155628",
+      "lastIndex": 14
+    },
+    {
+      "command": "RCFocusModeSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 16,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155690",
+      "lastIndex": 15
+    },
+    {
+      "command": "RCImageQualitySet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 17,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1556f4",
+      "lastIndex": 16
+    },
+    {
+      "command": "RCImageAspect",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 18,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15575c",
+      "lastIndex": 17
+    },
+    {
+      "command": "RCFileFormatSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 19,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1557c4",
+      "lastIndex": 18
+    },
+    {
+      "command": "RCDriveModeSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 20,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155830",
+      "lastIndex": 19
+    },
+    {
+      "command": "RCFNSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 21,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155894",
+      "lastIndex": 20
+    },
+    {
+      "command": "RCShutterSpeedSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 22,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155940",
+      "lastIndex": 21
+    },
+    {
+      "command": "RCEVSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 23,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1559a8",
+      "lastIndex": 22
+    },
+    {
+      "command": "RCISOSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 24,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155a10",
+      "lastIndex": 23
+    },
+    {
+      "command": "RCWBSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 25,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155a78",
+      "lastIndex": 24
+    },
+    {
+      "command": "RCChooseColorMode",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 26,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155b94",
+      "lastIndex": 25
+    },
+    {
+      "command": "RCSwitchDialMode",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 27,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155bf8",
+      "lastIndex": 26
+    },
+    {
+      "command": "RCDoFocus",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 28,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155c64",
+      "lastIndex": 27
+    },
+    {
+      "command": "RCDoShooting",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 29,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155e14",
+      "lastIndex": 28
+    },
+    {
+      "command": "RCCancelShooting",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 30,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155e24",
+      "lastIndex": 29
+    },
+    {
+      "command": "RCCancelShooting1",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 31,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155f30",
+      "lastIndex": 30
+    },
+    {
+      "command": "StartMovieStream",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 32,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x155f90",
+      "lastIndex": 31
+    },
+    {
+      "command": "StopMovieStream",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 33,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156120",
+      "lastIndex": 32
+    },
+    {
+      "command": "PauseMovieStream",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 34,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156148",
+      "lastIndex": 33
+    },
+    {
+      "command": "ResumeMovieStream",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 35,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156168",
+      "lastIndex": 34
+    },
+    {
+      "command": "ChangeCurrentFrame",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 36,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156188",
+      "lastIndex": 35
+    },
+    {
+      "command": "RCMFAdjust",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 37,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1562a8",
+      "lastIndex": 36
+    },
+    {
+      "command": "RCDShootCntSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 38,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156380",
+      "lastIndex": 37
+    },
+    {
+      "command": "VideoRecordingStart",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 39,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156414",
+      "lastIndex": 38
+    },
+    {
+      "command": "VideoRecordingStop",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 40,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15641c",
+      "lastIndex": 39
+    },
+    {
+      "command": "RCVideoFormatSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 41,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156424",
+      "lastIndex": 40
+    },
+    {
+      "command": "RCVASwitchSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 42,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15648c",
+      "lastIndex": 41
+    },
+    {
+      "command": "RCVAVolSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 43,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x156590",
+      "lastIndex": 42
+    },
+    {
+      "command": "RCVANoiseReduceSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 44,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x15661c",
+      "lastIndex": 43
+    },
+    {
+      "command": "RCEisSwitchSet",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 45,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x1566b8",
+      "lastIndex": 44
+    },
+    {
+      "command": "NoSuchCommand",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 45,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "RCISOSet-unknown",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 45,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "GetCameraStatus-unknown",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 45,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "",
+      "emulatorChange": true,
+      "stack": "0x20010000",
+      "reads": 45,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "NoSuchCommand",
+      "emulatorChange": true,
+      "stack": "0x20020000",
+      "reads": 45,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "RCISOSet-unknown",
+      "emulatorChange": true,
+      "stack": "0x20020000",
+      "reads": 45,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "GetCameraStatus-unknown",
+      "emulatorChange": true,
+      "stack": "0x20020000",
+      "reads": 45,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    },
+    {
+      "command": "",
+      "emulatorChange": true,
+      "stack": "0x20020000",
+      "reads": 45,
+      "firstOutsideTable": null,
+      "finished": true,
+      "resultHandler": "0x0",
+      "lastIndex": 45
+    }
+  ],
+  "limits": [
+    "入口寄存器、token字段及表副本由测试装置提供，不是完整HTTP解析器。",
+    "实际执行原strlen/比较指令；没有模拟外设、调度器或HTTP完整生命周期。",
+    "原指令在第一笔表外读取时停止；不等于证明相机崩溃。",
+    "全部机器码更改仅作用于模拟器RAM，不改输入或输出固件包。"
+  ]
+}

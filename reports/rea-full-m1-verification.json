@@ -1,0 +1,65 @@
+{
+  "qualification": "Software-loaded analysis wrapper and candidate-byte verification; not camera memory, physical CPU identification, codec compatibility or a firmware repair.",
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "language": "ARM:LE:32:v5t",
+  "compilerSpec": "default",
+  "profileDigest": "1a6b688add6ff76066434c8ebc602fdcb968c25441053b29b603484bae13e7e9",
+  "targetSha256": "8ec01587ac5df600ee58cf35ce99d80f3010a17793d5d64b35105c608ed06056",
+  "independentFormatSpecificAttestation": "unsupported",
+  "formatSpecificLimitation": "Independent load-image verification currently supports DOS MZ, explicit DOS COM, and caller-supplied raw-binary targets only.",
+  "observedWholeBlockHashesMatched": [
+    {
+      "block": ".text",
+      "start": "0x2000",
+      "end": "0x43f437",
+      "length": 4445240,
+      "sha256": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992"
+    },
+    {
+      "block": ".rodata",
+      "start": "0x43f800",
+      "end": "0x9afe17",
+      "length": 5703192,
+      "sha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438"
+    },
+    {
+      "block": ".data",
+      "start": "0xc09b0000",
+      "end": "0xc0a02e4f",
+      "length": 339536,
+      "sha256": "0c7bc4e420b8b24ad6ca36f0c931d415add9a56a23cf70537e9b79e545c5df98"
+    }
+  ],
+  "uninitializedRangesRemainUnknown": [
+    ".bss",
+    ".noinit",
+    ".heap",
+    ".rtosmem",
+    ".log_save"
+  ],
+  "evidenceBundle": "output\\rea-mode-review\\final-evidence-20261026.json",
+  "evidenceRecords": 90,
+  "evidenceBundleSha256": "6a2fcc810ac7e1aefe1eba1d4731d1112abaa543ae666922c4fa0ae7c80c594d",
+  "snapshot": "output\\rea-mode-review\\analysis-snapshot-20261026.json",
+  "snapshotBytes": 14233844,
+  "snapshotSha256": "844f12ad145e824f82f2ec1ae753986f41bce8524a5548ebcee628f485f27ce8",
+  "sessionClosedAfterExport": true,
+  "finalReadOnlyChecks": {
+    "mainReaOpen": false,
+    "mainReaCleanupPending": false,
+    "piRunningAgents": 0,
+    "wslAnalysisProcessNamesChecked": [
+      "java",
+      "decompile",
+      "demangler_gnu_v2"
+    ],
+    "wslMatchingAnalysisProcesses": 0
+  },
+  "handoff": "docs/project-status.md",
+  "repairDelivered": false,
+  "cameraOrSdWritesInThisStage": false
+}

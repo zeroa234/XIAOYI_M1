@@ -1,0 +1,380 @@
+{
+  "qualification": "有限算法/范围扫描，未匹配不等于证明不是校验值；不连接设备",
+  "algorithms": "IEEE/Castagnoli/Koopman/Q；正向及反射；初值0/ffffffff；异或0/ffffffff；输出反射与字节序；字节和/32位字和/补码/反码/Adler32",
+  "knownAnswerTests": 3,
+  "versions": [
+    {
+      "version": "3.1-cn",
+      "inputSha256": "97dfa394efc91f8643c3b1a0673be2dd96590754b29080ce60d3498ebe3d15be",
+      "targetOffset": "0x17a0",
+      "target": "0xe42cc312",
+      "trialsIncludingEndian": 3300,
+      "ranges": [
+        {
+          "range": "首段全部",
+          "bytes": 7370752,
+          "sha256": "9957a78a644f62d71d42149c9b267ae85826be67150ec77ff487ca4774f0effb",
+          "byteSum": 937581482,
+          "wordSumLE": 1796995167,
+          "wordSumBE": 3404784382
+        },
+        {
+          "range": "首段排除末尾字",
+          "bytes": 7370748,
+          "sha256": "1c0c5926af1e9e6d33d75adc64ac7a611469c75d185f06d3421f2a8563ab8c8b",
+          "byteSum": 937580997,
+          "wordSumLE": 2263823693,
+          "wordSumBE": 3090003482
+        },
+        {
+          "range": "首段末尾字置零",
+          "bytes": 7370752,
+          "sha256": "48d2f69eaffc133d6871f637688c0909e9bf91a07232f01e2a66d2ee15f7eb3f",
+          "byteSum": 937580997,
+          "wordSumLE": 2263823693,
+          "wordSumBE": 3090003482
+        },
+        {
+          "range": "向量区",
+          "bytes": 4096,
+          "sha256": "c90e6cb73c65f6a54e260b169eb511a3a32268af194c69086bdfebecfb8a5bc7",
+          "byteSum": 51753,
+          "wordSumLE": 3061311370,
+          "wordSumBE": 3069877896
+        },
+        {
+          "range": "secinfo含末尾字",
+          "bytes": 1956,
+          "sha256": "8e65048e56dff8f04d1b99eceed66ad815d3e2143daf430b6a696be033547a8c",
+          "byteSum": 88169,
+          "wordSumLE": 2922900397,
+          "wordSumBE": 4273613157
+        },
+        {
+          "range": "secinfo排除末尾字",
+          "bytes": 1952,
+          "sha256": "35d91ed7be5c6d0483159f35b69ba9fb23f4eace08420778fede266bedb1cab1",
+          "byteSum": 87684,
+          "wordSumLE": 3389728923,
+          "wordSumBE": 3958832257
+        },
+        {
+          "range": "secinfo末尾字置零",
+          "bytes": 1956,
+          "sha256": "7db14be8152caf08ad0c126c6a9a3c40172b6797267f2c86b05b33b2d37b02a9",
+          "byteSum": 87684,
+          "wordSumLE": 3389728923,
+          "wordSumBE": 3958832257
+        },
+        {
+          "range": "段表4KB",
+          "bytes": 4096,
+          "sha256": "50ce2c3a9a9a40c6b153adcf9fc49d3d4d105f327ee7f3ba35ce4262e4c6bc8d",
+          "byteSum": 89918,
+          "wordSumLE": 867417013,
+          "wordSumBE": 143304169
+        },
+        {
+          "range": "段表4KB末尾字置零",
+          "bytes": 4096,
+          "sha256": "4cf70deee1ca117ae1ce204ca20dfaaa533cff1d7366a190bea86cf2851b1e9b",
+          "byteSum": 89433,
+          "wordSumLE": 1334245539,
+          "wordSumBE": 4123490565
+        },
+        {
+          "range": "前8KB末尾字置零",
+          "bytes": 8192,
+          "sha256": "9938616c2c14548ccdc559ba65f9e0ddc291f5f6fd0d234953be39717a49615d",
+          "byteSum": 141186,
+          "wordSumLE": 100589613,
+          "wordSumBE": 2898401165
+        },
+        {
+          "range": "ROM区全部含填充",
+          "bytes": 7362560,
+          "sha256": "d35459e5b207c7821f84764be82548c35811535ef2a2c90e3a55243b9cfc0f4a",
+          "byteSum": 937439811,
+          "wordSumLE": 2163234080,
+          "wordSumBE": 191602317
+        },
+        {
+          "range": "text压缩正文",
+          "bytes": 3117559,
+          "sha256": "7debc51cfb246666c3b08a1cd12f6ce9ec2b2864cc262f9837c27249b9279245",
+          "byteSum": 383308016,
+          "wordSumLE": 2544008706,
+          "wordSumBE": 1147723098
+        },
+        {
+          "range": "text明文映射范围",
+          "bytes": 4445200,
+          "sha256": "cc4924c30507e1b31fcf6cc4149922c02245626ebc11a236285414410f0f66cb",
+          "byteSum": 484098679,
+          "wordSumLE": 3420372471,
+          "wordSumBE": 3208376052
+        },
+        {
+          "range": "text明文含尾部",
+          "bytes": 4445200,
+          "sha256": "cc4924c30507e1b31fcf6cc4149922c02245626ebc11a236285414410f0f66cb",
+          "byteSum": 484098679,
+          "wordSumLE": 3420372471,
+          "wordSumBE": 3208376052
+        },
+        {
+          "range": "rodata压缩正文",
+          "bytes": 4124550,
+          "sha256": "7dd8ffe0e82c7ae66306bbfba766f49be2e5c6e67579086130855d7ee2fcb473",
+          "byteSum": 541003860,
+          "wordSumLE": 1452447529,
+          "wordSumBE": 1938109138
+        },
+        {
+          "range": "rodata明文映射范围",
+          "bytes": 5703196,
+          "sha256": "232c720660ff1253161be05d969a5aa473130202bdaf47ff09250d805808bdbe",
+          "byteSum": 562323261,
+          "wordSumLE": 3702498735,
+          "wordSumBE": 130529227
+        },
+        {
+          "range": "rodata明文含尾部",
+          "bytes": 5703197,
+          "sha256": "62cb8913bed07e5c9085546dbeb35bdc4b8def6f9aa5619cc44fc038277e5181",
+          "byteSum": 562323516,
+          "wordSumLE": 3702498990,
+          "wordSumBE": 113752011
+        },
+        {
+          "range": "data压缩正文",
+          "bytes": 116784,
+          "sha256": "3d7aeac53275b175b8a948c290603803462dec0599e88b5921c0a6bed1695b26",
+          "byteSum": 13127935,
+          "wordSumLE": 2461745141,
+          "wordSumBE": 1400737377
+        },
+        {
+          "range": "data明文映射范围",
+          "bytes": 339536,
+          "sha256": "895fc87dc320d70786b9136aff3a1ceea455b807f878f4bfa3f58d17d4f70ac1",
+          "byteSum": 15341907,
+          "wordSumLE": 1601771676,
+          "wordSumBE": 323442661
+        },
+        {
+          "range": "data明文含尾部",
+          "bytes": 339537,
+          "sha256": "25ad024111031085e3b73819fe8994525b5455ea1e67af515e5413ff7f20d85b",
+          "byteSum": 15342162,
+          "wordSumLE": 1601771931,
+          "wordSumBE": 306665445
+        },
+        {
+          "range": "三个压缩正文拼接",
+          "bytes": 7358893,
+          "sha256": "c39a8b7af4781b3b8c8e7a6bda3bbcecaa7b62985ac6a974b7acd81256e29640",
+          "byteSum": 937439811,
+          "wordSumLE": 1986209644,
+          "wordSumBE": 1493076192
+        },
+        {
+          "range": "三个明文拼接",
+          "bytes": 10487932,
+          "sha256": "3d71a68b072c76ae827012b3efb77e0413ac29bb03e4243816431b1f258b9ece",
+          "byteSum": 1061763847,
+          "wordSumLE": 134708290,
+          "wordSumBE": 3662347940
+        }
+      ],
+      "matches": []
+    },
+    {
+      "version": "3.2-cn",
+      "inputSha256": "92b3f1fda39e37351432d19d0167879f477eb71713a8fbc94b3ba2141ca404e4",
+      "targetOffset": "0x17a0",
+      "target": "0x4e34f129",
+      "trialsIncludingEndian": 3300,
+      "ranges": [
+        {
+          "range": "首段全部",
+          "bytes": 7370752,
+          "sha256": "c57a83a6f99896b514d0dde8d4a8d3d037cff71c4470511a7295a0b23a13c950",
+          "byteSum": 937552776,
+          "wordSumLE": 1403918708,
+          "wordSumBE": 1969069728
+        },
+        {
+          "range": "首段排除末尾字",
+          "bytes": 7370748,
+          "sha256": "400607900702cc90acecc07eace17564ca8d9f66bf01e465599df272e5368d87",
+          "byteSum": 937552364,
+          "wordSumLE": 91826251,
+          "wordSumBE": 1265396306
+        },
+        {
+          "range": "首段末尾字置零",
+          "bytes": 7370752,
+          "sha256": "7ecac907e578d4979483822aa9814247b515f030d51a3b114906ba694a54320f",
+          "byteSum": 937552364,
+          "wordSumLE": 91826251,
+          "wordSumBE": 1265396306
+        },
+        {
+          "range": "向量区",
+          "bytes": 4096,
+          "sha256": "c90e6cb73c65f6a54e260b169eb511a3a32268af194c69086bdfebecfb8a5bc7",
+          "byteSum": 51753,
+          "wordSumLE": 3061311370,
+          "wordSumBE": 3069877896
+        },
+        {
+          "range": "secinfo含末尾字",
+          "bytes": 1956,
+          "sha256": "ce7873552386771d5c4c849636a5766c136abc7067d7c242cf1ad6fe67447cfd",
+          "byteSum": 87856,
+          "wordSumLE": 406853844,
+          "wordSumBE": 635973839
+        },
+        {
+          "range": "secinfo排除末尾字",
+          "bytes": 1952,
+          "sha256": "3245b09be71f3642f3ffdc17e0322954152985f52adbd4fa756793dcc929846c",
+          "byteSum": 87444,
+          "wordSumLE": 3389728683,
+          "wordSumBE": 4227267713
+        },
+        {
+          "range": "secinfo末尾字置零",
+          "bytes": 1956,
+          "sha256": "05a3480aadfc025106e10841adfd39f0dd0d195f4d0e6a8b1e12d7e983adfe75",
+          "byteSum": 87444,
+          "wordSumLE": 3389728683,
+          "wordSumBE": 4227267713
+        },
+        {
+          "range": "段表4KB",
+          "bytes": 4096,
+          "sha256": "d84cd8d1da041f09cc3acff9e4f76dcd3813abf42169458c87589065f4900810",
+          "byteSum": 89605,
+          "wordSumLE": 2646337756,
+          "wordSumBE": 800632147
+        },
+        {
+          "range": "段表4KB末尾字置零",
+          "bytes": 4096,
+          "sha256": "064ae5742aaf558a77348619dd594e3d5513461b1426cd79f580b1597f89336f",
+          "byteSum": 89193,
+          "wordSumLE": 1334245299,
+          "wordSumBE": 96958725
+        },
+        {
+          "range": "前8KB末尾字置零",
+          "bytes": 8192,
+          "sha256": "754afd740c04f769e4f05fe6c9f2aef900c26c4460ed4376ae8f9a25eb948743",
+          "byteSum": 140946,
+          "wordSumLE": 100589373,
+          "wordSumBE": 3166836621
+        },
+        {
+          "range": "ROM区全部含填充",
+          "bytes": 7362560,
+          "sha256": "3d37a15ba096a45d7c88848e62b1892a35edcac685caab748163bbef94957c1f",
+          "byteSum": 937411418,
+          "wordSumLE": 4286204174,
+          "wordSumBE": 2393526981
+        },
+        {
+          "range": "text压缩正文",
+          "bytes": 3117324,
+          "sha256": "2ec5ac9377fd5d8cd602ce462c1a956dbc8a9e13361ea2be297ef49e1581fdfa",
+          "byteSum": 383363191,
+          "wordSumLE": 3860828881,
+          "wordSumBE": 4157482462
+        },
+        {
+          "range": "text明文映射范围",
+          "bytes": 4445240,
+          "sha256": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+          "byteSum": 484049364,
+          "wordSumLE": 3017050351,
+          "wordSumBE": 3086540737
+        },
+        {
+          "range": "text明文含尾部",
+          "bytes": 4445241,
+          "sha256": "4e3a577067472d20e614d658a2ff5b81a260660085fa88615d02364280027c4e",
+          "byteSum": 484049619,
+          "wordSumLE": 3017050606,
+          "wordSumBE": 3069763521
+        },
+        {
+          "range": "rodata压缩正文",
+          "bytes": 4124532,
+          "sha256": "e4e5b9a77246b61a4c3b2de469ca101e3075f66df7995d53d38f9ad882c7c983",
+          "byteSum": 540919422,
+          "wordSumLE": 54416572,
+          "wordSumBE": 3748937233
+        },
+        {
+          "range": "rodata明文映射范围",
+          "bytes": 5703192,
+          "sha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+          "byteSum": 562307184,
+          "wordSumLE": 4029457683,
+          "wordSumBE": 1828991968
+        },
+        {
+          "range": "rodata明文含尾部",
+          "bytes": 5703192,
+          "sha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+          "byteSum": 562307184,
+          "wordSumLE": 4029457683,
+          "wordSumBE": 1828991968
+        },
+        {
+          "range": "data压缩正文",
+          "bytes": 116761,
+          "sha256": "9cc950fbe0a727a8cb3fe43726379f62e6c798a7ed5fe79fc2f0445c1a4b39b8",
+          "byteSum": 13128805,
+          "wordSumLE": 370958721,
+          "wordSumBE": 3077041878
+        },
+        {
+          "range": "data明文映射范围",
+          "bytes": 339536,
+          "sha256": "0c7bc4e420b8b24ad6ca36f0c931d415add9a56a23cf70537e9b79e545c5df98",
+          "byteSum": 15367114,
+          "wordSumLE": 1847948638,
+          "wordSumBE": 3577807860
+        },
+        {
+          "range": "data明文含尾部",
+          "bytes": 339537,
+          "sha256": "feb66ec825095891cdf8efedcce81fdb36d5d8bc593a5ddb7b7ca14eeb5f49fc",
+          "byteSum": 15367369,
+          "wordSumLE": 1847948893,
+          "wordSumBE": 3561030644
+        },
+        {
+          "range": "三个压缩正文拼接",
+          "bytes": 7358617,
+          "sha256": "6ffd5e6f37ffcc3ae6e86a2786cf346ef2dafae4b8d3199939d64ba3f35995c4",
+          "byteSum": 937411418,
+          "wordSumLE": 4286204174,
+          "wordSumBE": 2393526981
+        },
+        {
+          "range": "三个明文拼接",
+          "bytes": 10487968,
+          "sha256": "c67ed07884060093ce008a56dd79a76da9cdda2d4fbc849c047a3b602e77f440",
+          "byteSum": 1061723662,
+          "wordSumLE": 304522080,
+          "wordSumBE": 4198373269
+        }
+      ],
+      "matches": []
+    }
+  ],
+  "identified": false
+}

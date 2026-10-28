@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-26",
+  "source": "User-reported tests in this conversation; no independent runtime capture",
+  "parameterMemory": {
+    "status": "Original broad failure hypothesis withdrawn by user after retesting",
+    "fullPerParameterMatrixAvailable": false
+  },
+  "exposurePreview": {
+    "status": "Reproduced by user",
+    "mode": "M",
+    "isoFixed": true,
+    "flashDisabled": true,
+    "parametersVaried": [
+      "aperture",
+      "ISO",
+      "shutter speed"
+    ],
+    "photoLiveViewBrightnessFollowsExposure": false,
+    "videoLiveViewBrightnessFollowsExposure": false,
+    "finishedImageBrightnessChanges": true,
+    "lensesTested": [
+      "YI 12-40mm f/3.5-5.6",
+      "Panasonic lens, model not supplied"
+    ],
+    "exactParameterSweepAndImageFilesAvailable": false,
+    "underlyingControlFunctionIdentified": false
+  },
+  "fullHangs": {
+    "status": "User reports repeated full hangs during testing",
+    "reportedCount": 5,
+    "totalOperationsAndDuration": null,
+    "triggerDescription": "User reports many operations can trigger the hang; no unique final operation isolated",
+    "powerSwitchRespondsWhenHung": false,
+    "recovery": "Battery removal required",
+    "liveViewMotionDuringHangSeparatelyRecorded": false,
+    "cpuMemoryOrTaskTraceAvailable": false,
+    "rootCause": "Undetermined",
+    "priority": "Stability before exposure-preview enhancement",
+    "furtherStressTestingRequested": false
+  }
+}

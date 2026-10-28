@@ -1,0 +1,33 @@
+{
+  "qualification": "Live original REA/Ghidra analysis of an analysis-only ELF slice; CPU model is explicitly selected, not measured hardware identity.",
+  "service": "rea-m1",
+  "provider": {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "version": "12.1.4"
+  },
+  "languageId": "ARM:LE:32:v5t",
+  "compilerSpecId": "default",
+  "procedure": "0x41ef2c",
+  "functionBytes": 232,
+  "instructions": 58,
+  "analysisProfileDigest": "1a6b688add6ff76066434c8ebc602fdcb968c25441053b29b603484bae13e7e9",
+  "sliceTestDoesNotVerifyFullFirmware": true,
+  "subsequentFullCandidateElfAnalysisCompleted": true,
+  "subsequentFullCandidateAnalysisReport": "reports/rea-full-m1-verification.json",
+  "firmwareRawMarkers": [
+    {
+      "fileOffset": "0xb19868",
+      "value": "ARM926_1"
+    },
+    {
+      "fileOffset": "0xb19874",
+      "value": "ARM926_2"
+    }
+  ],
+  "hardwareCpuIdRead": false,
+  "sources": [
+    "https://documentation-service.arm.com/static/5e8e3d1088295d1e18d3a9b2",
+    "https://github.com/morluto/rea/blob/main/docs/installation.md#ghidra-import-language-and-analysis-seeds"
+  ]
+}

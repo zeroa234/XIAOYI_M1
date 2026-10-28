@@ -1,0 +1,80 @@
+{
+  "limitation": "Experimental decoder; strings alone do not identify functions or diagnose bugs. Offsets refer to local files, not runtime addresses.",
+  "matches": [
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192.decompressed",
+      "offset": 284016,
+      "text": "NANDDATA VERSION"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192.decompressed",
+      "offset": 284100,
+      "text": "LOADDATA UPDATE"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192.decompressed",
+      "offset": 284116,
+      "text": "FINISH LOADDATA UPDATE"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192.decompressed",
+      "offset": 284160,
+      "text": "   WITH LOADDATA UPDATE"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192.decompressed",
+      "offset": 284276,
+      "text": "BAD NANDDATA"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192.decompressed",
+      "offset": 284308,
+      "text": "ERROE LOADDATA UPDATE"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192.decompressed",
+      "offset": 284332,
+      "text": "NO NAND DATA"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296.decompressed",
+      "offset": 586001,
+      "text": "NVRAMRev"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296.decompressed",
+      "offset": 887726,
+      "text": "NVRAMRev"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296.decompressed",
+      "offset": 944320,
+      "text": "fnsShutdownWLAN_DrvGetCotCoryory^"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296.decompressed",
+      "offset": 948419,
+      "text": "fnsShutdownownN_DrvGetCotCoryory^"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296.decompressed",
+      "offset": 981741,
+      "text": "RESET BACKUP"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296.decompressed",
+      "offset": 5350357,
+      "text": "NVRAMRev"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296.decompressed",
+      "offset": 5652082,
+      "text": "NVRAMRev"
+    },
+    {
+      "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.07251968.decompressed",
+      "offset": 333692,
+      "text": "fnsShutdown"
+    }
+  ]
+}

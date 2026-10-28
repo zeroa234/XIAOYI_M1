@@ -1,0 +1,1178 @@
+{
+  "generatedAt": "2026-10-26T04:39:26.684Z",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "cwd": "./",
+    "upstreamCommit": "b90b96c124a3b076fa0283404e6595a4a40d20d0",
+    "lzss": {
+      "file": "vendor\\yi-mirrorless-firmware-tools\\lzss.js",
+      "bytes": 13739,
+      "sha256": "b4a59e82e77b541521d31d6d023fd5c398c6d05dfdafa044c0ae1b8bbe1f09e6"
+    },
+    "firmware": {
+      "file": "vendor\\yi-mirrorless-firmware-tools\\firmware.js",
+      "bytes": 21183,
+      "sha256": "a47df4b18919c2697684049df732e0afdfe51d7ed5dc1e1b169bfbf319b46b50"
+    },
+    "stringVersion": "3.3.3"
+  },
+  "inputs": {
+    "3.2-cn": {
+      "file": "data/input/body-3-2-cn/firmware.bin",
+      "bytes": 11704832,
+      "sha256": "92b3f1fda39e37351432d19d0167879f477eb71713a8fbc94b3ba2141ca404e4",
+      "analysisCopy": {
+        "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin",
+        "bytes": 11704832,
+        "sha256": "92b3f1fda39e37351432d19d0167879f477eb71713a8fbc94b3ba2141ca404e4",
+        "sameAsInput": true
+      },
+      "section0": {
+        "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0",
+        "bytes": 7370752,
+        "sha256": "c57a83a6f99896b514d0dde8d4a8d3d037cff71c4470511a7295a0b23a13c950",
+        "sameAsInputSection0Slice": true,
+        "subsections": [
+          {
+            "suffix": "00000000",
+            "offset": 0,
+            "bytes": 4096,
+            "sameAsSection0Slice": true
+          },
+          {
+            "suffix": "00004096",
+            "offset": 4096,
+            "bytes": 4096,
+            "sameAsSection0Slice": true
+          },
+          {
+            "suffix": "00008192",
+            "offset": 8192,
+            "bytes": 3119104,
+            "sameAsSection0Slice": true
+          },
+          {
+            "suffix": "03127296",
+            "offset": 3127296,
+            "bytes": 4124672,
+            "sameAsSection0Slice": true
+          },
+          {
+            "suffix": "07251968",
+            "offset": 7251968,
+            "bytes": 118784,
+            "sameAsSection0Slice": true
+          }
+        ]
+      }
+    },
+    "3.1-cn": {
+      "file": "data/input/body-3-1-cn/firmware.bin",
+      "bytes": 11704832,
+      "sha256": "97dfa394efc91f8643c3b1a0673be2dd96590754b29080ce60d3498ebe3d15be",
+      "analysisCopy": {
+        "file": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin",
+        "bytes": 11704832,
+        "sha256": "97dfa394efc91f8643c3b1a0673be2dd96590754b29080ce60d3498ebe3d15be",
+        "sameAsInput": true
+      },
+      "section0": {
+        "file": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin.0",
+        "bytes": 7370752,
+        "sha256": "9957a78a644f62d71d42149c9b267ae85826be67150ec77ff487ca4774f0effb",
+        "sameAsInputSection0Slice": true,
+        "subsections": [
+          {
+            "suffix": "00000000",
+            "offset": 0,
+            "bytes": 4096,
+            "sameAsSection0Slice": true
+          },
+          {
+            "suffix": "00004096",
+            "offset": 4096,
+            "bytes": 4096,
+            "sameAsSection0Slice": true
+          },
+          {
+            "suffix": "00008192",
+            "offset": 8192,
+            "bytes": 3119104,
+            "sameAsSection0Slice": true
+          },
+          {
+            "suffix": "03127296",
+            "offset": 3127296,
+            "bytes": 4124672,
+            "sameAsSection0Slice": true
+          },
+          {
+            "suffix": "07251968",
+            "offset": 7251968,
+            "bytes": 118784,
+            "sameAsSection0Slice": true
+          }
+        ]
+      }
+    }
+  },
+  "summary": {
+    "testerDefect": "The TypeError is a test-bookkeeping failure: compression emits more lookups than decompression, so l1 is undefined at firmware.js:418.",
+    "decompressorDefect": "Conditional on sequential overlap-copy semantics: upstream pre-reads whole matches; camera semantics have not yet been independently established.",
+    "compressorDefect": "Conditional on sequential overlap-copy semantics: emitted matches can disagree with that reference while self-roundtrip succeeds; camera compatibility is unverified.",
+    "padding": "Compressed streams omit uncompressed length fields, but the outer load/section table includes section lengths. Last-group zero literals can append 0..7 bytes; boundary handling is unverified.",
+    "termination": "The decoder stops at flag 0x00 followed by 16 zero bytes. Actual 3.1/3.2 compressed subsections end at all-zero 2048-block padding, but the rule is heuristic, not an explicit length.",
+    "camera": "No camera, flash, repack, or region flip was performed. A successful upstream round-trip does not establish camera-compatible compressed bytes."
+  },
+  "vectors": [
+    {
+      "name": "empty",
+      "inputBytes": 0,
+      "compressedBytes": 0,
+      "decodedBytes": 0,
+      "prefixMatchBytes": 0,
+      "extraBytes": 0,
+      "extraAllZero": true
+    },
+    {
+      "name": "1 literal",
+      "inputBytes": 1,
+      "error": "Output buffer is full, cannot write more data",
+      "note": "lzss.compress allocates input.length*2 bytes; sub-5-byte inputs can exceed it."
+    },
+    {
+      "name": "7 literals",
+      "inputBytes": 7,
+      "compressedBytes": 9,
+      "decodedBytes": 8,
+      "prefixMatchBytes": 7,
+      "extraBytes": 1,
+      "extraAllZero": true
+    },
+    {
+      "name": "8 literals",
+      "inputBytes": 8,
+      "compressedBytes": 9,
+      "decodedBytes": 8,
+      "prefixMatchBytes": 8,
+      "extraBytes": 0,
+      "extraAllZero": true
+    },
+    {
+      "name": "9 literals",
+      "inputBytes": 9,
+      "compressedBytes": 18,
+      "decodedBytes": 16,
+      "prefixMatchBytes": 9,
+      "extraBytes": 7,
+      "extraAllZero": true
+    },
+    {
+      "name": "periodic 3x20",
+      "inputBytes": 60,
+      "compressedBytes": 23,
+      "decodedBytes": 67,
+      "prefixMatchBytes": 60,
+      "extraBytes": 7,
+      "extraAllZero": true
+    },
+    {
+      "name": "zeros 100",
+      "inputBytes": 100,
+      "compressedBytes": 24,
+      "decodedBytes": 107,
+      "prefixMatchBytes": 100,
+      "extraBytes": 7,
+      "extraAllZero": true
+    },
+    {
+      "name": "sequence 0..254",
+      "inputBytes": 255,
+      "compressedBytes": 288,
+      "decodedBytes": 256,
+      "prefixMatchBytes": 255,
+      "extraBytes": 1,
+      "extraAllZero": true
+    },
+    {
+      "name": "random 1024",
+      "inputBytes": 1024,
+      "compressedBytes": 1129,
+      "decodedBytes": 1025,
+      "prefixMatchBytes": 1024,
+      "extraBytes": 1,
+      "extraAllZero": true
+    }
+  ],
+  "synthetic": {
+    "warmupOverlap": {
+      "streamBytes": 19,
+      "index": 4082,
+      "length": 8,
+      "distance": 4,
+      "outputBytes": 23,
+      "expectedBytes": 23,
+      "firstDiff": 12,
+      "observedHex": "414243445758595a51515151515151",
+      "sequentialCopyHex": "414243444142434451515151515151"
+    },
+    "steadyStateOverlap": {
+      "streamBytes": 4618,
+      "index": 4077,
+      "length": 18,
+      "distance": 1,
+      "outputBytes": 4121,
+      "expectedBytes": 4121,
+      "firstDiff": 4097,
+      "observedHex": "41414242414141414141414141414141",
+      "sequentialCopyHex": "41414242424242424242424242424242"
+    },
+    "terminationFalsePositive": {
+      "streamBytes": 4625,
+      "flagOffset": 4608,
+      "outputBytes": 4096,
+      "ifDecodedAsEight3ByteLookups": 4120,
+      "stoppedEarly": true,
+      "note": "Synthetic only; the actual 3.1/3.2 tails are all zero and terminate at the expected padding."
+    }
+  },
+  "compressorCounterexample": {
+    "input": "WXYZABCABCWXYZ",
+    "compressedBytes": 10,
+    "upstreamDcdPrefixMatch": 14,
+    "upstreamDcdFullPrefix": true,
+    "token": {
+      "pos": 8,
+      "inOff": 7,
+      "index": 4082,
+      "length": 7,
+      "ringIndex": 4085,
+      "distance": 3,
+      "badBytes": 4,
+      "inputHex": "4142435758595a",
+      "sequentialCopy": "41424341424341"
+    },
+    "sequentialCorrectOutput": "WXYZABCABCABCA",
+    "firstDifferenceFromInput": 10,
+    "note": "Upstream DCD succeeds because the same buggy overlap rule is used in both directions."
+  },
+  "decompression": [
+    {
+      "streamFile": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192",
+      "streamBytes": 3119104,
+      "streamSha256": "69b41f508bfb2d14a8dce446ec267617f347f77ee44133acf71a1a64d189a1d3",
+      "outputBytes": 4445245,
+      "outputSha256": "c6342036374e97ace58101e220924f25d2ca322aa7caba35f196827de50af676",
+      "decoderOutMatchesWalkOut": true,
+      "decoderLog": [
+        "Section end detected at 3117336"
+      ],
+      "walk": {
+        "bytes": 3119104,
+        "stop": {
+          "flagOffset": 3117328,
+          "next16": "00000000000000000000000000000000"
+        },
+        "groups": 264945,
+        "outputBytes": 4445245,
+        "last": {
+          "flagOffset": 3117319,
+          "flag": 255,
+          "flags": "CCCCCCCC",
+          "startOut": 4445237,
+          "endOut": 4445245
+        },
+        "error": null
+      },
+      "tail": {
+        "flagOffset": 3117328,
+        "streamBytes": 3119104,
+        "bytesFromFlagToEnd": 1776,
+        "nonZeroAfterFlag": 0,
+        "allZeroAfterFlag": true,
+        "flagOffsetModBlock": 272,
+        "bytesToBlockBoundary": 1776,
+        "flagByte": 0,
+        "next16": "00000000000000000000000000000000",
+        "finalRealGroup": {
+          "flagOffset": 3117319,
+          "flag": 255,
+          "flags": "CCCCCCCC",
+          "startOut": 4445237,
+          "endOut": 4445245
+        },
+        "padMatchesBlockBoundary": true
+      },
+      "stats": {
+        "tokens": 732823,
+        "overlaps": 362,
+        "overrunBytes": 2093,
+        "mismatchTokens": 354,
+        "mismatchBytes": 1926,
+        "nonOverlapSourceMismatch": 0,
+        "distanceZero": 0,
+        "examples": [
+          {
+            "token": 21,
+            "compressedOffset": 134,
+            "outputOffset": 146,
+            "index": 124,
+            "length": 14,
+            "ringIndex": 128,
+            "distance": 4,
+            "badBytes": 10,
+            "observedHex": "a0e10000d1f021e328d19fe5d2f0",
+            "sequentialCopyHex": "a0e10000a0e10000a0e10000a0e1"
+          },
+          {
+            "token": 28,
+            "compressedOffset": 183,
+            "outputOffset": 208,
+            "index": 186,
+            "length": 18,
+            "ringIndex": 190,
+            "distance": 4,
+            "badBytes": 14,
+            "observedHex": "f053a0e8d1f021e328d19fe5d2f021e324d1",
+            "sequentialCopyHex": "f053a0e8f053a0e8f053a0e8f053a0e8f053"
+          },
+          {
+            "token": 29,
+            "compressedOffset": 185,
+            "outputOffset": 226,
+            "index": 204,
+            "length": 10,
+            "ringIndex": 208,
+            "distance": 4,
+            "badBytes": 6,
+            "observedHex": "21e324d1d1f021e328d1",
+            "sequentialCopyHex": "21e324d121e324d121e3"
+          }
+        ],
+        "source": "decoded output"
+      },
+      "existing": {
+        "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192.decompressed",
+        "bytes": 4445245,
+        "sha256": "c6342036374e97ace58101e220924f25d2ca322aa7caba35f196827de50af676",
+        "sameAsThisRun": true
+      }
+    },
+    {
+      "streamFile": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296",
+      "streamBytes": 4124672,
+      "streamSha256": "0507731bcc743013345061ac149e4fa14aed7d2f72b57357fb1c826bd7225b38",
+      "outputBytes": 5703200,
+      "outputSha256": "ce3ecce58634a3798882aabed7ed3db9622d6264a59f1ec5cee3abbc3b78f58d",
+      "decoderOutMatchesWalkOut": true,
+      "decoderLog": [
+        "Section end detected at 4124548"
+      ],
+      "walk": {
+        "bytes": 4124672,
+        "stop": {
+          "flagOffset": 4124540,
+          "next16": "00000000000000000000000000000000"
+        },
+        "groups": 405050,
+        "outputBytes": 5703200,
+        "last": {
+          "flagOffset": 4124531,
+          "flag": 255,
+          "flags": "CCCCCCCC",
+          "startOut": 5703192,
+          "endOut": 5703200
+        },
+        "error": null
+      },
+      "tail": {
+        "flagOffset": 4124540,
+        "streamBytes": 4124672,
+        "bytesFromFlagToEnd": 132,
+        "nonZeroAfterFlag": 0,
+        "allZeroAfterFlag": true,
+        "flagOffsetModBlock": 1916,
+        "bytesToBlockBoundary": 132,
+        "flagByte": 0,
+        "next16": "00000000000000000000000000000000",
+        "finalRealGroup": {
+          "flagOffset": 4124531,
+          "flag": 255,
+          "flags": "CCCCCCCC",
+          "startOut": 5703192,
+          "endOut": 5703200
+        },
+        "padMatchesBlockBoundary": true
+      },
+      "stats": {
+        "tokens": 479090,
+        "overlaps": 36873,
+        "overrunBytes": 495979,
+        "mismatchTokens": 36745,
+        "mismatchBytes": 440207,
+        "nonOverlapSourceMismatch": 0,
+        "distanceZero": 0,
+        "examples": [
+          {
+            "token": 15,
+            "compressedOffset": 68,
+            "outputOffset": 100,
+            "index": 78,
+            "length": 18,
+            "ringIndex": 82,
+            "distance": 4,
+            "badBytes": 4,
+            "observedHex": "070000000000000000000000000000000000",
+            "sequentialCopyHex": "070000000700000007000000070000000700"
+          },
+          {
+            "token": 16,
+            "compressedOffset": 74,
+            "outputOffset": 121,
+            "index": 99,
+            "length": 18,
+            "ringIndex": 103,
+            "distance": 4,
+            "badBytes": 3,
+            "observedHex": "000000050000000000000000000000000000",
+            "sequentialCopyHex": "000000050000000500000005000000050000"
+          },
+          {
+            "token": 19,
+            "compressedOffset": 83,
+            "outputOffset": 153,
+            "index": 127,
+            "length": 18,
+            "ringIndex": 135,
+            "distance": 8,
+            "badBytes": 2,
+            "observedHex": "000000030000000100000000000000000000",
+            "sequentialCopyHex": "000000030000000100000003000000010000"
+          }
+        ],
+        "source": "decoded output"
+      },
+      "existing": {
+        "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296.decompressed",
+        "bytes": 5703200,
+        "sha256": "ce3ecce58634a3798882aabed7ed3db9622d6264a59f1ec5cee3abbc3b78f58d",
+        "sameAsThisRun": true
+      }
+    },
+    {
+      "streamFile": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.07251968",
+      "streamBytes": 118784,
+      "streamSha256": "82735a54f784e3024020b02ba3bf8a9e4541e35fa33ea719343166447d792cff",
+      "outputBytes": 339543,
+      "outputSha256": "476912e6698cabba404e7fef2374f374c518eb21dec2e7a60e0cd2fa36456b0e",
+      "decoderOutMatchesWalkOut": true,
+      "decoderLog": [
+        "Section end detected at 116775"
+      ],
+      "walk": {
+        "bytes": 118784,
+        "stop": {
+          "flagOffset": 116767,
+          "next16": "00000000000000000000000000000000"
+        },
+        "groups": 9976,
+        "outputBytes": 339543,
+        "last": {
+          "flagOffset": 116758,
+          "flag": 255,
+          "flags": "CCCCCCCC",
+          "startOut": 339535,
+          "endOut": 339543
+        },
+        "error": null
+      },
+      "tail": {
+        "flagOffset": 116767,
+        "streamBytes": 118784,
+        "bytesFromFlagToEnd": 2017,
+        "nonZeroAfterFlag": 0,
+        "allZeroAfterFlag": true,
+        "flagOffsetModBlock": 31,
+        "bytesToBlockBoundary": 2017,
+        "flagByte": 0,
+        "next16": "00000000000000000000000000000000",
+        "finalRealGroup": {
+          "flagOffset": 116758,
+          "flag": 255,
+          "flags": "CCCCCCCC",
+          "startOut": 339535,
+          "endOut": 339543
+        },
+        "padMatchesBlockBoundary": true
+      },
+      "stats": {
+        "tokens": 26983,
+        "overlaps": 8603,
+        "overrunBytes": 116350,
+        "mismatchTokens": 8446,
+        "mismatchBytes": 94475,
+        "nonOverlapSourceMismatch": 0,
+        "distanceZero": 0,
+        "examples": [
+          {
+            "token": 331,
+            "compressedOffset": 1139,
+            "outputOffset": 1547,
+            "index": 1526,
+            "length": 5,
+            "ringIndex": 1529,
+            "distance": 3,
+            "badBytes": 2,
+            "observedHex": "ffffff0000",
+            "sequentialCopyHex": "ffffffffff"
+          },
+          {
+            "token": 334,
+            "compressedOffset": 1146,
+            "outputOffset": 1564,
+            "index": 1543,
+            "length": 18,
+            "ringIndex": 1546,
+            "distance": 3,
+            "badBytes": 5,
+            "observedHex": "ff0000000000000000000000100000800000",
+            "sequentialCopyHex": "ff0000ff0000ff0000ff0000ff0000ff0000"
+          },
+          {
+            "token": 335,
+            "compressedOffset": 1148,
+            "outputOffset": 1582,
+            "index": 1561,
+            "length": 18,
+            "ringIndex": 1564,
+            "distance": 3,
+            "badBytes": 4,
+            "observedHex": "800000000000000000000000100000800000",
+            "sequentialCopyHex": "800000800000800000800000800000800000"
+          }
+        ],
+        "source": "decoded output"
+      },
+      "existing": {
+        "file": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.07251968.decompressed",
+        "bytes": 339543,
+        "sha256": "476912e6698cabba404e7fef2374f374c518eb21dec2e7a60e0cd2fa36456b0e",
+        "sameAsThisRun": true
+      }
+    },
+    {
+      "streamFile": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin.0.00008192",
+      "streamBytes": 3119104,
+      "streamSha256": "de619cf909e258cb129a6581130edadbfe45012ba0f1abb2c74a47e3b4cbd34a",
+      "outputBytes": 4445208,
+      "outputSha256": "897d72f418c562e47f75c056da2b40cb645d7459312ef59bc732ad61d56aa84a",
+      "decoderOutMatchesWalkOut": true,
+      "decoderLog": [
+        "Section end detected at 3117575"
+      ],
+      "walk": {
+        "bytes": 3119104,
+        "stop": {
+          "flagOffset": 3117567,
+          "next16": "00000000000000000000000000000000"
+        },
+        "groups": 264975,
+        "outputBytes": 4445208,
+        "last": {
+          "flagOffset": 3117558,
+          "flag": 255,
+          "flags": "CCCCCCCC",
+          "startOut": 4445200,
+          "endOut": 4445208
+        },
+        "error": null
+      },
+      "tail": {
+        "flagOffset": 3117567,
+        "streamBytes": 3119104,
+        "bytesFromFlagToEnd": 1537,
+        "nonZeroAfterFlag": 0,
+        "allZeroAfterFlag": true,
+        "flagOffsetModBlock": 511,
+        "bytesToBlockBoundary": 1537,
+        "flagByte": 0,
+        "next16": "00000000000000000000000000000000",
+        "finalRealGroup": {
+          "flagOffset": 3117558,
+          "flag": 255,
+          "flags": "CCCCCCCC",
+          "startOut": 4445200,
+          "endOut": 4445208
+        },
+        "padMatchesBlockBoundary": true
+      },
+      "stats": {
+        "tokens": 732792,
+        "overlaps": 362,
+        "overrunBytes": 2094,
+        "mismatchTokens": 354,
+        "mismatchBytes": 1915,
+        "nonOverlapSourceMismatch": 0,
+        "distanceZero": 0,
+        "examples": [
+          {
+            "token": 21,
+            "compressedOffset": 134,
+            "outputOffset": 146,
+            "index": 124,
+            "length": 14,
+            "ringIndex": 128,
+            "distance": 4,
+            "badBytes": 10,
+            "observedHex": "a0e10000d1f021e328d19fe5d2f0",
+            "sequentialCopyHex": "a0e10000a0e10000a0e10000a0e1"
+          },
+          {
+            "token": 28,
+            "compressedOffset": 183,
+            "outputOffset": 208,
+            "index": 186,
+            "length": 18,
+            "ringIndex": 190,
+            "distance": 4,
+            "badBytes": 14,
+            "observedHex": "f053a0e8d1f021e328d19fe5d2f021e324d1",
+            "sequentialCopyHex": "f053a0e8f053a0e8f053a0e8f053a0e8f053"
+          },
+          {
+            "token": 29,
+            "compressedOffset": 185,
+            "outputOffset": 226,
+            "index": 204,
+            "length": 10,
+            "ringIndex": 208,
+            "distance": 4,
+            "badBytes": 6,
+            "observedHex": "21e324d1d1f021e328d1",
+            "sequentialCopyHex": "21e324d121e324d121e3"
+          }
+        ],
+        "source": "decoded output"
+      },
+      "existing": {
+        "file": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin.0.00008192.decompressed",
+        "bytes": 4445208,
+        "sha256": "897d72f418c562e47f75c056da2b40cb645d7459312ef59bc732ad61d56aa84a",
+        "sameAsThisRun": true
+      }
+    },
+    {
+      "streamFile": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin.0.03127296",
+      "streamBytes": 4124672,
+      "streamSha256": "08852a389e94f90c595968e652d04b252b2af3e34ac83dabaa367608cd30730a",
+      "outputBytes": 5703198,
+      "outputSha256": "d51e13aca7ae6a5736165ab6a36bd4f1b08304e29fa6af94dc65031c5a661d7e",
+      "decoderOutMatchesWalkOut": true,
+      "decoderLog": [
+        "Section end detected at 4124559"
+      ],
+      "walk": {
+        "bytes": 4124672,
+        "stop": {
+          "flagOffset": 4124551,
+          "next16": "00000000000000000000000000000000"
+        },
+        "groups": 405052,
+        "outputBytes": 5703198,
+        "last": {
+          "flagOffset": 4124542,
+          "flag": 255,
+          "flags": "CCCCCCCC",
+          "startOut": 5703190,
+          "endOut": 5703198
+        },
+        "error": null
+      },
+      "tail": {
+        "flagOffset": 4124551,
+        "streamBytes": 4124672,
+        "bytesFromFlagToEnd": 121,
+        "nonZeroAfterFlag": 0,
+        "allZeroAfterFlag": true,
+        "flagOffsetModBlock": 1927,
+        "bytesToBlockBoundary": 121,
+        "flagByte": 0,
+        "next16": "00000000000000000000000000000000",
+        "finalRealGroup": {
+          "flagOffset": 4124542,
+          "flag": 255,
+          "flags": "CCCCCCCC",
+          "startOut": 5703190,
+          "endOut": 5703198
+        },
+        "padMatchesBlockBoundary": true
+      },
+      "stats": {
+        "tokens": 479083,
+        "overlaps": 36859,
+        "overrunBytes": 495929,
+        "mismatchTokens": 36729,
+        "mismatchBytes": 440175,
+        "nonOverlapSourceMismatch": 0,
+        "distanceZero": 0,
+        "examples": [
+          {
+            "token": 15,
+            "compressedOffset": 68,
+            "outputOffset": 100,
+            "index": 78,
+            "length": 18,
+            "ringIndex": 82,
+            "distance": 4,
+            "badBytes": 4,
+            "observedHex": "070000000000000000000000000000000000",
+            "sequentialCopyHex": "070000000700000007000000070000000700"
+          },
+          {
+            "token": 16,
+            "compressedOffset": 74,
+            "outputOffset": 121,
+            "index": 99,
+            "length": 18,
+            "ringIndex": 103,
+            "distance": 4,
+            "badBytes": 3,
+            "observedHex": "000000050000000000000000000000000000",
+            "sequentialCopyHex": "000000050000000500000005000000050000"
+          },
+          {
+            "token": 19,
+            "compressedOffset": 83,
+            "outputOffset": 153,
+            "index": 127,
+            "length": 18,
+            "ringIndex": 135,
+            "distance": 8,
+            "badBytes": 2,
+            "observedHex": "000000030000000100000000000000000000",
+            "sequentialCopyHex": "000000030000000100000003000000010000"
+          }
+        ],
+        "source": "decoded output"
+      },
+      "existing": {
+        "file": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin.0.03127296.decompressed",
+        "bytes": 5703198,
+        "sha256": "d51e13aca7ae6a5736165ab6a36bd4f1b08304e29fa6af94dc65031c5a661d7e",
+        "sameAsThisRun": true
+      }
+    },
+    {
+      "streamFile": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin.0.07251968",
+      "streamBytes": 118784,
+      "streamSha256": "85529d770987f420efb4fe8320461de9695e35ca23eecbb1cbbc3d281d5b70cb",
+      "outputBytes": 339539,
+      "outputSha256": "819b0a48cbeffe584b37b05e6d3a56dcaf94823a64743b04af219551c4ef1ff5",
+      "decoderOutMatchesWalkOut": true,
+      "decoderLog": [
+        "Section end detected at 116794"
+      ],
+      "walk": {
+        "bytes": 118784,
+        "stop": {
+          "flagOffset": 116786,
+          "next16": "00000000000000000000000000000000"
+        },
+        "groups": 9978,
+        "outputBytes": 339539,
+        "last": {
+          "flagOffset": 116776,
+          "flag": 254,
+          "flags": "LCCCCCCC",
+          "startOut": 339527,
+          "endOut": 339539
+        },
+        "error": null
+      },
+      "tail": {
+        "flagOffset": 116786,
+        "streamBytes": 118784,
+        "bytesFromFlagToEnd": 1998,
+        "nonZeroAfterFlag": 0,
+        "allZeroAfterFlag": true,
+        "flagOffsetModBlock": 50,
+        "bytesToBlockBoundary": 1998,
+        "flagByte": 0,
+        "next16": "00000000000000000000000000000000",
+        "finalRealGroup": {
+          "flagOffset": 116776,
+          "flag": 254,
+          "flags": "LCCCCCCC",
+          "startOut": 339527,
+          "endOut": 339539
+        },
+        "padMatchesBlockBoundary": true
+      },
+      "stats": {
+        "tokens": 26984,
+        "overlaps": 8604,
+        "overrunBytes": 116361,
+        "mismatchTokens": 8446,
+        "mismatchBytes": 94592,
+        "nonOverlapSourceMismatch": 0,
+        "distanceZero": 0,
+        "examples": [
+          {
+            "token": 331,
+            "compressedOffset": 1139,
+            "outputOffset": 1547,
+            "index": 1526,
+            "length": 5,
+            "ringIndex": 1529,
+            "distance": 3,
+            "badBytes": 2,
+            "observedHex": "ffffff0000",
+            "sequentialCopyHex": "ffffffffff"
+          },
+          {
+            "token": 334,
+            "compressedOffset": 1146,
+            "outputOffset": 1564,
+            "index": 1543,
+            "length": 18,
+            "ringIndex": 1546,
+            "distance": 3,
+            "badBytes": 5,
+            "observedHex": "ff0000000000000000000000100000800000",
+            "sequentialCopyHex": "ff0000ff0000ff0000ff0000ff0000ff0000"
+          },
+          {
+            "token": 335,
+            "compressedOffset": 1148,
+            "outputOffset": 1582,
+            "index": 1561,
+            "length": 18,
+            "ringIndex": 1564,
+            "distance": 3,
+            "badBytes": 4,
+            "observedHex": "800000000000000000000000100000800000",
+            "sequentialCopyHex": "800000800000800000800000800000800000"
+          }
+        ],
+        "source": "decoded output"
+      },
+      "existing": {
+        "file": "output\\body-3-1-cn\\m1-3.1-cn.analysis.bin.0.07251968.decompressed",
+        "bytes": 339539,
+        "sha256": "819b0a48cbeffe584b37b05e6d3a56dcaf94823a64743b04af219551c4ef1ff5",
+        "sameAsThisRun": true
+      }
+    }
+  ],
+  "roundtrips": [
+    {
+      "label": "3.2-cn subsection 00008192",
+      "inputFile": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.00008192.decompressed",
+      "inputBytes": 4445245,
+      "inputSha256": "c6342036374e97ace58101e220924f25d2ca322aa7caba35f196827de50af676",
+      "compressedBytes": 3116106,
+      "compressedSha256": "4e720a34844a2ebe8b9b3b9b30a15d45f47909134b5c6fd3852b3942cf631856",
+      "compressedNextBlockPadding": 950,
+      "tokens": 733158,
+      "overlaps": 403,
+      "invalidOverlaps": 379,
+      "invalidOverlapBytes": 1967,
+      "distanceZero": 0,
+      "examples": [
+        {
+          "token": 21,
+          "compressedOffset": 134,
+          "outputOffset": 146,
+          "index": 124,
+          "length": 14,
+          "ringIndex": 128,
+          "distance": 4,
+          "badBytes": 10,
+          "observedHex": "a0e10000d1f021e328d19fe5d2f0",
+          "sequentialCopyHex": "a0e10000a0e10000a0e10000a0e1"
+        },
+        {
+          "token": 28,
+          "compressedOffset": 183,
+          "outputOffset": 208,
+          "index": 186,
+          "length": 18,
+          "ringIndex": 190,
+          "distance": 4,
+          "badBytes": 14,
+          "observedHex": "f053a0e8d1f021e328d19fe5d2f021e324d1",
+          "sequentialCopyHex": "f053a0e8f053a0e8f053a0e8f053a0e8f053"
+        },
+        {
+          "token": 29,
+          "compressedOffset": 185,
+          "outputOffset": 226,
+          "index": 204,
+          "length": 10,
+          "ringIndex": 208,
+          "distance": 4,
+          "badBytes": 6,
+          "observedHex": "21e324d1d1f021e328d1",
+          "sequentialCopyHex": "21e324d121e324d121e3"
+        }
+      ],
+      "dcd": {
+        "decodedBytes": 4445246,
+        "prefixMatchBytes": 4445245,
+        "fullPrefixMatch": true,
+        "extraBytes": 1,
+        "extraAllZero": true,
+        "stopDetected": false
+      },
+      "walk": {
+        "bytes": 3116106,
+        "stop": null,
+        "groups": 264772,
+        "outputBytes": 4445246,
+        "last": {
+          "flagOffset": 3116096,
+          "flag": 191,
+          "flags": "CCCCCCLC",
+          "startOut": 4445235,
+          "endOut": 4445246
+        },
+        "error": null
+      },
+      "compressLog": [
+        "early end detected"
+      ]
+    },
+    {
+      "label": "3.2-cn subsection 03127296",
+      "inputFile": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.03127296.decompressed",
+      "inputBytes": 5703200,
+      "inputSha256": "ce3ecce58634a3798882aabed7ed3db9622d6264a59f1ec5cee3abbc3b78f58d",
+      "compressedBytes": 4122489,
+      "compressedSha256": "07fcfbea0c1bcb83aeed46a1a0548935dd9433fe27264fa90b669c87bba9d83f",
+      "compressedNextBlockPadding": 135,
+      "tokens": 481170,
+      "overlaps": 36871,
+      "invalidOverlaps": 36611,
+      "invalidOverlapBytes": 437859,
+      "distanceZero": 0,
+      "examples": [
+        {
+          "token": 15,
+          "compressedOffset": 68,
+          "outputOffset": 100,
+          "index": 78,
+          "length": 18,
+          "ringIndex": 82,
+          "distance": 4,
+          "badBytes": 4,
+          "observedHex": "070000000000000000000000000000000000",
+          "sequentialCopyHex": "070000000700000007000000070000000700"
+        },
+        {
+          "token": 16,
+          "compressedOffset": 74,
+          "outputOffset": 121,
+          "index": 99,
+          "length": 18,
+          "ringIndex": 103,
+          "distance": 4,
+          "badBytes": 3,
+          "observedHex": "000000050000000000000000000000000000",
+          "sequentialCopyHex": "000000050000000500000005000000050000"
+        },
+        {
+          "token": 19,
+          "compressedOffset": 83,
+          "outputOffset": 153,
+          "index": 127,
+          "length": 18,
+          "ringIndex": 135,
+          "distance": 8,
+          "badBytes": 2,
+          "observedHex": "000000030000000100000000000000000000",
+          "sequentialCopyHex": "000000030000000100000003000000010000"
+        }
+      ],
+      "dcd": {
+        "decodedBytes": 5703202,
+        "prefixMatchBytes": 5703200,
+        "fullPrefixMatch": true,
+        "extraBytes": 2,
+        "extraAllZero": true,
+        "stopDetected": false
+      },
+      "walk": {
+        "bytes": 4122489,
+        "stop": null,
+        "groups": 404591,
+        "outputBytes": 5703202,
+        "last": {
+          "flagOffset": 4122479,
+          "flag": 239,
+          "flags": "CCCCLCCC",
+          "startOut": 5703188,
+          "endOut": 5703202
+        },
+        "error": null
+      },
+      "compressLog": [
+        "early end detected"
+      ]
+    },
+    {
+      "label": "3.2-cn subsection 07251968",
+      "inputFile": "output\\body-3-2-cn\\m1-3.2-cn.analysis.bin.0.07251968.decompressed",
+      "inputBytes": 339543,
+      "inputSha256": "476912e6698cabba404e7fef2374f374c518eb21dec2e7a60e0cd2fa36456b0e",
+      "compressedBytes": 115953,
+      "compressedSha256": "ccbe56d94e9bf9d21a6b216e121f8f71b66bd8044fecce2f3cb6837ef644bf6d",
+      "compressedNextBlockPadding": 783,
+      "tokens": 27384,
+      "overlaps": 8538,
+      "invalidOverlaps": 8406,
+      "invalidOverlapBytes": 94034,
+      "distanceZero": 0,
+      "examples": [
+        {
+          "token": 331,
+          "compressedOffset": 1139,
+          "outputOffset": 1547,
+          "index": 1526,
+          "length": 5,
+          "ringIndex": 1529,
+          "distance": 3,
+          "badBytes": 2,
+          "observedHex": "ffffff0000",
+          "sequentialCopyHex": "ffffffffff"
+        },
+        {
+          "token": 334,
+          "compressedOffset": 1146,
+          "outputOffset": 1564,
+          "index": 1543,
+          "length": 18,
+          "ringIndex": 1546,
+          "distance": 3,
+          "badBytes": 5,
+          "observedHex": "ff0000000000000000000000100000800000",
+          "sequentialCopyHex": "ff0000ff0000ff0000ff0000ff0000ff0000"
+        },
+        {
+          "token": 335,
+          "compressedOffset": 1148,
+          "outputOffset": 1582,
+          "index": 1561,
+          "length": 18,
+          "ringIndex": 1564,
+          "distance": 3,
+          "badBytes": 4,
+          "observedHex": "800000000000000000000000100000800000",
+          "sequentialCopyHex": "800000800000800000800000800000800000"
+        }
+      ],
+      "dcd": {
+        "decodedBytes": 339545,
+        "prefixMatchBytes": 339543,
+        "fullPrefixMatch": true,
+        "extraBytes": 2,
+        "extraAllZero": true,
+        "stopDetected": false
+      },
+      "walk": {
+        "bytes": 115953,
+        "stop": null,
+        "groups": 9841,
+        "outputBytes": 339545,
+        "last": {
+          "flagOffset": 115943,
+          "flag": 247,
+          "flags": "CCCLCCCC",
+          "startOut": 339533,
+          "endOut": 339545
+        },
+        "error": null
+      },
+      "compressLog": [
+        "early end detected"
+      ]
+    }
+  ],
+  "tester": {
+    "mismatchLines": 50,
+    "firstLoggedMismatch": {
+      "raw": [
+        363,
+        427,
+        137,
+        3,
+        409,
+        363,
+        427,
+        199,
+        3,
+        409
+      ],
+      "decompression": {
+        "compressedOffset": 363,
+        "outputOffset": 427,
+        "index": 137,
+        "length": 3,
+        "ringIndex": 409
+      },
+      "compression": {
+        "compressedOffset": 363,
+        "outputOffset": 427,
+        "index": 199,
+        "length": 3,
+        "ringIndex": 409
+      },
+      "decompressionSourceHex": "d19fe5",
+      "compressionSourceHex": "d19fe5",
+      "targetHex": "d19fe5",
+      "bothSourcesMatchTarget": true
+    },
+    "undefinedEvidence": [
+      {
+        "subsection": "00008192",
+        "decompressionLookups": 732823,
+        "compressionLookups": 733158,
+        "compressionMinusDecompression": 335,
+        "firstLookupWithoutDecompressionCounterpart": 732823,
+        "simulatedError": "TypeError: Cannot read properties of undefined (reading 'every')",
+        "note": "firmware.js line 418 indexes decompressionLookups with the compression token ordinal; the extra tokens make l1 undefined."
+      },
+      {
+        "subsection": "03127296",
+        "decompressionLookups": 479090,
+        "compressionLookups": 481170,
+        "compressionMinusDecompression": 2080,
+        "firstLookupWithoutDecompressionCounterpart": 479090,
+        "simulatedError": "TypeError: Cannot read properties of undefined (reading 'every')",
+        "note": "firmware.js line 418 indexes decompressionLookups with the compression token ordinal; the extra tokens make l1 undefined."
+      },
+      {
+        "subsection": "07251968",
+        "decompressionLookups": 26983,
+        "compressionLookups": 27384,
+        "compressionMinusDecompression": 401,
+        "firstLookupWithoutDecompressionCounterpart": 26983,
+        "simulatedError": "TypeError: Cannot read properties of undefined (reading 'every')",
+        "note": "firmware.js line 418 indexes decompressionLookups with the compression token ordinal; the extra tokens make l1 undefined."
+      }
+    ]
+  },
+  "boundaries": [
+    "Offline only: no camera/device access, no E: access, no writes to data/input or external-downloads, no firmware byte changes, no repack/flipRegion, no C: writes, no global dependency installs.",
+    "Only the existing upstream lzss compressor/decompressor are executed; this driver contains no replacement codec.",
+    "The full-subsection recompression inputs are the existing output/*.decompressed artifacts, which are themselves affected by the decoder defect. The measurements therefore describe the current pipeline, not a corrected image.",
+    "The exact corrected decompressed image was not produced; the overlap-consistent byte counts are lower bounds based on bytes that disagree with the sequential-copy rule.",
+    "No conclusion is made about whether any modified firmware would boot, pass signature checks, or be safe to flash."
+  ],
+  "review": {
+    "date": "2026-10-26",
+    "scope": "Descriptions clarified by primary agent; observed measurements are unchanged.",
+    "cameraDecoderSemanticsProven": false,
+    "countsAreConditional": true
+  }
+}

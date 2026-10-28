@@ -1,0 +1,19 @@
+{
+  "distribution": "5.0.9",
+  "bindingVersion": "5.0.7",
+  "coreVersion": [
+    5,
+    0,
+    1280
+  ],
+  "modulePath": "./temp\\tool-deps\\capstone\\__init__.py",
+  "unicorn": {
+    "bindingVersion": "2.1.4",
+    "coreVersion": [
+      2,
+      1,
+      33621247
+    ],
+    "modulePath": "./temp\\tool-deps\\unicorn\\__init__.py"
+  }
+}

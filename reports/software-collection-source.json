@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-26",
+  "source": "https://github.com/bullbin/xiaoyi_m1_re_liveview",
+  "commit": "52deda7d7ed390c2edc1a3d0c2383dc7cdf7c9ca",
+  "sha256": {
+    "udp_bitmap_decoder.py": "f527a04bb141fbaf40f3d0a4613ca692b881ca18687cfb41baaa5511f93c38de",
+    "debug_ble.py": "bc32a60a8c36b0d2a4f7579a28c30ceb0e8a602ec6ab86d9e4b34061d804dc9d",
+    "debug_html.py": "59330e1e301aa37560c479107b1009b0fdb2bb3134bbefdf46517c7a55ada580",
+    "prot_ble/ble_keyhack.py": "be361f65e2cc35289900f6611f0004d180bda21d4eecbf16ccb2267e174d4bab",
+    "prot_http/command_http.py": "99607c940915ee0406a9288692a200adc66d78c471562774ea94382f30f5f675"
+  },
+  "scope": "Downloaded and reviewed only. Not executed, dependencies not installed, no camera connection.",
+  "limits": [
+    "Upstream targets 3.2-int; CN compatibility not verified.",
+    "Prototype UDP assembler discards out-of-order packets; incomplete frames cannot be treated as exposure or timing evidence.",
+    "Do not auto-pair with the closest device without identifying the user camera; upstream debug script prints credentials."
+  ]
+}

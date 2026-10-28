@@ -1,0 +1,101 @@
+{
+  "containers": {
+    "3.2-cn": [
+      {
+        "header": "LENGTH=7370752 C59Y1 VER=M1CN DVR=Ver1.42 SUM=937552776 ND1 IPL PTBL",
+        "length": 7370752,
+        "declaredSum": 937552776,
+        "byteSum": 937552776,
+        "match": true
+      },
+      {
+        "header": "ND1 LENGTH=4197888 C59Y1 VER=M1CN DVR=Ver1.42 SUM=299791776 OFFSET=23068672",
+        "length": 4197888,
+        "declaredSum": 299791776,
+        "byteSum": 299791776,
+        "match": true
+      },
+      {
+        "header": "IPL LENGTH=131072 C59Y1 VER=M1CN DVR=Ver1.42 SUM=5714438",
+        "length": 131072,
+        "declaredSum": 5714438,
+        "byteSum": 5714438,
+        "match": true
+      },
+      {
+        "header": "PTBL LENGTH=4096  C59Y1 VER=M1CN SUM=5181",
+        "length": 4096,
+        "declaredSum": 5181,
+        "byteSum": 5181,
+        "match": true
+      }
+    ],
+    "3.1-cn": [
+      {
+        "header": "LENGTH=7370752 C59Y1 VER=M1CN DVR=Ver1.41 SUM=937581482 ND1 IPL PTBL",
+        "length": 7370752,
+        "declaredSum": 937581482,
+        "byteSum": 937581482,
+        "match": true
+      },
+      {
+        "header": "ND1 LENGTH=4197888 C59Y1 VER=M1CN DVR=Ver1.41 SUM=299791776 OFFSET=23068672",
+        "length": 4197888,
+        "declaredSum": 299791776,
+        "byteSum": 299791776,
+        "match": true
+      },
+      {
+        "header": "IPL LENGTH=131072 C59Y1 VER=M1CN DVR=Ver1.41 SUM=5714438",
+        "length": 131072,
+        "declaredSum": 5714438,
+        "byteSum": 5714438,
+        "match": true
+      },
+      {
+        "header": "PTBL LENGTH=4096  C59Y1 VER=M1CN SUM=5181",
+        "length": 4096,
+        "declaredSum": 5181,
+        "byteSum": 5181,
+        "match": true
+      }
+    ]
+  },
+  "decodeSemantics3_2": {
+    ".text": {
+      "snapshotSha256": "c6342036374e97ace58101e220924f25d2ca322aa7caba35f196827de50af676",
+      "sequentialSha256": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+      "differingRuns": 2277,
+      "differingBytes": 7064,
+      "wordsExamined": 2979,
+      "invalidArmWords": {
+        "snapshot": 85,
+        "sequential": 13
+      }
+    },
+    ".rodata": {
+      "snapshotSha256": "ce3ecce58634a3798882aabed7ed3db9622d6264a59f1ec5cee3abbc3b78f58d",
+      "sequentialSha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+      "differingRuns": 164114,
+      "differingBytes": 795745,
+      "runsInAsciiContext": 2168,
+      "bytesInAsciiContext": 14404,
+      "printableRatio": {
+        "snapshot": 0.8079,
+        "sequential": 0.9704
+      }
+    },
+    ".data": {
+      "snapshotSha256": "476912e6698cabba404e7fef2374f374c518eb21dec2e7a60e0cd2fa36456b0e",
+      "sequentialSha256": "0c7bc4e420b8b24ad6ca36f0c931d415add9a56a23cf70537e9b79e545c5df98",
+      "differingRuns": 29731,
+      "differingBytes": 175206,
+      "runsInAsciiContext": 199,
+      "bytesInAsciiContext": 728,
+      "printableRatio": {
+        "snapshot": 0.8338,
+        "sequential": 1.0
+      }
+    }
+  }
+}

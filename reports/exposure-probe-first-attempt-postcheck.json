@@ -1,0 +1,528 @@
+{
+  "date": "2026-10-26",
+  "capture": "output\\live-captures\\20261026-071721-iso-probe-5fac24",
+  "rawZipSha256": "28f366daff887d381502e85735493950f72e960e99c62019d3c0f7da960d7faf",
+  "originalAutomationResult": {
+    "error": "TimeoutError: Fresh stream metadata not confirmed for {'ColorMode': 'Standard', 'ISOSetting': '100'}",
+    "restoration": {
+      "ISO": "unchanged",
+      "ColorMode": "not-confirmed: Fresh stream metadata not confirmed for {'ColorMode': 'HContrastBW'}"
+    }
+  },
+  "settingRequests": [
+    {
+      "field": "ColorMode",
+      "value": "Standard",
+      "purpose": "temporary-neutral-style",
+      "elapsedSeconds": 1.6568831999320537
+    },
+    {
+      "field": "ColorMode",
+      "value": "HContrastBW",
+      "purpose": "restore-original-style",
+      "elapsedSeconds": 4.277167199994437
+    }
+  ],
+  "metadataPrefixes": 50,
+  "completeJpegs": 6,
+  "isoValuesObserved": [
+    "100"
+  ],
+  "standardStylePrefixes": 22,
+  "restoredOriginalStylePrefixes": [
+    {
+      "frameIndex": 54,
+      "prefixStartedSeconds": 5.135389999952167,
+      "confirmedSeconds": 5.135466399951838,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 55,
+      "prefixStartedSeconds": 5.178247799980454,
+      "confirmedSeconds": 5.178326399996877,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 57,
+      "prefixStartedSeconds": 5.457593100029044,
+      "confirmedSeconds": 5.457680099993013,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 63,
+      "prefixStartedSeconds": 8.132789499941282,
+      "confirmedSeconds": 8.13289959996473,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    }
+  ],
+  "events": [
+    {
+      "frameIndex": 0,
+      "prefixStartedSeconds": 0.6181934999767691,
+      "confirmedSeconds": 0.6217670999467373,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 1,
+      "prefixStartedSeconds": 0.7022812999784946,
+      "confirmedSeconds": 0.7024000999517739,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 3,
+      "prefixStartedSeconds": 0.8770913999760523,
+      "confirmedSeconds": 0.8771646999521181,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 4,
+      "prefixStartedSeconds": 0.9151369000319391,
+      "confirmedSeconds": 0.9152692999923602,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 5,
+      "prefixStartedSeconds": 0.9995906000258401,
+      "confirmedSeconds": 0.9996665000217035,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 6,
+      "prefixStartedSeconds": 1.0532114999368787,
+      "confirmedSeconds": 1.0534505000105128,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 7,
+      "prefixStartedSeconds": 1.1103446999331936,
+      "confirmedSeconds": 1.1104271999793127,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 8,
+      "prefixStartedSeconds": 1.208589999936521,
+      "confirmedSeconds": 1.2086882999865338,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 9,
+      "prefixStartedSeconds": 1.2285161999752745,
+      "confirmedSeconds": 1.2286532999714836,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 10,
+      "prefixStartedSeconds": 1.325775400036946,
+      "confirmedSeconds": 1.3260154000017792,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 11,
+      "prefixStartedSeconds": 1.3392411000095308,
+      "confirmedSeconds": 1.3393343000207096,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 12,
+      "prefixStartedSeconds": 1.3975985000142828,
+      "confirmedSeconds": 1.3976673999568447,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 13,
+      "prefixStartedSeconds": 1.473566300002858,
+      "confirmedSeconds": 1.4736344999400899,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 14,
+      "prefixStartedSeconds": 1.553078299970366,
+      "confirmedSeconds": 1.5531490999273956,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 15,
+      "prefixStartedSeconds": 1.626283699995838,
+      "confirmedSeconds": 1.6265933000249788,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 16,
+      "prefixStartedSeconds": 1.6553080999292433,
+      "confirmedSeconds": 1.6554820999735966,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 17,
+      "prefixStartedSeconds": 1.7574817000422627,
+      "confirmedSeconds": 1.757630700012669,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 18,
+      "prefixStartedSeconds": 1.7791827999753878,
+      "confirmedSeconds": 1.7793093000072986,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 19,
+      "prefixStartedSeconds": 1.8776033000322059,
+      "confirmedSeconds": 1.8776721999747679,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 20,
+      "prefixStartedSeconds": 1.9616548999911174,
+      "confirmedSeconds": 1.9617839999264106,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 21,
+      "prefixStartedSeconds": 1.988278100034222,
+      "confirmedSeconds": 1.9883840000256896,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 22,
+      "prefixStartedSeconds": 2.1029352999757975,
+      "confirmedSeconds": 2.1030667999293655,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 23,
+      "prefixStartedSeconds": 2.1801542999455705,
+      "confirmedSeconds": 2.180264199967496,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 24,
+      "prefixStartedSeconds": 2.18225169996731,
+      "confirmedSeconds": 2.1890684999525547,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 25,
+      "prefixStartedSeconds": 2.3235101000173017,
+      "confirmedSeconds": 2.323579699965194,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 26,
+      "prefixStartedSeconds": 2.4206994000123814,
+      "confirmedSeconds": 2.420769599964842,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 27,
+      "prefixStartedSeconds": 2.481310199946165,
+      "confirmedSeconds": 2.481474000029266,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 28,
+      "prefixStartedSeconds": 2.583845500019379,
+      "confirmedSeconds": 2.5839167999802157,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 29,
+      "prefixStartedSeconds": 2.6942718999926,
+      "confirmedSeconds": 2.6943518000189215,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 30,
+      "prefixStartedSeconds": 2.742255699937232,
+      "confirmedSeconds": 2.742422000039369,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 31,
+      "prefixStartedSeconds": 2.771643799962476,
+      "confirmedSeconds": 2.771729900036007,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 32,
+      "prefixStartedSeconds": 2.8862030999734998,
+      "confirmedSeconds": 2.886310899979435,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 34,
+      "prefixStartedSeconds": 3.0350358999567106,
+      "confirmedSeconds": 3.035112499957904,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 35,
+      "prefixStartedSeconds": 3.1094906999496743,
+      "confirmedSeconds": 3.1095722999889404,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 36,
+      "prefixStartedSeconds": 3.137402700027451,
+      "confirmedSeconds": 3.1375483999727294,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 37,
+      "prefixStartedSeconds": 3.1876580000389367,
+      "confirmedSeconds": 3.1877626000205055,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 38,
+      "prefixStartedSeconds": 3.29299240000546,
+      "confirmedSeconds": 3.2930817999877036,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 39,
+      "prefixStartedSeconds": 3.2951744999736547,
+      "confirmedSeconds": 3.2952397000044584,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 40,
+      "prefixStartedSeconds": 3.416005300008692,
+      "confirmedSeconds": 3.4161708999890834,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 41,
+      "prefixStartedSeconds": 3.473093600012362,
+      "confirmedSeconds": 3.4731645999709144,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 43,
+      "prefixStartedSeconds": 3.7432708999840543,
+      "confirmedSeconds": 3.7433558999327943,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 44,
+      "prefixStartedSeconds": 3.8937789000337943,
+      "confirmedSeconds": 3.8939332999289036,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 46,
+      "prefixStartedSeconds": 4.1850606999360025,
+      "confirmedSeconds": 4.185592900030315,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 51,
+      "prefixStartedSeconds": 4.761570799979381,
+      "confirmedSeconds": 4.761736599961296,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 52,
+      "prefixStartedSeconds": 4.790267699980177,
+      "confirmedSeconds": 4.7908263999270275,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 53,
+      "prefixStartedSeconds": 4.894099400029518,
+      "confirmedSeconds": 4.900808500009589,
+      "ColorMode": "Standard",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 54,
+      "prefixStartedSeconds": 5.135389999952167,
+      "confirmedSeconds": 5.135466399951838,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 55,
+      "prefixStartedSeconds": 5.178247799980454,
+      "confirmedSeconds": 5.178326399996877,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 57,
+      "prefixStartedSeconds": 5.457593100029044,
+      "confirmedSeconds": 5.457680099993013,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    },
+    {
+      "frameIndex": 63,
+      "prefixStartedSeconds": 8.132789499941282,
+      "confirmedSeconds": 8.13289959996473,
+      "ColorMode": "HContrastBW",
+      "ISOSetting": "100",
+      "Fnumber": "3.5",
+      "ShutterSpeed": "1.3s"
+    }
+  ],
+  "postcheckConclusion": "ISO was never changed. Original HContrastBW/ISO100 restoration is confirmed by complete metadata prefixes recorded after the restore request; the original JPEG-dependent check missed them.",
+  "limits": [
+    "No ISO brightness comparison completed.",
+    "Partial JPEG payload is not treated as a valid image.",
+    "Metadata confirms reported settings, not sensor register values."
+  ]
+}

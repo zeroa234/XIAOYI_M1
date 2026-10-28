@@ -1,0 +1,37 @@
+{
+  "historicalPage": "https://web.archive.org/web/20180119102548id_/http://www.xiaoyi.com:80/weidan_download.html",
+  "historicalHref": "http://xiaoyi-publicfiles.oss-cn-shanghai.aliyuncs.com/firmware/3.1-cn.zip",
+  "downloadedUrl": "https://xiaoyi-publicfiles.oss-cn-shanghai.aliyuncs.com/firmware/3.1-cn.zip",
+  "files": [
+    {
+      "file": "data\\input\\body-3-1-cn\\3.1-cn.zip",
+      "size": 10482291,
+      "sha256": "b20535b56460899f80fcc2c81a04e952d961c686ec2cff85f2500a4dab09d307"
+    },
+    {
+      "file": "data\\input\\body-3-1-cn\\YI-M1 视频功能使用说明.pdf",
+      "archive_entry": "3.1-cn/YI-M1 视频功能使用说明.pdf",
+      "size": 1652321,
+      "sha256": "8bfe0467a2759699f8021e12d0517848b3755ef4f71e8586e1d2e5aadb8bb449"
+    },
+    {
+      "file": "data\\input\\body-3-1-cn\\firmware.bin",
+      "archive_entry": "3.1-cn/firmware.bin",
+      "size": 11704832,
+      "sha256": "97dfa394efc91f8643c3b1a0673be2dd96590754b29080ce60d3498ebe3d15be"
+    },
+    {
+      "file": "data\\input\\body-3-1-cn\\固件v3.1-cn_Release Note.pdf",
+      "archive_entry": "3.1-cn/固件v3.1-cn_Release Note.pdf",
+      "size": 334706,
+      "sha256": "c59795209447e3789d0f66be66060eedb4d65b960a038e525e47e454dc5f5f09"
+    },
+    {
+      "file": "data\\input\\body-3-1-cn\\小蚁微单相机M1使用SD卡升级固件方法.pdf",
+      "archive_entry": "3.1-cn/小蚁微单相机M1使用SD卡升级固件方法.pdf",
+      "size": 469255,
+      "sha256": "e6c5e559674ce60d28f2007f478eb9da0a9532446fba2e1c1f78114622155814"
+    }
+  ],
+  "purpose": "Offline comparison only. Downgrade compatibility and stability are unverified."
+}
