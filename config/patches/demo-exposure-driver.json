@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "id": "demo-exposure-driver",
+  "base_version": "3.2-cn",
+  "status": "experimental-offline-only",
+  "description": "实验性 M 档曝光预览：在取景时间施加调用点 0x365684 接入包装器，仅当当前 AE 模式为 M 且 0xc150f9f4 非零时，用原 0x35d254 缩放时间，再调用原 0x35b35c；非 M 原样调用。",
+  "patches": [
+    {
+      "section": ".text",
+      "va": "0x365684",
+      "orig_hex": "34d7ffeb",
+      "new_hex": "b71100eb",
+      "note": "把原 bl 0x35b35c 改为 bl 0x369d68；调用点 r0=state+0x38、r1=0，由原指令核实。"
+    },
+    {
+      "section": ".text",
+      "va": "0x369d68",
+      "orig_hex": "c496f2eb04431fe53c0194e565f1ffeb0600000aed8bf8eb74f1ffeb6b8df8eb315102eb7ff1ffeb0b8cf8eb9e2901ebe4521fe5b400c5e14c7194e53edbffeb690500eb0100009a3bdbffeb016040e20700b0e177f1ffeb2180feeb3c731fe50630a0e10710a0e1",
+      "new_hex": "10402de904d04de20f102de94c309fe54c30d3e5010053e30900001a40309fe5003093e5000053e30500000a00009de50310a0e12ccdffeb0010a0e36cc5ffeb020000ea00009de504109de568c5ffeb00008de50f10bde804d08de21080bde8949646c1f4f950c1",
+      "note": "104 字节包装器（0x369d68-0x369dcf）；M 且 EV 非零时 0x35d254(time,ev) -> 0x35b35c(scaled,0)，否则 0x35b35c(time,0)；保存 r4/LR 与 r0-r3/ip，恢复 r4/SP 与 r1-r3/ip，并返回原驱动 r0；不显式保存/恢复 CPSR，标志由最后一次原驱动调用决定，局部夹具与基线一致；不写 state+0x38。"
+    }
+  ],
+  "limits": [
+    "0xc150f9f4 的十分之一 EV 语义没有物理标定；本补丁不声称绝对曝光预览或精确 EV 倍率。",
+    "缩放后的时间可能超过帧周期；原 0x391fdc/0x35b35c 的帧期处理与原驱动限幅继续执行，未证明全部长快门/边界都正确。",
+    "M 门控读当前 ctrl+0x4c（0x36e8b8 复制到 snapshot+0x1c，0x361ad4 复制到 cfg+8）；静态已核对主要写入路径，但未做全程序别名穷举。",
+    "包装器占用 0x369d68-0x369dcf 共 104 字节，位于 176 字节候选死区；死区可达性仍是既有静态扫描结论，未重新做全量动态证明。",
+    "未在相机验证；非 M 仅由 Unicorn 局部夹具验证，不能外推整机所有模式/AF/闪光/录像/长曝光。",
+    "未实现用户快门直接映射到驱动；当前采用测光 EV 缓存，若需绝对快门预览需另行核实 setting+0xc 到时间单位的映射。"
+  ],
+  "enabled_by_default": false,
+  "requires_camera_validation": true
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-29",
+  "status": "offline-review-only-not-recovery-firmware",
+  "candidate": "output/firmware-builds/offline-system-3-2cn-v1/firmware.bin",
+  "sha256": "f7cf40d43dd0cdbc502b54db92562fbef71cebef2a699f4a82bac1b1320f7019",
+  "scope": [
+    "remote command bound correction",
+    "same-length visible version 3.2-s1"
+  ],
+  "excluded": [
+    "exposure preview hook",
+    "custom shutter sound"
+  ],
+  "changedPlainBytes": 8,
+  "allPackedLengthsUnchanged": true,
+  "newMatches": 0,
+  "initialDictionaryReferences": {
+    ".text": {
+      "packedBytes": 3117324,
+      "unwrittenInitialReferences": 0,
+      "zeroDistanceReferences": 0
+    },
+    ".rodata": {
+      "packedBytes": 4124532,
+      "unwrittenInitialReferences": 0,
+      "zeroDistanceReferences": 0
+    },
+    ".data": {
+      "packedBytes": 116761,
+      "unwrittenInitialReferences": 0,
+      "zeroDistanceReferences": 0
+    }
+  },
+  "nativeDecodeVerified": false,
+  "cameraTested": false,
+  "bootFailureRootCauseConfirmed": false,
+  "currentBrickedCameraRecoverySupported": false,
+  "fileDifferentBytes": 11,
+  "independentVerifierRechecked": true,
+  "independentVerifierCommand": "python -B scripts/verify-build.py output/firmware-builds/offline-system-3-2cn-v1/firmware.bin",
+  "independentVerifierExitCode": 0,
+  "newFirmwareCreated": false,
+  "candidateBytesUnchanged": true
+}

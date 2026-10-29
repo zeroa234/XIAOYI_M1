@@ -1,0 +1,219 @@
+{
+  "passed": true,
+  "inputsUnchanged": true,
+  "results": [
+    {
+      "name": "lens-12-40",
+      "path": "data/input/lens-12-40/LENS_FW.lin",
+      "bytes": 327744,
+      "sha256": "5d472041913897ee9ede60b81abf154720f10e8d90bf970efa51708dd938b8bd",
+      "headerHex": "414c0110000000000000fa000000050000110000000000000000000000000000",
+      "trailerHex": "414c0110000000000000fa0000000500001100000000000000000000cb2aaa14",
+      "headerWordsLE": [
+        "0x10014c41",
+        "0x0",
+        "0xfa0000",
+        "0x50000",
+        "0x1100",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "payloadBytes": 327680,
+      "payloadSha256": "532025ac6062c501097b133ce5813287b13e20f7ae7f71b52108671d1c6daa98",
+      "first28BytesMirrored": true,
+      "trailingWord": "0x14aa2acb",
+      "trailingWordMeaning": "unknown",
+      "finiteChecksumComparisons": [
+        {
+          "range": "payload",
+          "values": {
+            "crc32IEEE": "0xcf13a607",
+            "adler32": "0x89663d94",
+            "byteSum": "0x1302bc3"
+          },
+          "matches": []
+        },
+        {
+          "range": "header-plus-payload",
+          "values": {
+            "crc32IEEE": "0x88907852",
+            "adler32": "0x31a63f42",
+            "byteSum": "0x1302d71"
+          },
+          "matches": []
+        },
+        {
+          "range": "except-last-four",
+          "values": {
+            "crc32IEEE": "0x42cc4506",
+            "adler32": "0x40a640f0",
+            "byteSum": "0x1302f1f"
+          },
+          "matches": []
+        }
+      ],
+      "architectureHypothesis": null
+    },
+    {
+      "name": "lens-42-5",
+      "path": "data/input/lens-42-5/LENS_FW.lin",
+      "bytes": 262208,
+      "sha256": "1b2f10ad20f4cb30e4b21b30b869cd6b962990ca5921d4bd91c697b6f6f6758a",
+      "headerHex": "414c021002000000000000000000040000110000000000000000000000000000",
+      "trailerHex": "414c021002000000000000000000040000110000000000000000000054c8b474",
+      "headerWordsLE": [
+        "0x10024c41",
+        "0x2",
+        "0x0",
+        "0x40000",
+        "0x1100",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "payloadBytes": 262144,
+      "payloadSha256": "41fcbeced8449a7cc72eb383980ce847c3c4f09cb2746af06cc1a84611c1e2fd",
+      "first28BytesMirrored": true,
+      "trailingWord": "0x74b4c854",
+      "trailingWordMeaning": "unknown",
+      "finiteChecksumComparisons": [
+        {
+          "range": "payload",
+          "values": {
+            "crc32IEEE": "0x8be755a8",
+            "adler32": "0x30005771",
+            "byteSum": "0xd54af5"
+          },
+          "matches": []
+        },
+        {
+          "range": "header-plus-payload",
+          "values": {
+            "crc32IEEE": "0x82d232db",
+            "adler32": "0x6fa75827",
+            "byteSum": "0xd54bab"
+          },
+          "matches": []
+        },
+        {
+          "range": "except-last-four",
+          "values": {
+            "crc32IEEE": "0x87097b0f",
+            "adler32": "0x268858dd",
+            "byteSum": "0xd54c61"
+          },
+          "matches": []
+        }
+      ],
+      "architectureHypothesis": {
+        "interpretation": "ARM Thumb with zero-based payload; not externally established",
+        "initialWord0": "0x20001250",
+        "initialWord1": "0x6e1",
+        "inferredEntry": "0x6e0",
+        "disassembly": [
+          {
+            "address": "0x6e0",
+            "raw": "80b5",
+            "assembly": "push {r7, lr}"
+          },
+          {
+            "address": "0x6e2",
+            "raw": "fff7adff",
+            "assembly": "bl #0x640"
+          },
+          {
+            "address": "0x6e6",
+            "raw": "02f075f8",
+            "assembly": "bl #0x27d4"
+          },
+          {
+            "address": "0x6ea",
+            "raw": "0348",
+            "assembly": "ldr r0, [pc, #0xc]"
+          },
+          {
+            "address": "0x6ec",
+            "raw": "0349",
+            "assembly": "ldr r1, [pc, #0xc]"
+          },
+          {
+            "address": "0x6ee",
+            "raw": "0160",
+            "assembly": "str r1, [r0]"
+          },
+          {
+            "address": "0x6f0",
+            "raw": "bde80140",
+            "assembly": "pop.w {r0, lr}"
+          },
+          {
+            "address": "0x6f4",
+            "raw": "03f084be",
+            "assembly": "b.w #0x4400"
+          },
+          {
+            "address": "0x6f8",
+            "raw": "08ed00e0",
+            "assembly": "stc p0, c14, [r8, #-0]"
+          },
+          {
+            "address": "0x6fc",
+            "raw": "0042",
+            "assembly": "tst r0, r0"
+          },
+          {
+            "address": "0x6fe",
+            "raw": "0000",
+            "assembly": "movs r0, r0"
+          },
+          {
+            "address": "0x700",
+            "raw": "fee7",
+            "assembly": "b #0x700"
+          },
+          {
+            "address": "0x702",
+            "raw": "fee7",
+            "assembly": "b #0x702"
+          },
+          {
+            "address": "0x704",
+            "raw": "0000",
+            "assembly": "movs r0, r0"
+          },
+          {
+            "address": "0x706",
+            "raw": "0000",
+            "assembly": "movs r0, r0"
+          },
+          {
+            "address": "0x708",
+            "raw": "0000",
+            "assembly": "movs r0, r0"
+          },
+          {
+            "address": "0x70a",
+            "raw": "0000",
+            "assembly": "movs r0, r0"
+          },
+          {
+            "address": "0x70c",
+            "raw": "0000",
+            "assembly": "movs r0, r0"
+          },
+          {
+            "address": "0x70e",
+            "raw": "0000",
+            "assembly": "movs r0, r0"
+          }
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Wrapper field meanings beyond observed lengths/mirrors are not established.",
+    "Finite checksum comparisons do not prove that no checksum exists.",
+    "No CPU or lens performance claim; these inputs are not part of the body system candidate."
+  ]
+}

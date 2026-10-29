@@ -1,0 +1,132 @@
+{
+  "name": "offline-system-3-2cn-v1",
+  "outputSha256": "f7cf40d43dd0cdbc502b54db92562fbef71cebef2a699f4a82bac1b1320f7019",
+  "outputBytes": 11704832,
+  "rawDifferentBytes": 11,
+  "rawDifferences": [
+    {
+      "offset": "0x34",
+      "before": 55,
+      "after": 53
+    },
+    {
+      "offset": "0x35",
+      "before": 55,
+      "after": 56
+    },
+    {
+      "offset": "0x36",
+      "before": 54,
+      "after": 49
+    },
+    {
+      "offset": "0x100194",
+      "before": 90,
+      "after": 45
+    },
+    {
+      "offset": "0x100195",
+      "before": 15,
+      "after": 0
+    },
+    {
+      "offset": "0x4101b4",
+      "before": 99,
+      "after": 115
+    },
+    {
+      "offset": "0x4101b5",
+      "before": 110,
+      "after": 49
+    },
+    {
+      "offset": "0x47e975",
+      "before": 99,
+      "after": 115
+    },
+    {
+      "offset": "0x47e976",
+      "before": 110,
+      "after": 49
+    },
+    {
+      "offset": "0x5e7a8d",
+      "before": 99,
+      "after": 115
+    },
+    {
+      "offset": "0x5e7a8e",
+      "before": 110,
+      "after": 49
+    }
+  ],
+  "changedPlainBytes": 8,
+  "patchSources": [
+    {
+      "path": "config/patches/command-bounds.json",
+      "sha256": "f995453b3c94d5e365bd1fdcebd5d2c6e4ed780405489844227b610b4fe814da"
+    },
+    {
+      "path": "config/patches/offline-system-identity.json",
+      "sha256": "6e27c7aae21b1de78897394af46c0e75f72babd403189b83f3d89562a5012242"
+    }
+  ],
+  "buildSections": [
+    {
+      "section": ".text",
+      "va": "0x2000",
+      "romOffset": "0x2000",
+      "oldPackedBytes": 3117324,
+      "newPackedBytes": 3117324,
+      "growth": 0,
+      "availableSlack": 1780,
+      "mappedBytes": 4445240,
+      "fullDecodedBytes": 4445241,
+      "trailerHex": "ff",
+      "serializationIdentical": true,
+      "replacedTokens": 2,
+      "dependentTokens": 0,
+      "newLiterals": 2,
+      "changedByteCount": 2,
+      "retainedTokens": 2119554
+    },
+    {
+      "section": ".rodata",
+      "va": "0x43f800",
+      "romOffset": "0x2fb800",
+      "oldPackedBytes": 4124532,
+      "newPackedBytes": 4124532,
+      "growth": 0,
+      "availableSlack": 140,
+      "mappedBytes": 5703192,
+      "fullDecodedBytes": 5703192,
+      "trailerHex": "",
+      "serializationIdentical": true,
+      "replacedTokens": 6,
+      "dependentTokens": 0,
+      "newLiterals": 6,
+      "changedByteCount": 6,
+      "retainedTokens": 3240386
+    },
+    {
+      "section": ".data",
+      "va": "0xc09b0000",
+      "romOffset": "0x6ea800",
+      "oldPackedBytes": 116761,
+      "newPackedBytes": 116761,
+      "growth": 0,
+      "availableSlack": 2023,
+      "mappedBytes": 339536,
+      "fullDecodedBytes": 339537,
+      "trailerHex": "ff",
+      "serializationIdentical": true,
+      "replacedTokens": 0,
+      "dependentTokens": 0,
+      "newLiterals": 0,
+      "changedByteCount": 0
+    }
+  ],
+  "independentDiskVerificationPassed": true,
+  "cameraTested": false,
+  "nativeDecodeVerified": false
+}

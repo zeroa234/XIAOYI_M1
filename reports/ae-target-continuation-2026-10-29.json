@@ -1,0 +1,410 @@
+{
+  "passed": true,
+  "inputHashes": {
+    "text": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+    "rodata": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+    "data": "0c7bc4e420b8b24ad6ca36f0c931d415add9a56a23cf70537e9b79e545c5df98"
+  },
+  "externalCallStubs": 0,
+  "gateCases": [
+    {
+      "cfg57": 0,
+      "stateE0": 0,
+      "reached": "0x362bbc"
+    },
+    {
+      "cfg57": 0,
+      "stateE0": 1,
+      "reached": "0x362bbc"
+    },
+    {
+      "cfg57": 0,
+      "stateE0": 2,
+      "reached": "0x362bbc"
+    },
+    {
+      "cfg57": 0,
+      "stateE0": 255,
+      "reached": "0x362bbc"
+    },
+    {
+      "cfg57": 1,
+      "stateE0": 0,
+      "reached": "0x364504"
+    },
+    {
+      "cfg57": 1,
+      "stateE0": 1,
+      "reached": "0x364504"
+    },
+    {
+      "cfg57": 1,
+      "stateE0": 2,
+      "reached": "0x362bbc"
+    },
+    {
+      "cfg57": 1,
+      "stateE0": 255,
+      "reached": "0x364504"
+    },
+    {
+      "cfg57": 2,
+      "stateE0": 0,
+      "reached": "0x364504"
+    },
+    {
+      "cfg57": 2,
+      "stateE0": 1,
+      "reached": "0x364504"
+    },
+    {
+      "cfg57": 2,
+      "stateE0": 2,
+      "reached": "0x362bbc"
+    },
+    {
+      "cfg57": 2,
+      "stateE0": 255,
+      "reached": "0x364504"
+    },
+    {
+      "cfg57": 255,
+      "stateE0": 0,
+      "reached": "0x364504"
+    },
+    {
+      "cfg57": 255,
+      "stateE0": 1,
+      "reached": "0x364504"
+    },
+    {
+      "cfg57": 255,
+      "stateE0": 2,
+      "reached": "0x362bbc"
+    },
+    {
+      "cfg57": 255,
+      "stateE0": 255,
+      "reached": "0x364504"
+    }
+  ],
+  "targetCases": [
+    {
+      "base": 100,
+      "compensationTenths": -50,
+      "targetBeforeNextStage": 3,
+      "targetAfterNextStage": 3
+    },
+    {
+      "base": 100,
+      "compensationTenths": -33,
+      "targetBeforeNextStage": 10,
+      "targetAfterNextStage": 10
+    },
+    {
+      "base": 100,
+      "compensationTenths": -20,
+      "targetBeforeNextStage": 25,
+      "targetAfterNextStage": 25
+    },
+    {
+      "base": 100,
+      "compensationTenths": -10,
+      "targetBeforeNextStage": 50,
+      "targetAfterNextStage": 50
+    },
+    {
+      "base": 100,
+      "compensationTenths": 0,
+      "targetBeforeNextStage": 100,
+      "targetAfterNextStage": 100
+    },
+    {
+      "base": 100,
+      "compensationTenths": 10,
+      "targetBeforeNextStage": 200,
+      "targetAfterNextStage": 200
+    },
+    {
+      "base": 100,
+      "compensationTenths": 20,
+      "targetBeforeNextStage": 400,
+      "targetAfterNextStage": 337
+    },
+    {
+      "base": 100,
+      "compensationTenths": 33,
+      "targetBeforeNextStage": 984,
+      "targetAfterNextStage": 739
+    },
+    {
+      "base": 100,
+      "compensationTenths": 50,
+      "targetBeforeNextStage": 3200,
+      "targetAfterNextStage": 2262
+    },
+    {
+      "base": 3869,
+      "compensationTenths": -50,
+      "targetBeforeNextStage": 121,
+      "targetAfterNextStage": 121
+    },
+    {
+      "base": 3869,
+      "compensationTenths": -33,
+      "targetBeforeNextStage": 392,
+      "targetAfterNextStage": 392
+    },
+    {
+      "base": 3869,
+      "compensationTenths": -20,
+      "targetBeforeNextStage": 967,
+      "targetAfterNextStage": 967
+    },
+    {
+      "base": 3869,
+      "compensationTenths": -10,
+      "targetBeforeNextStage": 1934,
+      "targetAfterNextStage": 1934
+    },
+    {
+      "base": 3869,
+      "compensationTenths": 0,
+      "targetBeforeNextStage": 3869,
+      "targetAfterNextStage": 3869
+    },
+    {
+      "base": 3869,
+      "compensationTenths": 10,
+      "targetBeforeNextStage": 7738,
+      "targetAfterNextStage": 7738
+    },
+    {
+      "base": 3869,
+      "compensationTenths": 20,
+      "targetBeforeNextStage": 15476,
+      "targetAfterNextStage": 13057
+    },
+    {
+      "base": 3869,
+      "compensationTenths": 33,
+      "targetBeforeNextStage": 38106,
+      "targetAfterNextStage": 28616
+    },
+    {
+      "base": 3869,
+      "compensationTenths": 50,
+      "targetBeforeNextStage": 123808,
+      "targetAfterNextStage": 87536
+    },
+    {
+      "base": 100000,
+      "compensationTenths": -50,
+      "targetBeforeNextStage": 3130,
+      "targetAfterNextStage": 3130
+    },
+    {
+      "base": 100000,
+      "compensationTenths": -33,
+      "targetBeforeNextStage": 10150,
+      "targetAfterNextStage": 10150
+    },
+    {
+      "base": 100000,
+      "compensationTenths": -20,
+      "targetBeforeNextStage": 25000,
+      "targetAfterNextStage": 25000
+    },
+    {
+      "base": 100000,
+      "compensationTenths": -10,
+      "targetBeforeNextStage": 50000,
+      "targetAfterNextStage": 50000
+    },
+    {
+      "base": 100000,
+      "compensationTenths": 0,
+      "targetBeforeNextStage": 100000,
+      "targetAfterNextStage": 100000
+    },
+    {
+      "base": 100000,
+      "compensationTenths": 10,
+      "targetBeforeNextStage": 200000,
+      "targetAfterNextStage": 200000
+    },
+    {
+      "base": 100000,
+      "compensationTenths": 20,
+      "targetBeforeNextStage": 400000,
+      "targetAfterNextStage": 337500
+    },
+    {
+      "base": 100000,
+      "compensationTenths": 33,
+      "targetBeforeNextStage": 984920,
+      "targetAfterNextStage": 739632
+    },
+    {
+      "base": 100000,
+      "compensationTenths": 50,
+      "targetBeforeNextStage": 3200000,
+      "targetAfterNextStage": 2262500
+    }
+  ],
+  "programCases": [
+    {
+      "target": 0,
+      "programField4": 4000,
+      "programField6": 100,
+      "outputTriple": [
+        66696,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 100,
+      "programField4": 4000,
+      "programField6": 100,
+      "outputTriple": [
+        66696,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 3869,
+      "programField4": 4000,
+      "programField6": 100,
+      "outputTriple": [
+        66696,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 13057,
+      "programField4": 4000,
+      "programField6": 100,
+      "outputTriple": [
+        66696,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 0,
+      "programField4": 8000,
+      "programField6": 200,
+      "outputTriple": [
+        4448,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 100,
+      "programField4": 8000,
+      "programField6": 200,
+      "outputTriple": [
+        4448,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 3869,
+      "programField4": 8000,
+      "programField6": 200,
+      "outputTriple": [
+        4448,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 13057,
+      "programField4": 8000,
+      "programField6": 200,
+      "outputTriple": [
+        4448,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 0,
+      "programField4": 2000,
+      "programField6": 400,
+      "outputTriple": [
+        258256,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 100,
+      "programField4": 2000,
+      "programField6": 400,
+      "outputTriple": [
+        258256,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 3869,
+      "programField4": 2000,
+      "programField6": 400,
+      "outputTriple": [
+        258256,
+        100,
+        0
+      ]
+    },
+    {
+      "target": 13057,
+      "programField4": 2000,
+      "programField6": 400,
+      "outputTriple": [
+        258256,
+        100,
+        0
+      ]
+    }
+  ],
+  "outputCases": [
+    {
+      "compensationTenths": -50,
+      "cfgReads": [],
+      "outputHex": "ef00112233445566778899aabbccddeeff102132435465768798a9bacbdcedfe0f2031420718293a4b5c6d7e8b9cadbe233445567f90a1b2f708192a9c400220b0c1d2e349cc899acccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "stackRestored": true
+    },
+    {
+      "compensationTenths": 0,
+      "cfgReads": [],
+      "outputHex": "ef00112233445566778899aabbccddeeff102132435465768798a9bacbdcedfe0f2031420718293a4b5c6d7e8b9cadbe233445567f90a1b2f708192a9c400220b0c1d2e349cc899acccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "stackRestored": true
+    },
+    {
+      "compensationTenths": 50,
+      "cfgReads": [],
+      "outputHex": "ef00112233445566778899aabbccddeeff102132435465768798a9bacbdcedfe0f2031420718293a4b5c6d7e8b9cadbe233445567f90a1b2f708192a9c400220b0c1d2e349cc899acccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "stackRestored": true
+    }
+  ],
+  "proved": [
+    "The original gate can select a complete output-copy path without target recomputation.",
+    "On that path, the complete original 0x364504 function does not read cfg+0x30 and copies the supplied state.",
+    "With the documented synthetic zero-based normalization state, native target normalization and all three target stores preserve the changed target.",
+    "The next original target stage compresses positive targets above twice base; it does not always erase compensation.",
+    "The original 0x365410..0x365448 output recomputation is unchanged when only state+0xb8 varies, but changes when the program fields vary."
+  ],
+  "limits": [
+    "All configuration and algorithm state inputs are synthetic, not a camera memory trace.",
+    "Target execution stops at 0x362c0c after 0x35d280 and target stores, before the rest of AE and hardware.",
+    "The program recomputation region is tested separately with synthetic state and does not prove runtime ordering or field physical units.",
+    "No claim that the real camera selected the bypass branch; no exposure patch or firmware produced."
+  ]
+}

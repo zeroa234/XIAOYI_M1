@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-29",
+  "scope": "Sanitized public checkout only; no firmware or camera execution",
+  "tests": [
+    {
+      "command": "python -B tests/test-liveview-metadata.py",
+      "passed": 9
+    },
+    {
+      "command": "python -B tests/test-repack.py TokenTests",
+      "passed": 16
+    }
+  ],
+  "syntheticTestsPassed": 25,
+  "syntaxAndJson": {
+    "textFiles": 208,
+    "python": 44,
+    "json": 67,
+    "markdown": 64
+  },
+  "privacyIdentifierFindings": 0,
+  "binaryOrPrivateOutputFiles": 0,
+  "brokenLocalMarkdownLinks": 0,
+  "gitDiffCheckPassed": true,
+  "gitleaks": {
+    "fileScanCompleted": true,
+    "rawFindings": 1,
+    "reviewedFalsePositives": 1,
+    "unreviewedFindings": 0,
+    "finding": {
+      "path": "reports/software-collection-source.json",
+      "field": "sha256[prot_ble/ble_keyhack.py]",
+      "classification": "public upstream source-file SHA-256, not a credential",
+      "sha256": "be361f65e2cc35289900f6611f0004d180bda21d4eecbf16ccb2267e174d4bab"
+    }
+  },
+  "historicalDeviceOrFirmwareTestsRerun": false,
+  "firmwarePublished": false,
+  "privateGitHistoryPublished": false,
+  "withdrawnEntrypoints": [
+    {
+      "entrypoint": "scripts/build-integrated-demo.py",
+      "blocked": true,
+      "exitCode": 1
+    },
+    {
+      "entrypoint": "scripts/package-integrated-demo.py",
+      "blocked": true,
+      "exitCode": 1
+    }
+  ],
+  "newFirmwareCreated": false
+}

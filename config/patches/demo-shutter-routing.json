@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "id": "demo-normal-shutter-routing",
+  "status": "experimental-offline-only",
+  "description": "Normal shutter points to the custom PCM slot. Both old duplicate-boot aliases point to the retained original mono boot sound. Long-exposure opening, focus and other sound resources remain original.",
+  "patches": [
+    {
+      "section": ".text",
+      "va": "0x127594",
+      "orig_hex": "62026100",
+      "new_hex": "2c106200",
+      "note": "Normal shutter slot +8 in 0xc140e96c uses the custom sound at 0x62102c; do not redirect long-exposure opening slot +4."
+    },
+    {
+      "section": ".text",
+      "va": "0x14ed4c",
+      "orig_hex": "2c106200",
+      "new_hex": "a8e45d00",
+      "note": "Preserve sound index 1 as the original boot audio via its existing mono duplicate, before reusing the stereo duplicate storage."
+    },
+    {
+      "section": ".rodata",
+      "va": "0x61ce70",
+      "orig_hex": "2c106200",
+      "new_hex": "a8e45d00",
+      "note": "Preserve the duplicate pointer table's sound index 1 as the original boot audio; all other table entries unchanged."
+    }
+  ]
+}

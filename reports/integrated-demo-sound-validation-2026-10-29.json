@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "firmwareSha256": "6c247d53e127d0a3b3442f38b438afb15d24a7bb16fe51e6bf060fc635bc2b35",
+  "descriptorExecutions": [
+    {
+      "patched": false,
+      "pointers": [
+        "0x6014d8",
+        "0x6041e0",
+        "0x610262"
+      ]
+    },
+    {
+      "patched": true,
+      "pointers": [
+        "0x6014d8",
+        "0x6041e0",
+        "0x62102c"
+      ]
+    }
+  ],
+  "untouchedOriginalWavResources": [
+    "0x5de4a8",
+    "0x6014d8",
+    "0x6041e0",
+    "0x610262",
+    "0x61ceb0",
+    "0x66777e",
+    "0x6747b0",
+    "0x6a69ca"
+  ],
+  "customSound": {
+    "va": "0x62102c",
+    "seconds": 1.33225,
+    "channels": 1,
+    "sampleRate": 48000,
+    "bits": 16,
+    "completeConvertedPcmMatches": true,
+    "pcmSha256": "7f6f1baa35088f71389777e0e8d469a6f3a5394077fc615d940a0aa93cbe74b1"
+  },
+  "duplicateBootAliasesPreserved": true,
+  "cameraPlaybackValidated": false,
+  "limits": [
+    "Source mapping is based on static capture-call analysis, not a live-camera test.",
+    "Changing duplicate sound ID 1 to the retained original mono boot copy preserves its content; actual speaker behavior is untested."
+  ]
+}

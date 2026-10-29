@@ -1,0 +1,667 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "evidence": "Existing token parser and decoder; file-only audit",
+  "firmwareModified": false,
+  "hardwareDecodeVerified": false,
+  "rootCauseConfirmed": false,
+  "qualification": "Nonzero dictionary fills are hypothetical sensitivity probes. The hardware's actual dictionary initialization is unknown.",
+  "sources": [
+    {
+      "label": "official-3.1",
+      "path": "data/input/body-3-1-cn/firmware.bin",
+      "sha256": "97dfa394efc91f8643c3b1a0673be2dd96590754b29080ce60d3498ebe3d15be",
+      "bytes": 11704832,
+      "containerSumsPass": true,
+      "rawVectorEqualsOfficial": true,
+      "secinfoWord": "0xe42cc312",
+      "extraSectionsEqualOfficial": [
+        false,
+        false,
+        true
+      ],
+      "sections": {
+        ".text": {
+          "layout": {
+            "start": 8192,
+            "limit": 3127296,
+            "capacity": 3119104,
+            "packedSize": 3117559,
+            "plainSize": 4445200,
+            "va": 8192,
+            "sizeField": 4648,
+            "slack": 1545
+          },
+          "prefixHex": "ffd1f021e328d19fe555d2eff024f3f0d3f7f020fbf055d7fff01c0300db0700",
+          "tailHex": "3410de9b3804409de4ae3184fbfb9a00ae5000f04b3c7eff",
+          "packedSha256": "7debc51cfb246666c3b08a1cd12f6ce9ec2b2864cc262f9837c27249b9279245",
+          "profile": {
+            "tokens": 2119792,
+            "parsedOutputBytes": 4445200,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 362,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 742,
+            "trailingOrphanFlag": "ff",
+            "unusedFlags": 0
+          }
+        },
+        ".rodata": {
+          "layout": {
+            "start": 3127296,
+            "limit": 7251968,
+            "capacity": 4124672,
+            "packedSize": 4124550,
+            "plainSize": 5703196,
+            "va": 4454400,
+            "sizeField": 4684,
+            "slack": 122
+          },
+          "prefixHex": "e7000000eeff00080d0c0ebf0021210300c1130020aa1700c01b00281f00c823",
+          "tailHex": "30395f5f31464aff5f6c70322e747874ff0000dd0b4cb9ff",
+          "packedSha256": "7dd8ffe0e82c7ae66306bbfba766f49be2e5c6e67579086130855d7ee2fcb473",
+          "profile": {
+            "tokens": 3240415,
+            "parsedOutputBytes": 5703197,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 36859,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 618,
+            "trailingOrphanFlag": "",
+            "unusedFlags": 128
+          }
+        },
+        ".data": {
+          "layout": {
+            "start": 7251968,
+            "limit": 7370752,
+            "capacity": 118784,
+            "packedSize": 116784,
+            "plainSize": 339536,
+            "va": 3231383552,
+            "sizeField": 4720,
+            "slack": 2000
+          },
+          "prefixHex": "f7000000eef31000008066f4f0cc49f1f3faf52c4a0403be1305e4b65cc1ff1b",
+          "tailHex": "fff11ee10ae2fe25105cb89100d46a96fe1be243a0e649ff",
+          "packedSha256": "3d7aeac53275b175b8a948c290603803462dec0599e88b5921c0a6bed1695b26",
+          "profile": {
+            "tokens": 79822,
+            "parsedOutputBytes": 339537,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 8604,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 70,
+            "trailingOrphanFlag": "",
+            "unusedFlags": 192
+          }
+        }
+      }
+    },
+    {
+      "label": "official-3.2",
+      "path": "data/input/body-3-2-cn/firmware.bin",
+      "sha256": "92b3f1fda39e37351432d19d0167879f477eb71713a8fbc94b3ba2141ca404e4",
+      "bytes": 11704832,
+      "containerSumsPass": true,
+      "rawVectorEqualsOfficial": true,
+      "secinfoWord": "0x4e34f129",
+      "extraSectionsEqualOfficial": [
+        true,
+        true,
+        true
+      ],
+      "sections": {
+        ".text": {
+          "layout": {
+            "start": 8192,
+            "limit": 3127296,
+            "capacity": 3119104,
+            "packedSize": 3117324,
+            "plainSize": 4445240,
+            "va": 8192,
+            "sizeField": 4648,
+            "slack": 1780
+          },
+          "prefixHex": "ffd1f021e328d19fe555d2eff024f3f0d3f7f020fbf055d7fff01c0300db0700",
+          "tailHex": "3410c33804409de4ded63180fb9a00d6500080ffe7caaaff",
+          "packedSha256": "2ec5ac9377fd5d8cd602ce462c1a956dbc8a9e13361ea2be297ef49e1581fdfa",
+          "profile": {
+            "tokens": 2119556,
+            "parsedOutputBytes": 4445241,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 362,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 747,
+            "trailingOrphanFlag": "",
+            "unusedFlags": 240
+          }
+        },
+        ".rodata": {
+          "layout": {
+            "start": 3127296,
+            "limit": 7251968,
+            "capacity": 4124672,
+            "packedSize": 4124532,
+            "plainSize": 5703192,
+            "va": 4454400,
+            "sizeField": 4684,
+            "slack": 140
+          },
+          "prefixHex": "e7000000eeff00080d0c0ebf0021210300c1130020aa1700c01b00281f00c823",
+          "tailHex": "30395f5f31ff464a5f6c70322e74ff78740000836b5f8cff",
+          "packedSha256": "e4e5b9a77246b61a4c3b2de469ca101e3075f66df7995d53d38f9ad882c7c983",
+          "profile": {
+            "tokens": 3240392,
+            "parsedOutputBytes": 5703192,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 36873,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 588,
+            "trailingOrphanFlag": "ff",
+            "unusedFlags": 0
+          },
+          "initialDictionarySensitivity": [
+            {
+              "hypotheticalDictionaryFill": 32,
+              "outputSha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+              "first64Hex": "00000000000000000000000000000000000000000000000000000000000000000d0c0e0021210300c121030020210300c021030028210300c821030021200300",
+              "changedBytes": 0,
+              "changedRunCount": 0,
+              "firstRuns": []
+            },
+            {
+              "hypotheticalDictionaryFill": 165,
+              "outputSha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+              "first64Hex": "00000000000000000000000000000000000000000000000000000000000000000d0c0e0021210300c121030020210300c021030028210300c821030021200300",
+              "changedBytes": 0,
+              "changedRunCount": 0,
+              "firstRuns": []
+            }
+          ],
+          "zeroFillOutputSha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+          "zeroFillFirst64Hex": "00000000000000000000000000000000000000000000000000000000000000000d0c0e0021210300c121030020210300c021030028210300c821030021200300"
+        },
+        ".data": {
+          "layout": {
+            "start": 7251968,
+            "limit": 7370752,
+            "capacity": 118784,
+            "packedSize": 116761,
+            "plainSize": 339536,
+            "va": 3231383552,
+            "sizeField": 4720,
+            "slack": 2023
+          },
+          "prefixHex": "f7000000eef31000008066f4f0cc49f1f3faf52c4a0403be1305e4b65cc1ff1b",
+          "tailHex": "fff11ee10ae2251058b891ef00d06a961be2711f92ff58ff",
+          "packedSha256": "9cc950fbe0a727a8cb3fe43726379f62e6c798a7ed5fe79fc2f0445c1a4b39b8",
+          "profile": {
+            "tokens": 79802,
+            "parsedOutputBytes": 339537,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 8603,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 70,
+            "trailingOrphanFlag": "",
+            "unusedFlags": 252
+          }
+        }
+      }
+    },
+    {
+      "label": "failed-3.2-d1",
+      "path": "output/demo-packages/firmware.bin",
+      "sha256": "6c247d53e127d0a3b3442f38b438afb15d24a7bb16fe51e6bf060fc635bc2b35",
+      "bytes": 11704832,
+      "containerSumsPass": true,
+      "rawVectorEqualsOfficial": true,
+      "secinfoWord": "0x4e34f129",
+      "extraSectionsEqualOfficial": [
+        true,
+        true,
+        true
+      ],
+      "sections": {
+        ".text": {
+          "layout": {
+            "start": 8192,
+            "limit": 3127296,
+            "capacity": 3119104,
+            "packedSize": 3117385,
+            "plainSize": 4445240,
+            "va": 8192,
+            "sizeField": 4648,
+            "slack": 1719
+          },
+          "prefixHex": "ffd1f021e328d19fe555d2eff024f3f0d3f7f020fbf055d7fff01c0300db0700",
+          "tailHex": "3410c33804f7409de4d63180fb9a00fed6500080e7caaaff",
+          "packedSha256": "a071d71a0dc9a8bc4711fefaa8b3ff78511c78a21d9e63f63f5d2d7f5e3a4f16",
+          "profile": {
+            "tokens": 2119639,
+            "parsedOutputBytes": 4445241,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 362,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 747,
+            "trailingOrphanFlag": "",
+            "unusedFlags": 128
+          }
+        },
+        ".rodata": {
+          "layout": {
+            "start": 3127296,
+            "limit": 7251968,
+            "capacity": 4124672,
+            "packedSize": 4050675,
+            "plainSize": 5703192,
+            "va": 4454400,
+            "sizeField": 4684,
+            "slack": 73997
+          },
+          "prefixHex": "fcedfffffb0d0c0e002121570300c11300201700c01b0035281f00c823002120",
+          "tailHex": "3039ff5f5f31464a5f6c70ff322e747874000083076b5f8c",
+          "packedSha256": "db7987c9f294bda44902c156daabb1561d5c1ccdbb8cda447f223231ad1b662c",
+          "profile": {
+            "tokens": 3188987,
+            "parsedOutputBytes": 5703192,
+            "unwrittenInitialReferences": [
+              {
+                "outputOffset": 0,
+                "packedTokenOffset": 1,
+                "tokenHex": "edff",
+                "index": 4077,
+                "length": 18,
+                "distance": 1,
+                "sourceOutputOffset": -1
+              }
+            ],
+            "overlappingReferences": 47052,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 599,
+            "trailingOrphanFlag": "",
+            "unusedFlags": 0
+          },
+          "initialDictionarySensitivity": [
+            {
+              "hypotheticalDictionaryFill": 32,
+              "outputSha256": "083fc153a987b7bf6a56fe5265d32ce228141d38f3b5079cd561f14f0d72a910",
+              "first64Hex": "20202020202020202020202020202020202020202020202020202020202020200d0c0e0021210300c121030020210300c021030028210300c821030021200300",
+              "changedBytes": 466,
+              "changedRunCount": 367,
+              "firstRuns": [
+                {
+                  "offset": 0,
+                  "va": "0x43f800",
+                  "bytes": 32
+                },
+                {
+                  "offset": 97,
+                  "va": "0x43f861",
+                  "bytes": 3
+                },
+                {
+                  "offset": 101,
+                  "va": "0x43f865",
+                  "bytes": 3
+                },
+                {
+                  "offset": 105,
+                  "va": "0x43f869",
+                  "bytes": 3
+                },
+                {
+                  "offset": 109,
+                  "va": "0x43f86d",
+                  "bytes": 3
+                },
+                {
+                  "offset": 113,
+                  "va": "0x43f871",
+                  "bytes": 3
+                },
+                {
+                  "offset": 117,
+                  "va": "0x43f875",
+                  "bytes": 1
+                },
+                {
+                  "offset": 121,
+                  "va": "0x43f879",
+                  "bytes": 1
+                },
+                {
+                  "offset": 125,
+                  "va": "0x43f87d",
+                  "bytes": 1
+                },
+                {
+                  "offset": 129,
+                  "va": "0x43f881",
+                  "bytes": 1
+                },
+                {
+                  "offset": 133,
+                  "va": "0x43f885",
+                  "bytes": 1
+                },
+                {
+                  "offset": 137,
+                  "va": "0x43f889",
+                  "bytes": 1
+                },
+                {
+                  "offset": 141,
+                  "va": "0x43f88d",
+                  "bytes": 1
+                },
+                {
+                  "offset": 145,
+                  "va": "0x43f891",
+                  "bytes": 1
+                },
+                {
+                  "offset": 153,
+                  "va": "0x43f899",
+                  "bytes": 1
+                },
+                {
+                  "offset": 161,
+                  "va": "0x43f8a1",
+                  "bytes": 1
+                },
+                {
+                  "offset": 169,
+                  "va": "0x43f8a9",
+                  "bytes": 1
+                },
+                {
+                  "offset": 177,
+                  "va": "0x43f8b1",
+                  "bytes": 1
+                },
+                {
+                  "offset": 185,
+                  "va": "0x43f8b9",
+                  "bytes": 1
+                },
+                {
+                  "offset": 193,
+                  "va": "0x43f8c1",
+                  "bytes": 1
+                },
+                {
+                  "offset": 201,
+                  "va": "0x43f8c9",
+                  "bytes": 1
+                },
+                {
+                  "offset": 213,
+                  "va": "0x43f8d5",
+                  "bytes": 1
+                },
+                {
+                  "offset": 217,
+                  "va": "0x43f8d9",
+                  "bytes": 3
+                },
+                {
+                  "offset": 221,
+                  "va": "0x43f8dd",
+                  "bytes": 1
+                }
+              ]
+            },
+            {
+              "hypotheticalDictionaryFill": 165,
+              "outputSha256": "8ac82189b309bbc619582c12dfa7f0d6159df39214e5642fea66dc6fc215b3df",
+              "first64Hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a50d0c0e0021210300c121030020210300c021030028210300c821030021200300",
+              "changedBytes": 466,
+              "changedRunCount": 367,
+              "firstRuns": [
+                {
+                  "offset": 0,
+                  "va": "0x43f800",
+                  "bytes": 32
+                },
+                {
+                  "offset": 97,
+                  "va": "0x43f861",
+                  "bytes": 3
+                },
+                {
+                  "offset": 101,
+                  "va": "0x43f865",
+                  "bytes": 3
+                },
+                {
+                  "offset": 105,
+                  "va": "0x43f869",
+                  "bytes": 3
+                },
+                {
+                  "offset": 109,
+                  "va": "0x43f86d",
+                  "bytes": 3
+                },
+                {
+                  "offset": 113,
+                  "va": "0x43f871",
+                  "bytes": 3
+                },
+                {
+                  "offset": 117,
+                  "va": "0x43f875",
+                  "bytes": 1
+                },
+                {
+                  "offset": 121,
+                  "va": "0x43f879",
+                  "bytes": 1
+                },
+                {
+                  "offset": 125,
+                  "va": "0x43f87d",
+                  "bytes": 1
+                },
+                {
+                  "offset": 129,
+                  "va": "0x43f881",
+                  "bytes": 1
+                },
+                {
+                  "offset": 133,
+                  "va": "0x43f885",
+                  "bytes": 1
+                },
+                {
+                  "offset": 137,
+                  "va": "0x43f889",
+                  "bytes": 1
+                },
+                {
+                  "offset": 141,
+                  "va": "0x43f88d",
+                  "bytes": 1
+                },
+                {
+                  "offset": 145,
+                  "va": "0x43f891",
+                  "bytes": 1
+                },
+                {
+                  "offset": 153,
+                  "va": "0x43f899",
+                  "bytes": 1
+                },
+                {
+                  "offset": 161,
+                  "va": "0x43f8a1",
+                  "bytes": 1
+                },
+                {
+                  "offset": 169,
+                  "va": "0x43f8a9",
+                  "bytes": 1
+                },
+                {
+                  "offset": 177,
+                  "va": "0x43f8b1",
+                  "bytes": 1
+                },
+                {
+                  "offset": 185,
+                  "va": "0x43f8b9",
+                  "bytes": 1
+                },
+                {
+                  "offset": 193,
+                  "va": "0x43f8c1",
+                  "bytes": 1
+                },
+                {
+                  "offset": 201,
+                  "va": "0x43f8c9",
+                  "bytes": 1
+                },
+                {
+                  "offset": 213,
+                  "va": "0x43f8d5",
+                  "bytes": 1
+                },
+                {
+                  "offset": 217,
+                  "va": "0x43f8d9",
+                  "bytes": 3
+                },
+                {
+                  "offset": 221,
+                  "va": "0x43f8dd",
+                  "bytes": 1
+                }
+              ]
+            }
+          ],
+          "zeroFillOutputSha256": "fc16c169b14502aab2662b8ce71b180613066385ffa997fe609d7c379f704bc5",
+          "zeroFillFirst64Hex": "00000000000000000000000000000000000000000000000000000000000000000d0c0e0021210300c121030020210300c021030028210300c821030021200300"
+        },
+        ".data": {
+          "layout": {
+            "start": 7251968,
+            "limit": 7370752,
+            "capacity": 118784,
+            "packedSize": 116761,
+            "plainSize": 339536,
+            "va": 3231383552,
+            "sizeField": 4720,
+            "slack": 2023
+          },
+          "prefixHex": "f7000000eef31000008066f4f0cc49f1f3faf52c4a0403be1305e4b65cc1ff1b",
+          "tailHex": "fff11ee10ae2251058b891ef00d06a961be2711f92ff58ff",
+          "packedSha256": "9cc950fbe0a727a8cb3fe43726379f62e6c798a7ed5fe79fc2f0445c1a4b39b8",
+          "profile": {
+            "tokens": 79802,
+            "parsedOutputBytes": 339537,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 8603,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 70,
+            "trailingOrphanFlag": "",
+            "unusedFlags": 252
+          }
+        }
+      }
+    },
+    {
+      "label": "prior-user-reported-boot",
+      "path": "output/firmware-builds/experimental-exposure-bounds-3-2cn/firmware.bin",
+      "sha256": "d8efc7bc4d014992e8a4ae307f627b9498575feadba3a3d28cf33b956172663d",
+      "bytes": 11704832,
+      "containerSumsPass": true,
+      "rawVectorEqualsOfficial": true,
+      "secinfoWord": "0x4e34f129",
+      "extraSectionsEqualOfficial": [
+        true,
+        true,
+        true
+      ],
+      "sections": {
+        ".text": {
+          "layout": {
+            "start": 8192,
+            "limit": 3127296,
+            "capacity": 3119104,
+            "packedSize": 3117378,
+            "plainSize": 4445240,
+            "va": 8192,
+            "sizeField": 4648,
+            "slack": 1726
+          },
+          "prefixHex": "ffd1f021e328d19fe555d2eff024f3f0d3f7f020fbf055d7fff01c0300db0700",
+          "tailHex": "3410c338ef04409de4d63180fb9afd00d6500080e7caaaff",
+          "packedSha256": "6775d30c4a7bee42929993561879c2ed24972c98c2066fbc5e00de6027d7ed3b",
+          "profile": {
+            "tokens": 2119632,
+            "parsedOutputBytes": 4445241,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 362,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 747,
+            "trailingOrphanFlag": "",
+            "unusedFlags": 0
+          }
+        },
+        ".rodata": {
+          "layout": {
+            "start": 3127296,
+            "limit": 7251968,
+            "capacity": 4124672,
+            "packedSize": 4124532,
+            "plainSize": 5703192,
+            "va": 4454400,
+            "sizeField": 4684,
+            "slack": 140
+          },
+          "prefixHex": "e7000000eeff00080d0c0ebf0021210300c1130020aa1700c01b00281f00c823",
+          "tailHex": "30395f5f31ff464a5f6c70322e74ff78740000836b5f8cff",
+          "packedSha256": "e4e5b9a77246b61a4c3b2de469ca101e3075f66df7995d53d38f9ad882c7c983",
+          "profile": {
+            "tokens": 3240392,
+            "parsedOutputBytes": 5703192,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 36873,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 588,
+            "trailingOrphanFlag": "ff",
+            "unusedFlags": 0
+          }
+        },
+        ".data": {
+          "layout": {
+            "start": 7251968,
+            "limit": 7370752,
+            "capacity": 118784,
+            "packedSize": 116761,
+            "plainSize": 339536,
+            "va": 3231383552,
+            "sizeField": 4720,
+            "slack": 2023
+          },
+          "prefixHex": "f7000000eef31000008066f4f0cc49f1f3faf52c4a0403be1305e4b65cc1ff1b",
+          "tailHex": "fff11ee10ae2251058b891ef00d06a961be2711f92ff58ff",
+          "packedSha256": "9cc950fbe0a727a8cb3fe43726379f62e6c798a7ed5fe79fc2f0445c1a4b39b8",
+          "profile": {
+            "tokens": 79802,
+            "parsedOutputBytes": 339537,
+            "unwrittenInitialReferences": [],
+            "overlappingReferences": 8603,
+            "zeroDistanceReferences": 0,
+            "ringBoundaryReferences": 70,
+            "trailingOrphanFlag": "",
+            "unusedFlags": 252
+          }
+        }
+      }
+    }
+  ]
+}

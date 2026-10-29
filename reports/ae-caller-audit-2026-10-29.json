@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "textSha256": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+  "alignedWordsScanned": 1111310,
+  "directCalls": {
+    "0x361ad4": [
+      {
+        "callsite": "0x35a0ac",
+        "raw": "881e00eb",
+        "assembly": "bl #0x361ad4"
+      },
+      {
+        "callsite": "0x35b2a0",
+        "raw": "0b1a00eb",
+        "assembly": "bl #0x361ad4"
+      },
+      {
+        "callsite": "0x35b3e8",
+        "raw": "b91900eb",
+        "assembly": "bl #0x361ad4"
+      },
+      {
+        "callsite": "0x35b500",
+        "raw": "731900eb",
+        "assembly": "bl #0x361ad4"
+      },
+      {
+        "callsite": "0x360338",
+        "raw": "e50500eb",
+        "assembly": "bl #0x361ad4"
+      },
+      {
+        "callsite": "0x361c70",
+        "raw": "97ffffeb",
+        "assembly": "bl #0x361ad4"
+      },
+      {
+        "callsite": "0x362084",
+        "raw": "92feffeb",
+        "assembly": "bl #0x361ad4"
+      }
+    ],
+    "0x361c0c": [
+      {
+        "callsite": "0x358a7c",
+        "raw": "622400eb",
+        "assembly": "bl #0x361c0c"
+      },
+      {
+        "callsite": "0x359fe8",
+        "raw": "071f00eb",
+        "assembly": "bl #0x361c0c"
+      }
+    ]
+  },
+  "limits": [
+    "Aligned A32 BL candidates only; no indirect calls, Thumb or other executable payloads.",
+    "Raw candidates can in general be data; the listed callsites require instruction-context review.",
+    "Seven cfg-filler callsites occur in six catalog functions; this is not seven independent business modes."
+  ]
+}

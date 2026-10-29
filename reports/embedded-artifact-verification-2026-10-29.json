@@ -1,0 +1,81 @@
+{
+  "artifactChecksPassed": true,
+  "sourceRoDataSha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+  "embeddedSubcpu": {
+    "payloadSha256": "a48744ebf2e7f8c4fe895f8ddd7b4823dab82b7307acb19a185e31684579cc7a",
+    "functions": 12940,
+    "success": 12869,
+    "failed": 71,
+    "cBytes": 17313593,
+    "strings": 20647,
+    "filesWithDecompilerWarnings": 8266,
+    "decompilerWarnings": 20175,
+    "unrecognizedCallTargetsAfterThumbNormalization": 445,
+    "thumbBitCallTargets": 9382
+  },
+  "radioExtractions": [
+    {
+      "file": "bt_version_0x8411c8_0x8411e8.bin",
+      "bytes": 32,
+      "sha256": "fdd2e25f58d9318d7ae2e995a19f676e040c66133df697c9c8faea4b07295e33"
+    },
+    {
+      "file": "bt_hcd_patchram_0x8411e8_0x849e7d.bin",
+      "bytes": 35989,
+      "sha256": "17954ada9a88b21a51f4f82896779407862a11079e974127729dc29f7e928f85"
+    },
+    {
+      "file": "wlan_header_candidate_0x91b760_0x91b798.bin",
+      "bytes": 56,
+      "sha256": "bf3ff1faf95a4add2a8d06ec7c9c1e9eda284ab1f3441adc28be568104a4d9cd"
+    },
+    {
+      "file": "wlan_near_identical_candidate_0x91b798_0x9afe18.bin",
+      "bytes": 607872,
+      "sha256": "86b88705d7873e3cf920c1d63ca12814df23999a1060fc3b17bb250975896b4d"
+    },
+    {
+      "file": "wlan_version_record_A_0x9669ec_0x966acb.bin",
+      "bytes": 223,
+      "sha256": "3e44a8eaa5061e578c20cb738eff28a32685c8c9afe82aeb9f51c0d798850744"
+    },
+    {
+      "file": "wlan_version_record_B_0x9afac4_0x9afb7c.bin",
+      "bytes": 184,
+      "sha256": "f4e1ac510590c3636b88a2b99470b0b19a038fc245edde03cc62d7f328392fa8"
+    },
+    {
+      "file": "wlan_nvram_text_0x9afb80_0x9afdea.bin",
+      "bytes": 618,
+      "sha256": "adc793e251d196d76f104e5772fc69d29899a6cea9cfe7d548272b3d1d32e6d3"
+    },
+    {
+      "file": "pdi_wlan_version_record_A_0x4db728_0x4db807.bin",
+      "bytes": 223,
+      "sha256": "3e44a8eaa5061e578c20cb738eff28a32685c8c9afe82aeb9f51c0d798850744"
+    },
+    {
+      "file": "pdi_wlan_version_record_B_0x524800_0x5248b8.bin",
+      "bytes": 184,
+      "sha256": "f4e1ac510590c3636b88a2b99470b0b19a038fc245edde03cc62d7f328392fa8"
+    }
+  ],
+  "radioClone": {
+    "bytesCompared": 607872,
+    "differingBytes": 4,
+    "differingOffsets": [
+      "0x9467c",
+      "0x9467d",
+      "0x9467e",
+      "0x9467f"
+    ],
+    "actualFirmwareBoundaryVerified": false
+  },
+  "semanticVerification": false,
+  "limits": [
+    "All recognized embedded functions have an output file, including failure fallbacks; this is not full semantic recovery.",
+    "Mixed ARM/Thumb and nested WLAN content can produce false functions, invalid instructions and decompiler warnings.",
+    "Matching or near-matching windows prove duplication, not firmware container boundaries, load addresses or entrypoints.",
+    "No hardware, camera or wireless firmware is modified by this verification."
+  ]
+}

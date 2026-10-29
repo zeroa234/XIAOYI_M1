@@ -34,6 +34,8 @@ def main():
     parser.add_argument("--limit", type=int, default=0, help="0 表示全量；试跑用 200")
     parser.add_argument("--timeout", type=int, choices=range(30, 61), default=45)
     parser.add_argument("--start", default="0x2000", help="反编译起始地址；目录始终全量")
+    parser.add_argument("--coverage-only", action="store_true", help="只读导出精确地址集合覆盖，不反编译")
+    parser.add_argument("--max-cpu", type=int, choices=range(1, 5), default=4)
     args = parser.parse_args()
     out = inside(args.output)
     if not out.is_relative_to(ROOT / "output"):
@@ -43,6 +45,8 @@ def main():
     if args.limit < 0:
         raise ValueError("limit 必须非负")
     int(args.start, 0)
+    if args.coverage_only and (args.limit != 0 or args.timeout != 45 or int(args.start, 0) != 0x2000):
+        raise ValueError("coverage-only 覆盖完整 .text，不接受 limit/timeout/start 的非默认值")
     out.mkdir(parents=True, exist_ok=True)
     started = time.time()
     paths = {n: ROOT / "temp" / ("ghidra-" + n) for n in ("user", "settings", "cache", "tmp")}
@@ -77,8 +81,9 @@ def main():
                str(tools["ghidra"] / "Ghidra/Framework/Utility/lib/Utility.jar"), "ghidra.Ghidra",
                "ghidra.app.util.headless.AnalyzeHeadless", str(work), PROJECT,
                "-process", "text.mapped.candidate.bin", "-readOnly", "-noanalysis",
-               "-scriptPath", str(ROOT / "scripts/ghidra"), "-postScript", "ExportM1Catalog.java",
-               str(out), str(args.limit), str(args.timeout), args.start, "-max-cpu", "4",
+               "-scriptPath", str(ROOT / "scripts/ghidra"), "-postScript",
+               "AuditM1Coverage.java" if args.coverage_only else "ExportM1Catalog.java",
+               str(out), str(args.limit), str(args.timeout), args.start, "-max-cpu", str(args.max_cpu),
                "-log", str(out / "ghidra.log"), "-scriptlog", str(out / "ghidra-script.log")]
     env = os.environ.copy()
     env.update(TEMP=str(paths["tmp"]), TMP=str(paths["tmp"]), TMPDIR=str(paths["tmp"]),

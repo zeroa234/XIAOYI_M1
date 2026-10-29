@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "qualification": "Bounded offline compression feasibility measurement. It is not a firmware build, not a hardware decode proof, and not a claim that the selected shutter audio fits.",
+  "inputs": {
+    "rodata_full": {
+      "path": "output/reference-decoded/body-3-2-cn/rodata.full.candidate.bin",
+      "bytes": 5703192,
+      "sha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438"
+    },
+    "rodata_mapped": {
+      "path": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+      "bytes": 5703192,
+      "sha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438"
+    },
+    "official_padded_packed": {
+      "path": "output/body-3-2-cn/m1-3.2-cn.analysis.bin.0.03127296",
+      "bytes": 4124672,
+      "sha256": "0507731bcc743013345061ac149e4fa14aed7d2f72b57357fb1c826bd7225b38"
+    },
+    "ff7tools_lzss": {
+      "path": "vendor/ff7tools-reference/lzss.py",
+      "bytes": 5704,
+      "sha256": "ee3b65e055231164d29ac53a67da1dd047c2e761b932c6a3efb27e6d7f102f84"
+    },
+    "selected_shutter_mp3": {
+      "path": "data/input/custom-sounds/shutter-selected.mp3",
+      "bytes": 32023,
+      "sha256": "c65e5b132a1d11567ce2237da36a0a58fa320cc592d7605914e315aa020db772",
+      "declared_duration_seconds": 1.332208,
+      "declared_channels": 2,
+      "declared_sample_rate": 44100
+    }
+  },
+  "geometry": {
+    "capacity_bytes": 4124672,
+    "old_packed_bytes": 4124532,
+    "old_slack_bytes": 140,
+    "full_bytes": 5703192,
+    "full_equals_mapped": true,
+    "full_trailer_bytes": 0,
+    "old_padded_tail_zero": true
+  },
+  "base_full_recompression": {
+    "method": "vendor/ff7tools-reference/lzss.py compress() unmodified; no new matcher",
+    "output_path": "temp/demo-repack/rodata.full.recompressed.lzss.bin",
+    "bytes": 4120972,
+    "sha256": "8be41830f482b605ad41a836c3ce8ab0c7b89fd026a26c7cb4359eeb269970da",
+    "compression_seconds": 68.07094289999986,
+    "fits_capacity": true,
+    "headroom_bytes": 3700,
+    "growth_vs_old_packed": -3560,
+    "token_count": 3236312,
+    "unused_flags": 0,
+    "orphan_flag_hex": "",
+    "parsed_output_bytes": 5703192,
+    "low_priority_set": true,
+    "concurrency": 1
+  },
+  "decode_checks": {
+    "ff7tools_library_decode_equal": true,
+    "ff7tools_library_decode_seconds": 0.9739945000001171,
+    "firmware_tokens_sequential_equal": true,
+    "firmware_tokens_sequential_seconds": 1.520229200000358,
+    "firmware_tokens_snapshot_equal": false,
+    "firmware_tokens_snapshot_seconds": 1.8817099000007147,
+    "firmware_tokens_snapshot_zero_equal": false,
+    "firmware_tokens_snapshot_zero_seconds": 1.8343338000004223,
+    "snapshot_diff_bytes": 868221,
+    "snapshot_diff_runs": 177013,
+    "snapshot_first_diff": {
+      "offset": 104,
+      "snapshot_byte": 0,
+      "full_byte": 7
+    },
+    "snapshot_zero_diff_bytes": 868221,
+    "snapshot_zero_diff_runs": 177013,
+    "official_control": {
+      "library_decode_equal": true,
+      "sequential_decode_equal": true,
+      "snapshot_equal": false,
+      "snapshot_diff_bytes": 795745,
+      "snapshot_diff_runs": 164114,
+      "snapshot_first_diff": {
+        "offset": 104,
+        "snapshot_byte": 0,
+        "full_byte": 7
+      },
+      "tokens": 3240392,
+      "orphan_flag_hex": "ff",
+      "firmware_tokens_serialization_equal": true
+    },
+    "firmware_tokens_serialization_equal": true,
+    "firmware_tokens_serialization_bytes": 4120972
+  },
+  "snapshot_semantics_risk": {
+    "summary": "The new stream is byte-identical under the ff7tools library and firmware_tokens sequential semantics, but not under snapshot/snapshot_zero semantics. The official stream also fails snapshot at the same first offset. This confirms snapshot is an upstream-tool reproduction rather than proven hardware behavior, but it does not prove the real hardware uses sequential semantics.",
+    "new_snapshot_diff_bytes": 868221,
+    "official_snapshot_diff_bytes": 795745,
+    "hardware_token_semantics_proven": false,
+    "sequential_semantics_proven": false
+  },
+  "audio_candidate": {
+    "selected_mp3_verified": true,
+    "candidate_rodata_measured": false,
+    "reason": "Shutter WAV index/VA was not supplied by the other Pi in this task; guessing it or overwriting any resource is prohibited. Only the base full recompression was measured.",
+    "ffmpeg_variant_generated": false,
+    "resource_overwritten": false
+  },
+  "conclusion": {
+    "base_full_recompression_fits": true,
+    "base_headroom_bytes": 3700,
+    "compression_time_seconds": 68.07094289999986,
+    "two_decoder_checks_pass": true,
+    "snapshot_semantics_safe": false,
+    "integrated_demo_feasibility": "base is feasible; the selected shutter replacement is not yet measured and must be recompressed with the actual target WAV/VA before any build."
+  },
+  "limits": [
+    "One full compression run; time is host/load dependent and includes pure-Python dictionary work.",
+    "The recompressed stream changes the whole rodata token layout; it is not an equal-token or equal-bytes patch.",
+    "Only ff7tools library and firmware_tokens sequential decoders reproduce the full plaintext; snapshot/snapshot_zero do not.",
+    "The original hardware token decoder was not observed or proven; the original loader's decode behavior remains experimental.",
+    "No shutter address is assumed, no other sound is changed, and no candidate firmware was built or written.",
+    "Capacity fit is for the unmodified official plaintext; an audio replacement changes the plaintext and must be recompressed and rechecked.",
+    ".text/.data full trailers were not touched; rodata full and mapped are identical (no extra trailer)."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "integrated-demo-identity",
+  "status": "experimental-offline-only",
+  "patches": [
+    {
+      "section": ".rodata",
+      "va": "0x61ce80",
+      "orig_hex": "332e322d636e00",
+      "new_hex": "332e322d643100",
+      "note": "Same-length display identity 3.2-d1; adjacent model and update header remain original."
+    },
+    {
+      "section": ".rodata",
+      "va": "0x6b7f54",
+      "orig_hex": "332e322d636e00",
+      "new_hex": "332e322d643100",
+      "note": "Same-length visible version text 3.2-d1."
+    },
+    {
+      "section": ".rodata",
+      "va": "0x834674",
+      "orig_hex": "332e322d636e00",
+      "new_hex": "332e322d643100",
+      "note": "Same-length version drawing copy 3.2-d1, including NUL."
+    }
+  ]
+}

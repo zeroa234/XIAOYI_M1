@@ -1,0 +1,2179 @@
+{
+  "schema": "yi-m1-radio/2",
+  "generated_at": "2026-10-29",
+  "summary": {
+    "bt_0x8411c8": "BT HCD/patchram metadata, not WLAN",
+    "bt_hcd": {
+      "start": "0x8411e8",
+      "end_exclusive": "0x849e7d",
+      "bytes": 35989,
+      "sha256": "17954ada9a88b21a51f4f82896779407862a11079e974127729dc29f7e928f85",
+      "records": 167,
+      "write_ram": 166,
+      "launch_ram": 1,
+      "write_ram_data_bytes": 34820
+    },
+    "wlan_candidate": {
+      "start": "0x91b798",
+      "end_exclusive": "0x9afe18",
+      "bytes": 607872,
+      "matching_bytes": 607868,
+      "differing_bytes": 4,
+      "boundary_proven": false
+    },
+    "address_0x950000": {
+      "inside_wlan_candidate": true,
+      "offset": "0x34868"
+    },
+    "aac_payload": "not proven; descriptors only",
+    "extracted_files": 9
+  },
+  "scope": {
+    "device_contact": "none",
+    "network_access": "none",
+    "firmware_generation": "none",
+    "code_modification": "none",
+    "note": "Read-only static audit; corrections applied after review."
+  },
+  "source": {
+    "path": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+    "size": 5703192,
+    "sha256": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+    "base_va": "0x43f800",
+    "note": "Sequential reference-decoded .rodata view; no new decompression or format decoding."
+  },
+  "bt_hcd": {
+    "version_metadata": {
+      "name": "bt_version_metadata",
+      "start": "0x8411c8",
+      "end_exclusive": "0x8411e8",
+      "length": 32,
+      "sha256": "fdd2e25f58d9318d7ae2e995a19f676e040c66133df697c9c8faea4b07295e33",
+      "boundary_evidence": "NUL-terminated version string immediately before the first HCI command; 32 bytes including NUL.",
+      "boundary_proven": true,
+      "text": "BCM4343A1_001.002.009.0043.0178"
+    },
+    "hcd": {
+      "name": "bt_hcd_patchram",
+      "start": "0x8411e8",
+      "end_exclusive": "0x849e7d",
+      "length": 35989,
+      "sha256": "17954ada9a88b21a51f4f82896779407862a11079e974127729dc29f7e928f85",
+      "boundary_evidence": "Strict HCI command stream parsed with scapy 2.8.0 HCI_Command_Hdr: every record has a valid 3-byte header and matching length; 166 vendor Write_RAM (0xFC4C) records, one final Launch_RAM (0xFC4E). Ends immediately after Launch_RAM; following bytes do not belong to this strict stream.",
+      "boundary_proven": true,
+      "record_count": 167,
+      "write_ram_records": 166,
+      "launch_ram_records": 1,
+      "total_command_bytes": 35989,
+      "total_payload_lengths": 35488,
+      "write_ram_data_bytes": 34820,
+      "address_min": "0xd6220",
+      "address_max": "0x2194d7",
+      "unique_addresses": 166,
+      "address_ranges_high16": {
+        "0x210000": 156,
+        "0xd0000": 10
+      },
+      "unaligned_addresses": 116,
+      "addresses_monotonic": false,
+      "launch_record": {
+        "index": 166,
+        "offset": "0x849e76",
+        "opcode": "0xfc4e",
+        "length": 4,
+        "command_bytes": 7,
+        "payload_hex": "ffffffff"
+      },
+      "trailing_hex": "01030c00012efc000118fc060127fc0c",
+      "trailing_note": "Bytes after the terminal Launch_RAM are not part of the strict FC4C/FC4E stream and are not extracted.",
+      "records": [
+        {
+          "index": 0,
+          "offset": "0x8411e8",
+          "opcode": "0xfc4c",
+          "length": 70,
+          "command_bytes": 73,
+          "address": "0x211810",
+          "data_bytes": 66,
+          "data_prefix_hex": "4252434d636667530000000032000000"
+        },
+        {
+          "index": 1,
+          "offset": "0x841231",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x211852",
+          "data_bytes": 251,
+          "data_prefix_hex": "4252434d6366674400000000a47c0000"
+        },
+        {
+          "index": 2,
+          "offset": "0x841333",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21194d",
+          "data_bytes": 251,
+          "data_prefix_hex": "4100ffff00003303000064064100ffff"
+        },
+        {
+          "index": 3,
+          "offset": "0x841435",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x211a48",
+          "data_bytes": 251,
+          "data_prefix_hex": "014100ffff0000050800005c014100ff"
+        },
+        {
+          "index": 4,
+          "offset": "0x841537",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x211b43",
+          "data_bytes": 251,
+          "data_prefix_hex": "20153200fffffaff0501060624153200"
+        },
+        {
+          "index": 5,
+          "offset": "0x841639",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x211c3e",
+          "data_bytes": 251,
+          "data_prefix_hex": "f20314ff14ff14ff14ff14ff14ff0600"
+        },
+        {
+          "index": 6,
+          "offset": "0x84173b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x211d39",
+          "data_bytes": 251,
+          "data_prefix_hex": "748484848483a5a4a4a4a4a4f41f03fa"
+        },
+        {
+          "index": 7,
+          "offset": "0x84183d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x211e34",
+          "data_bytes": 251,
+          "data_prefix_hex": "8803ff8c03ff9003ff9403ff9803ff00"
+        },
+        {
+          "index": 8,
+          "offset": "0x84193f",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x211f2f",
+          "data_bytes": 251,
+          "data_prefix_hex": "d8047404c404d804c4041405b0040005"
+        },
+        {
+          "index": 9,
+          "offset": "0x841a41",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21202a",
+          "data_bytes": 251,
+          "data_prefix_hex": "00000301c401080a2000080800000404"
+        },
+        {
+          "index": 10,
+          "offset": "0x841b43",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212125",
+          "data_bytes": 251,
+          "data_prefix_hex": "4c015400500155005401560058015700"
+        },
+        {
+          "index": 11,
+          "offset": "0x841c45",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212220",
+          "data_bytes": 251,
+          "data_prefix_hex": "00011500011800013a00011d00011f00"
+        },
+        {
+          "index": 12,
+          "offset": "0x841d47",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21231b",
+          "data_bytes": 251,
+          "data_prefix_hex": "ff0f00050724ff0108080c0008010402"
+        },
+        {
+          "index": 13,
+          "offset": "0x841e49",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212416",
+          "data_bytes": 251,
+          "data_prefix_hex": "91f8d821016821f440010ab101f58001"
+        },
+        {
+          "index": 14,
+          "offset": "0x841f4b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212511",
+          "data_bytes": 251,
+          "data_prefix_hex": "be020d0031b9c18f012903d1b0f84610"
+        },
+        {
+          "index": 15,
+          "offset": "0x84204d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21260c",
+          "data_bytes": 251,
+          "data_prefix_hex": "bffca1f7b5b9000003010c70030d0001"
+        },
+        {
+          "index": 16,
+          "offset": "0x84214f",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212707",
+          "data_bytes": 251,
+          "data_prefix_hex": "1fbf53f723bf53f70fbf000003011430"
+        },
+        {
+          "index": 17,
+          "offset": "0x842251",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212802",
+          "data_bytes": 251,
+          "data_prefix_hex": "000d630d003409640060016500030118"
+        },
+        {
+          "index": 18,
+          "offset": "0x842353",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2128fd",
+          "data_bytes": 251,
+          "data_prefix_hex": "3cfe6af749ff00bd9ef7b8bf030116b6"
+        },
+        {
+          "index": 19,
+          "offset": "0x842455",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2129f8",
+          "data_bytes": 251,
+          "data_prefix_hex": "0301144a060d000fb403f044fc0fbcbd"
+        },
+        {
+          "index": 20,
+          "offset": "0x842557",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212af3",
+          "data_bytes": 251,
+          "data_prefix_hex": "4605f047fbbde8f0810000030114fc06"
+        },
+        {
+          "index": 21,
+          "offset": "0x842659",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212bee",
+          "data_bytes": 251,
+          "data_prefix_hex": "94070d0070b504465cf75af8174d95f8"
+        },
+        {
+          "index": 22,
+          "offset": "0x84275b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212ce9",
+          "data_bytes": 251,
+          "data_prefix_hex": "fe431b4c6678a07808b1064622e084f7"
+        },
+        {
+          "index": 23,
+          "offset": "0x84285d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212de4",
+          "data_bytes": 251,
+          "data_prefix_hex": "f8213002fa00f20cb193430fe0134201"
+        },
+        {
+          "index": 24,
+          "offset": "0x84295f",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212edf",
+          "data_bytes": 251,
+          "data_prefix_hex": "63f701ffa7f828010120b040216cc0f3"
+        },
+        {
+          "index": 25,
+          "offset": "0x842a61",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x212fda",
+          "data_bytes": 251,
+          "data_prefix_hex": "32fac5b2444824b1062c02d0042c05d0"
+        },
+        {
+          "index": 26,
+          "offset": "0x842b63",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2130d5",
+          "data_bytes": 251,
+          "data_prefix_hex": "74f7c2fd0c4889f78bff0028efd010bd"
+        },
+        {
+          "index": 27,
+          "offset": "0x842c65",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2131d0",
+          "data_bytes": 251,
+          "data_prefix_hex": "f88b1f41f020010170704700005c620d"
+        },
+        {
+          "index": 28,
+          "offset": "0x842d67",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2132cb",
+          "data_bytes": 251,
+          "data_prefix_hex": "f041a4f7acbd2a78012a0ed1ff280cd0"
+        },
+        {
+          "index": 29,
+          "offset": "0x842e69",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2133c6",
+          "data_bytes": 251,
+          "data_prefix_hex": "d00022ff2600f146016c4d174603eb43"
+        },
+        {
+          "index": 30,
+          "offset": "0x842f6b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2134c1",
+          "data_bytes": 251,
+          "data_prefix_hex": "1d686c71f7b9faaef73dfb1422314620"
+        },
+        {
+          "index": 31,
+          "offset": "0x84306d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2135bc",
+          "data_bytes": 251,
+          "data_prefix_hex": "adf73dfb012809d1fff726fc002805d0"
+        },
+        {
+          "index": 32,
+          "offset": "0x84316f",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2136b7",
+          "data_bytes": 251,
+          "data_prefix_hex": "aa03f1500071f7c5fb29490978884224"
+        },
+        {
+          "index": 33,
+          "offset": "0x843271",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2137b2",
+          "data_bytes": 251,
+          "data_prefix_hex": "e001eb0013401c1a7123789842f8d315"
+        },
+        {
+          "index": 34,
+          "offset": "0x843373",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2138ad",
+          "data_bytes": 251,
+          "data_prefix_hex": "101a834204dd491e02e0491c0e29e5db"
+        },
+        {
+          "index": 35,
+          "offset": "0x843475",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2139a8",
+          "data_bytes": 251,
+          "data_prefix_hex": "27a1f106080190b61d75e0fe2007b0bd"
+        },
+        {
+          "index": 36,
+          "offset": "0x843577",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x213aa3",
+          "data_bytes": 251,
+          "data_prefix_hex": "8adc8fb100e001e0ff2082e705eb8500"
+        },
+        {
+          "index": 37,
+          "offset": "0x843679",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x213b9e",
+          "data_bytes": 251,
+          "data_prefix_hex": "012511e0def8081005fa04f701eb8012"
+        },
+        {
+          "index": 38,
+          "offset": "0x84377b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x213c99",
+          "data_bytes": 251,
+          "data_prefix_hex": "0f06d0b8f1050f07d0b8f1060f04d008"
+        },
+        {
+          "index": 39,
+          "offset": "0x84387d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x213d94",
+          "data_bytes": 251,
+          "data_prefix_hex": "4207d0a143d16304d11770a9680e7876"
+        },
+        {
+          "index": 40,
+          "offset": "0x84397f",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x213e8f",
+          "data_bytes": 251,
+          "data_prefix_hex": "45f1d30a4621461ee00b464a46414620"
+        },
+        {
+          "index": 41,
+          "offset": "0x843a81",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x213f8a",
+          "data_bytes": 251,
+          "data_prefix_hex": "40346d1cedb2894881788d42ded308eb"
+        },
+        {
+          "index": 42,
+          "offset": "0x843b83",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214085",
+          "data_bytes": 251,
+          "data_prefix_hex": "25514888468a460e468946c1684078ad"
+        },
+        {
+          "index": 43,
+          "offset": "0x843c85",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214180",
+          "data_bytes": 251,
+          "data_prefix_hex": "0aea0b0108ea0200084304d1164009ea"
+        },
+        {
+          "index": 44,
+          "offset": "0x843d87",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21427b",
+          "data_bytes": 251,
+          "data_prefix_hex": "78b94601eb00100068800601d4fe2025"
+        },
+        {
+          "index": 45,
+          "offset": "0x843e89",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214376",
+          "data_bytes": 251,
+          "data_prefix_hex": "0100074301d00020abe6ff20a9e60301"
+        },
+        {
+          "index": 46,
+          "offset": "0x843f8b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214471",
+          "data_bytes": 251,
+          "data_prefix_hex": "d5009b2bea090023ea0a0108430ed00f"
+        },
+        {
+          "index": 47,
+          "offset": "0x84408d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21456c",
+          "data_bytes": 251,
+          "data_prefix_hex": "04d01db1002021e4fe28fbd030461de4"
+        },
+        {
+          "index": 48,
+          "offset": "0x84418f",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214667",
+          "data_bytes": 251,
+          "data_prefix_hex": "70b50e4605461446b34215d9042b0cd0"
+        },
+        {
+          "index": 49,
+          "offset": "0x844291",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214762",
+          "data_bytes": 251,
+          "data_prefix_hex": "f7f2fac4f82ca0009881f7f6fad8b1c4"
+        },
+        {
+          "index": 50,
+          "offset": "0x844393",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21485d",
+          "data_bytes": 251,
+          "data_prefix_hex": "04d98b0708d1838b934205d321f01001"
+        },
+        {
+          "index": 51,
+          "offset": "0x844495",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214958",
+          "data_bytes": 251,
+          "data_prefix_hex": "04d2f02e01d9354600e0f02560690ee0"
+        },
+        {
+          "index": 52,
+          "offset": "0x844597",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214a53",
+          "data_bytes": 251,
+          "data_prefix_hex": "10c7f8e400a3e76869b0f84c703c2f01"
+        },
+        {
+          "index": 53,
+          "offset": "0x844699",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214b4e",
+          "data_bytes": 251,
+          "data_prefix_hex": "5c8e401c490e601b4909fa08f0083908"
+        },
+        {
+          "index": 54,
+          "offset": "0x84479b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214c49",
+          "data_bytes": 251,
+          "data_prefix_hex": "012059f7c9fab4f80900002131f727f8"
+        },
+        {
+          "index": 55,
+          "offset": "0x84489d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214d44",
+          "data_bytes": 251,
+          "data_prefix_hex": "400c2130f7bcbf1c4871f729fca9f792"
+        },
+        {
+          "index": 56,
+          "offset": "0x84499f",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214e3f",
+          "data_bytes": 251,
+          "data_prefix_hex": "0136ae270d002de9f04105460e4600f1"
+        },
+        {
+          "index": 57,
+          "offset": "0x844aa1",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x214f3a",
+          "data_bytes": 251,
+          "data_prefix_hex": "fe4ff00708012847d120791227022808"
+        },
+        {
+          "index": 58,
+          "offset": "0x844ba3",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215035",
+          "data_bytes": 251,
+          "data_prefix_hex": "07d0296881f8058034e7f107f9d17608"
+        },
+        {
+          "index": 59,
+          "offset": "0x844ca5",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215130",
+          "data_bytes": 251,
+          "data_prefix_hex": "2b21d0022b32d03ce0d30702d086f805"
+        },
+        {
+          "index": 60,
+          "offset": "0x844da7",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21522b",
+          "data_bytes": 251,
+          "data_prefix_hex": "2046fff78bfe0ce00aa92046fff7dcfe"
+        },
+        {
+          "index": 61,
+          "offset": "0x844ea9",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215326",
+          "data_bytes": 251,
+          "data_prefix_hex": "10684fea85034ff00f0101fa03f120ea"
+        },
+        {
+          "index": 62,
+          "offset": "0x844fab",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215421",
+          "data_bytes": 251,
+          "data_prefix_hex": "f788fe206840f00400206010bd206820"
+        },
+        {
+          "index": 63,
+          "offset": "0x8450ad",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21551c",
+          "data_bytes": 251,
+          "data_prefix_hex": "f0f31a4a506801fb0300506001200746"
+        },
+        {
+          "index": 64,
+          "offset": "0x8451af",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215617",
+          "data_bytes": 251,
+          "data_prefix_hex": "c1f3c031b1b10c49028e09880f2a01d0"
+        },
+        {
+          "index": 65,
+          "offset": "0x8452b1",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215712",
+          "data_bytes": 251,
+          "data_prefix_hex": "1e200003010ee42f0d0011480021c0e9"
+        },
+        {
+          "index": 66,
+          "offset": "0x8453b3",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21580d",
+          "data_bytes": 251,
+          "data_prefix_hex": "00401c16d0887b6df796fe2968d1f8c0"
+        },
+        {
+          "index": 67,
+          "offset": "0x8454b5",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215908",
+          "data_bytes": 251,
+          "data_prefix_hex": "0021204668f7b6fc94f8611080b28a1c"
+        },
+        {
+          "index": 68,
+          "offset": "0x8455b7",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215a03",
+          "data_bytes": 251,
+          "data_prefix_hex": "d37db16df703f894f85900401c84f859"
+        },
+        {
+          "index": 69,
+          "offset": "0x8456b9",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215afe",
+          "data_bytes": 251,
+          "data_prefix_hex": "64f900288dd13220a0748ae700005063"
+        },
+        {
+          "index": 70,
+          "offset": "0x8457bb",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215bf9",
+          "data_bytes": 251,
+          "data_prefix_hex": "98b10e49b4f91c000978884206dc4042"
+        },
+        {
+          "index": 71,
+          "offset": "0x8458bd",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215cf4",
+          "data_bytes": 251,
+          "data_prefix_hex": "4203d194f8290002280bd020465bf70f"
+        },
+        {
+          "index": 72,
+          "offset": "0x8459bf",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215def",
+          "data_bytes": 251,
+          "data_prefix_hex": "e90601cde90401e08b6843410000986d"
+        },
+        {
+          "index": 73,
+          "offset": "0x845ac1",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215eea",
+          "data_bytes": 251,
+          "data_prefix_hex": "f7d5f900260028204610d068f745fb01"
+        },
+        {
+          "index": 74,
+          "offset": "0x845bc3",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x215fe5",
+          "data_bytes": 251,
+          "data_prefix_hex": "b5438e784f7906fa0cf69f403e432e43"
+        },
+        {
+          "index": 75,
+          "offset": "0x845cc5",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2160e0",
+          "data_bytes": 251,
+          "data_prefix_hex": "b0a2dff8b8b24ff4ca040025306198b3"
+        },
+        {
+          "index": 76,
+          "offset": "0x845dc7",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2161db",
+          "data_bytes": 251,
+          "data_prefix_hex": "2ad5800228d54ff4001068612c6d4ff0"
+        },
+        {
+          "index": 77,
+          "offset": "0x845ec9",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2162d6",
+          "data_bytes": 251,
+          "data_prefix_hex": "3a48491c01f00f01a97290f83320fe2a"
+        },
+        {
+          "index": 78,
+          "offset": "0x845fcb",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2163d1",
+          "data_bytes": 251,
+          "data_prefix_hex": "00bc1c20006c24200060016500041d20"
+        },
+        {
+          "index": 79,
+          "offset": "0x8460cd",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2164cc",
+          "data_bytes": 251,
+          "data_prefix_hex": "0101602f48016941f001010161016841"
+        },
+        {
+          "index": 80,
+          "offset": "0x8461cf",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2165c7",
+          "data_bytes": 251,
+          "data_prefix_hex": "f0b2f8c83032f8100032f81110c01ab2"
+        },
+        {
+          "index": 81,
+          "offset": "0x8462d1",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2166c2",
+          "data_bytes": 251,
+          "data_prefix_hex": "b23e0d0010b50446bf48006810f0fe0f"
+        },
+        {
+          "index": 82,
+          "offset": "0x8463d3",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2167bd",
+          "data_bytes": 251,
+          "data_prefix_hex": "1afd00e03db1022099f745ff94f8ef00"
+        },
+        {
+          "index": 83,
+          "offset": "0x8464d5",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2168b8",
+          "data_bytes": 251,
+          "data_prefix_hex": "d20299cde900100ae00298401c03e002"
+        },
+        {
+          "index": 84,
+          "offset": "0x8465d7",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2169b3",
+          "data_bytes": 251,
+          "data_prefix_hex": "84f83c004e280ad994f83200012806d1"
+        },
+        {
+          "index": 85,
+          "offset": "0x8466d9",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x216aae",
+          "data_bytes": 251,
+          "data_prefix_hex": "7ff76afa38b994f83b00012803d869f7"
+        },
+        {
+          "index": 86,
+          "offset": "0x8467db",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x216ba9",
+          "data_bytes": 251,
+          "data_prefix_hex": "f755faf2e7442b200024863100003f20"
+        },
+        {
+          "index": 87,
+          "offset": "0x8468dd",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x216ca4",
+          "data_bytes": 251,
+          "data_prefix_hex": "d4f8fc2202d042f00c0203e022f00c02"
+        },
+        {
+          "index": 88,
+          "offset": "0x8469df",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x216d9f",
+          "data_bytes": 251,
+          "data_prefix_hex": "4608f0ff01114895f730fb0b48046028"
+        },
+        {
+          "index": 89,
+          "offset": "0x846ae1",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x216e9a",
+          "data_bytes": 251,
+          "data_prefix_hex": "00ebc7002844104490f86d01b0601cf8"
+        },
+        {
+          "index": 90,
+          "offset": "0x846be3",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x216f95",
+          "data_bytes": 251,
+          "data_prefix_hex": "f0010208440590b4f8481002eb410282"
+        },
+        {
+          "index": 91,
+          "offset": "0x846ce5",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217090",
+          "data_bytes": 251,
+          "data_prefix_hex": "30b9adf80060b4f84a004000adf80200"
+        },
+        {
+          "index": 92,
+          "offset": "0x846de7",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21718b",
+          "data_bytes": 251,
+          "data_prefix_hex": "f902254ff00009200c4f460990baf802"
+        },
+        {
+          "index": 93,
+          "offset": "0x846ee9",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217286",
+          "data_bytes": 251,
+          "data_prefix_hex": "03a85ef7f6ff00287ad05448007818b1"
+        },
+        {
+          "index": 94,
+          "offset": "0x846feb",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217381",
+          "data_bytes": 251,
+          "data_prefix_hex": "0001e002e055e0a4f8b20004a968465f"
+        },
+        {
+          "index": 95,
+          "offset": "0x8470ed",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21747c",
+          "data_bytes": 251,
+          "data_prefix_hex": "626b930701d5052304e0d20701d00323"
+        },
+        {
+          "index": 96,
+          "offset": "0x8471ef",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217577",
+          "data_bytes": 251,
+          "data_prefix_hex": "3018b1401ec8f8000001e0c8f80030ed"
+        },
+        {
+          "index": 97,
+          "offset": "0x8472f1",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217672",
+          "data_bytes": 251,
+          "data_prefix_hex": "812101ebc2114feae17201eb92514fea"
+        },
+        {
+          "index": 98,
+          "offset": "0x8473f3",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21776d",
+          "data_bytes": 251,
+          "data_prefix_hex": "4160344949688160704703011abe4e0d"
+        },
+        {
+          "index": 99,
+          "offset": "0x8474f5",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217868",
+          "data_bytes": 251,
+          "data_prefix_hex": "2000003f200064086400b0650d000301"
+        },
+        {
+          "index": 100,
+          "offset": "0x8475f7",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217963",
+          "data_bytes": 251,
+          "data_prefix_hex": "80b23080d3f804612e604978012909d0"
+        },
+        {
+          "index": 101,
+          "offset": "0x8476f9",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217a5e",
+          "data_bytes": 251,
+          "data_prefix_hex": "68186048780128106803d040f4804010"
+        },
+        {
+          "index": 102,
+          "offset": "0x8477fb",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217b59",
+          "data_bytes": 251,
+          "data_prefix_hex": "30604ff4c0403860306880b240f44070"
+        },
+        {
+          "index": 103,
+          "offset": "0x8478fd",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217c54",
+          "data_bytes": 251,
+          "data_prefix_hex": "2000401020002a1020000301b8012453"
+        },
+        {
+          "index": 104,
+          "offset": "0x8479ff",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217d4f",
+          "data_bytes": 251,
+          "data_prefix_hex": "0160416d21f001014165a0f1900000f1"
+        },
+        {
+          "index": 105,
+          "offset": "0x847b01",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217e4a",
+          "data_bytes": 251,
+          "data_prefix_hex": "08432ed12ff7b0ff00282ad06a460a21"
+        },
+        {
+          "index": 106,
+          "offset": "0x847c03",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x217f45",
+          "data_bytes": 251,
+          "data_prefix_hex": "1d20274c48702548a0642648aff22501"
+        },
+        {
+          "index": 107,
+          "offset": "0x847d05",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218040",
+          "data_bytes": 251,
+          "data_prefix_hex": "012b0bd0022b6bd0032b69d115e0062b"
+        },
+        {
+          "index": 108,
+          "offset": "0x847e07",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21813b",
+          "data_bytes": 251,
+          "data_prefix_hex": "4d2d78012d0ed1256d0d60646d06e0a5"
+        },
+        {
+          "index": 109,
+          "offset": "0x847f09",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218236",
+          "data_bytes": 251,
+          "data_prefix_hex": "224007fa05f31c4341f8224006ebc002"
+        },
+        {
+          "index": 110,
+          "offset": "0x84800b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218331",
+          "data_bytes": 251,
+          "data_prefix_hex": "006807f57a4400f003024ff47a704443"
+        },
+        {
+          "index": 111,
+          "offset": "0x84810d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21842c",
+          "data_bytes": 251,
+          "data_prefix_hex": "e0062004e0082002e0102000e0182008"
+        },
+        {
+          "index": 112,
+          "offset": "0x84820f",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218527",
+          "data_bytes": 251,
+          "data_prefix_hex": "0561002200fb02119a0b42ea8142890b"
+        },
+        {
+          "index": 113,
+          "offset": "0x848311",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218622",
+          "data_bytes": 251,
+          "data_prefix_hex": "2304604048001945f1000155f706fc3e"
+        },
+        {
+          "index": 114,
+          "offset": "0x848413",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21871d",
+          "data_bytes": 251,
+          "data_prefix_hex": "aa112100e0112100b411210000c05d00"
+        },
+        {
+          "index": 115,
+          "offset": "0x848515",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218818",
+          "data_bytes": 251,
+          "data_prefix_hex": "f101043068800701d4322cf5d345f080"
+        },
+        {
+          "index": 116,
+          "offset": "0x848617",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218913",
+          "data_bytes": 251,
+          "data_prefix_hex": "486ef706f8284670bd0301322c5f0d00"
+        },
+        {
+          "index": 117,
+          "offset": "0x848719",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218a0e",
+          "data_bytes": 251,
+          "data_prefix_hex": "0436000301580c600d00d0f8d8200446"
+        },
+        {
+          "index": 118,
+          "offset": "0x84881b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218b09",
+          "data_bytes": 251,
+          "data_prefix_hex": "9afb47f28200606055f7adfb214601e0"
+        },
+        {
+          "index": 119,
+          "offset": "0x84891d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218c04",
+          "data_bytes": 251,
+          "data_prefix_hex": "1278514340f6eb3251436422b1fbf2f1"
+        },
+        {
+          "index": 120,
+          "offset": "0x848a1f",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218cff",
+          "data_bytes": 251,
+          "data_prefix_hex": "29f8d200000000000010010f0ccc2a07"
+        },
+        {
+          "index": 121,
+          "offset": "0x848b21",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218dfa",
+          "data_bytes": 251,
+          "data_prefix_hex": "010f194c5c03009af068bb000020030d"
+        },
+        {
+          "index": 122,
+          "offset": "0x848c23",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218ef5",
+          "data_bytes": 251,
+          "data_prefix_hex": "220d0010010f26d46906006bf06bbc00"
+        },
+        {
+          "index": 123,
+          "offset": "0x848d25",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x218ff0",
+          "data_bytes": 251,
+          "data_prefix_hex": "70040d0010010f34206506000c205043"
+        },
+        {
+          "index": 124,
+          "offset": "0x848e27",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2190eb",
+          "data_bytes": 251,
+          "data_prefix_hex": "0074050d0010010f42dcf0030091f059"
+        },
+        {
+          "index": 125,
+          "offset": "0x848f29",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2191e6",
+          "data_bytes": 251,
+          "data_prefix_hex": "c80700401a80b2000000000000060104"
+        },
+        {
+          "index": 126,
+          "offset": "0x84902b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2192e1",
+          "data_bytes": 251,
+          "data_prefix_hex": "a0f00abb000064460d0010010f5dd04b"
+        },
+        {
+          "index": 127,
+          "offset": "0x84912d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x2193dc",
+          "data_bytes": 251,
+          "data_prefix_hex": "06010474580d0010010f6af4d7080042"
+        },
+        {
+          "index": 128,
+          "offset": "0x84922f",
+          "opcode": "0xfc4c",
+          "length": 51,
+          "command_bytes": 54,
+          "address": "0x2194d7",
+          "data_bytes": 47,
+          "data_prefix_hex": "b6bf00006c070d0010010f7864c80100"
+        },
+        {
+          "index": 129,
+          "offset": "0x849265",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0xd6220",
+          "data_bytes": 251,
+          "data_prefix_hex": "3c1c2000341c20002c1c2000000a1400"
+        },
+        {
+          "index": 130,
+          "offset": "0x849367",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0xd631b",
+          "data_bytes": 251,
+          "data_prefix_hex": "000de60200fde60200cbec0200000000"
+        },
+        {
+          "index": 131,
+          "offset": "0x849469",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0xd6416",
+          "data_bytes": 251,
+          "data_prefix_hex": "ac43fc434a449744e2442d457645bd45"
+        },
+        {
+          "index": 132,
+          "offset": "0x84956b",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0xd6511",
+          "data_bytes": 251,
+          "data_prefix_hex": "58195831584958615878589058a758be"
+        },
+        {
+          "index": 133,
+          "offset": "0x84966d",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0xd660c",
+          "data_bytes": 251,
+          "data_prefix_hex": "43434343000000002000600000000000"
+        },
+        {
+          "index": 134,
+          "offset": "0x84976f",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0xd6707",
+          "data_bytes": 251,
+          "data_prefix_hex": "00f1820000ffff000000000000c00441"
+        },
+        {
+          "index": 135,
+          "offset": "0x849871",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0xd6802",
+          "data_bytes": 251,
+          "data_prefix_hex": "0000ed4f0d00bcbcbcbc434343430000"
+        },
+        {
+          "index": 136,
+          "offset": "0x849973",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0xd68fd",
+          "data_bytes": 251,
+          "data_prefix_hex": "000000000000001c006000ff000000ff"
+        },
+        {
+          "index": 137,
+          "offset": "0x849a75",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0xd69f8",
+          "data_bytes": 251,
+          "data_prefix_hex": "bcbcbcbc4343434300000000c0044100"
+        },
+        {
+          "index": 138,
+          "offset": "0x849b77",
+          "opcode": "0xfc4c",
+          "length": 73,
+          "command_bytes": 76,
+          "address": "0xd6af3",
+          "data_bytes": 69,
+          "data_prefix_hex": "0003000e008fbe010000000600ef260d"
+        },
+        {
+          "index": 139,
+          "offset": "0x849bc3",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x21180f",
+          "data_bytes": 1,
+          "data_prefix_hex": "00"
+        },
+        {
+          "index": 140,
+          "offset": "0x849bcb",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x21180e",
+          "data_bytes": 1,
+          "data_prefix_hex": "00"
+        },
+        {
+          "index": 141,
+          "offset": "0x849bd3",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x21180d",
+          "data_bytes": 1,
+          "data_prefix_hex": "01"
+        },
+        {
+          "index": 142,
+          "offset": "0x849bdb",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x21180c",
+          "data_bytes": 1,
+          "data_prefix_hex": "01"
+        },
+        {
+          "index": 143,
+          "offset": "0x849be3",
+          "opcode": "0xfc4c",
+          "length": 8,
+          "command_bytes": 11,
+          "address": "0x211808",
+          "data_bytes": 4,
+          "data_prefix_hex": "b9b9bbb9"
+        },
+        {
+          "index": 144,
+          "offset": "0x849bee",
+          "opcode": "0xfc4c",
+          "length": 8,
+          "command_bytes": 11,
+          "address": "0x211804",
+          "data_bytes": 4,
+          "data_prefix_hex": "b9b9bbb9"
+        },
+        {
+          "index": 145,
+          "offset": "0x849bf9",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x211800",
+          "data_bytes": 1,
+          "data_prefix_hex": "00"
+        },
+        {
+          "index": 146,
+          "offset": "0x849c01",
+          "opcode": "0xfc4c",
+          "length": 6,
+          "command_bytes": 9,
+          "address": "0x211802",
+          "data_bytes": 2,
+          "data_prefix_hex": "0000"
+        },
+        {
+          "index": 147,
+          "offset": "0x849c0a",
+          "opcode": "0xfc4c",
+          "length": 12,
+          "command_bytes": 15,
+          "address": "0x2117f8",
+          "data_bytes": 8,
+          "data_prefix_hex": "1500000014000000"
+        },
+        {
+          "index": 148,
+          "offset": "0x849c19",
+          "opcode": "0xfc4c",
+          "length": 40,
+          "command_bytes": 43,
+          "address": "0x2117d4",
+          "data_bytes": 36,
+          "data_prefix_hex": "5266fcfc3e52fdfd2a3efefe162affff"
+        },
+        {
+          "index": 149,
+          "offset": "0x849c44",
+          "opcode": "0xfc4c",
+          "length": 7,
+          "command_bytes": 10,
+          "address": "0x2117cf",
+          "data_bytes": 3,
+          "data_prefix_hex": "000000"
+        },
+        {
+          "index": 150,
+          "offset": "0x849c4e",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x2117cd",
+          "data_bytes": 1,
+          "data_prefix_hex": "00"
+        },
+        {
+          "index": 151,
+          "offset": "0x849c56",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x2117cc",
+          "data_bytes": 1,
+          "data_prefix_hex": "00"
+        },
+        {
+          "index": 152,
+          "offset": "0x849c5e",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x2117ce",
+          "data_bytes": 1,
+          "data_prefix_hex": "00"
+        },
+        {
+          "index": 153,
+          "offset": "0x849c66",
+          "opcode": "0xfc4c",
+          "length": 6,
+          "command_bytes": 9,
+          "address": "0x2117d2",
+          "data_bytes": 2,
+          "data_prefix_hex": "9001"
+        },
+        {
+          "index": 154,
+          "offset": "0x849c6f",
+          "opcode": "0xfc4c",
+          "length": 8,
+          "command_bytes": 11,
+          "address": "0x2117c8",
+          "data_bytes": 4,
+          "data_prefix_hex": "28000000"
+        },
+        {
+          "index": 155,
+          "offset": "0x849c7a",
+          "opcode": "0xfc4c",
+          "length": 8,
+          "command_bytes": 11,
+          "address": "0x2117c4",
+          "data_bytes": 4,
+          "data_prefix_hex": "0f000000"
+        },
+        {
+          "index": 156,
+          "offset": "0x849c85",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x2117c1",
+          "data_bytes": 1,
+          "data_prefix_hex": "01"
+        },
+        {
+          "index": 157,
+          "offset": "0x849c8d",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x2117c0",
+          "data_bytes": 1,
+          "data_prefix_hex": "28"
+        },
+        {
+          "index": 158,
+          "offset": "0x849c95",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x2117bf",
+          "data_bytes": 1,
+          "data_prefix_hex": "01"
+        },
+        {
+          "index": 159,
+          "offset": "0x849c9d",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x2117be",
+          "data_bytes": 1,
+          "data_prefix_hex": "00"
+        },
+        {
+          "index": 160,
+          "offset": "0x849ca5",
+          "opcode": "0xfc4c",
+          "length": 6,
+          "command_bytes": 9,
+          "address": "0x2117bc",
+          "data_bytes": 2,
+          "data_prefix_hex": "0000"
+        },
+        {
+          "index": 161,
+          "offset": "0x849cae",
+          "opcode": "0xfc4c",
+          "length": 255,
+          "command_bytes": 258,
+          "address": "0x21161c",
+          "data_bytes": 251,
+          "data_prefix_hex": "9c0160008c0260008802600098026000"
+        },
+        {
+          "index": 162,
+          "offset": "0x849db0",
+          "opcode": "0xfc4c",
+          "length": 169,
+          "command_bytes": 172,
+          "address": "0x211717",
+          "data_bytes": 165,
+          "data_prefix_hex": "00310000005d000000060000005d0000"
+        },
+        {
+          "index": 163,
+          "offset": "0x849e5c",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x211618",
+          "data_bytes": 1,
+          "data_prefix_hex": "01"
+        },
+        {
+          "index": 164,
+          "offset": "0x849e64",
+          "opcode": "0xfc4c",
+          "length": 7,
+          "command_bytes": 10,
+          "address": "0x211615",
+          "data_bytes": 3,
+          "data_prefix_hex": "060400"
+        },
+        {
+          "index": 165,
+          "offset": "0x849e6e",
+          "opcode": "0xfc4c",
+          "length": 5,
+          "command_bytes": 8,
+          "address": "0x211614",
+          "data_bytes": 1,
+          "data_prefix_hex": "00"
+        },
+        {
+          "index": 166,
+          "offset": "0x849e76",
+          "opcode": "0xfc4e",
+          "length": 4,
+          "command_bytes": 7,
+          "payload_hex": "ffffffff"
+        }
+      ]
+    },
+    "first_two_commands": {
+      "first": {
+        "index": 0,
+        "offset": "0x8411e8",
+        "opcode": "0xfc4c",
+        "length": 70,
+        "command_bytes": 73,
+        "address": "0x211810",
+        "data_bytes": 66,
+        "data_prefix_hex": "4252434d636667530000000032000000"
+      },
+      "second": {
+        "index": 1,
+        "offset": "0x841231",
+        "opcode": "0xfc4c",
+        "length": 255,
+        "command_bytes": 258,
+        "address": "0x211852",
+        "data_bytes": 251,
+        "data_prefix_hex": "4252434d6366674400000000a47c0000"
+      },
+      "first_payload_prefix": "BRCMcfgS\u0000\u0000\u0000\u00002\u0000\u0000\u0000\u0001\u0001\u0004\u0018",
+      "second_payload_prefix": "BRCMcfgD\u0000\u0000\u0000\u0000¤|\u0000\u0000\u0003\u00035B"
+    },
+    "classification": "Broadcom Bluetooth HCI vendor Write_RAM patchram stream (HCD-style), not WLAN.",
+    "format_validation": {
+      "parser": "scapy 2.8.0 HCI_Command_Hdr",
+      "records_parsed": 167,
+      "opcodes_valid": true,
+      "lengths_match": true,
+      "terminal_launch_ram": true,
+      "trailing_bytes_excluded": true,
+      "linux_hcd_compatibility": "unproven; raw HCI command stream starts directly with vendor FC4C and has no initial Reset"
+    },
+    "bt4_1": {
+      "address": "0x84124b",
+      "text": "BCM4343WA1 37.4MHz Murata Type-1FJ BT4.1 OTP-BD-0043",
+      "inside_hcd_command_payload": true,
+      "note": "Part of a Write_RAM payload written by the HCD stream; it is not a separate WLAN module header."
+    }
+  },
+  "wlan_candidate": {
+    "range": {
+      "name": "wlan_near_identical_candidate",
+      "start": "0x91b798",
+      "end_exclusive": "0x9afe18",
+      "length": 607872,
+      "sha256": "86b88705d7873e3cf920c1d63ca12814df23999a1060fc3b17bb250975896b4d",
+      "boundary_evidence": "607,868 of 607,872 bytes match PDI 0x4904d4-0x524b54; 4 tail bytes differ (main 836b5f8c, PDI 00000000). This is a repeated near-identical window, NOT a byte-identical payload and NOT a proven image boundary; no main .data pointer/loader was found.",
+      "boundary_proven": false,
+      "pdi_copy_start": "0x4904d4",
+      "pdi_copy_end_exclusive": "0x524b54",
+      "pdi_copy_sha256": "6263a891ef06a89d56ca38bc3cb4a2eb2d5b159777d9c5d69246987034c88154",
+      "same_length": true,
+      "matching_bytes": 607868,
+      "differing_bytes": 4,
+      "differing_offsets_in_range": [
+        "0x9467c",
+        "0x9467d",
+        "0x9467e",
+        "0x9467f"
+      ],
+      "tail_main_hex": "78740000836b5f8c",
+      "tail_pdi_hex": "7874000000000000",
+      "offset_of_0x950000": "0x34868",
+      "offset_of_0x920000": "0x4868",
+      "offset_of_0x960000": "0x44868",
+      "architecture_observation": "Thumb/Thumb-2 instruction samples; exact CPU/architecture unproven.",
+      "loader_evidence": "No 32-bit pointer to 0x91b798/0x920000/0x950000 in main .data/.text; no loader found."
+    },
+    "header_candidate": {
+      "name": "wlan_header_candidate",
+      "start": "0x91b760",
+      "end_exclusive": "0x91b798",
+      "length": 56,
+      "sha256": "bf3ff1faf95a4add2a8d06ec7c9c1e9eda284ab1f3441adc28be568104a4d9cd",
+      "boundary_evidence": "56 bytes immediately before the near-identical range; not identical in PDI; candidate only.",
+      "boundary_proven": false
+    },
+    "version_records": {
+      "A_main": {
+        "name": "wlan_version_record_A_main",
+        "start": "0x9669ec",
+        "end_exclusive": "0x966acb",
+        "length": 223,
+        "sha256": "3e44a8eaa5061e578c20cb738eff28a32685c8c9afe82aeb9f51c0d798850744",
+        "boundary_evidence": "38-byte prefix + NUL-terminated ASCII version/CRC/date/Ucode/FWID record; exact NUL boundary. This record boundary does not prove the surrounding range is a payload.",
+        "boundary_proven": true,
+        "text": "43430a1-roml/sdio-g-pool-idsup-idauth-keepalive-txbf-pktfilter-mchan-proptxstatus Version: 7.10.48.2 CRC: 396141be Date: Thu 2016-05-19 16:51:41 KST Ucode Ver: 997.0 FWID: 01-b37064e2\n"
+      },
+      "B_main": {
+        "name": "wlan_version_record_B_main",
+        "start": "0x9afac4",
+        "end_exclusive": "0x9afb7c",
+        "length": 184,
+        "sha256": "f4e1ac510590c3636b88a2b99470b0b19a038fc245edde03cc62d7f328392fa8",
+        "boundary_evidence": "38-byte prefix + NUL-terminated ASCII version/CRC/date/Ucode/FWID record; exact NUL boundary. This record boundary does not prove the surrounding range is a payload.",
+        "boundary_proven": true,
+        "text": "43430a1-roml/sdio-g-pool-apcs-idsup-idauth Version: 7.10.48.2 CRC: 6164d53b Date: Tue 2016-04-05 10:19:38 KST Ucode Ver: 997.0 FWID: 01-42ffb713\n"
+      },
+      "A_pdi": {
+        "name": "wlan_version_record_A_pdi",
+        "start": "0x4db728",
+        "end_exclusive": "0x4db807",
+        "length": 223,
+        "sha256": "3e44a8eaa5061e578c20cb738eff28a32685c8c9afe82aeb9f51c0d798850744",
+        "boundary_evidence": "38-byte prefix + NUL-terminated ASCII version/CRC/date/Ucode/FWID record; exact NUL boundary. This record boundary does not prove the surrounding range is a payload.",
+        "boundary_proven": true,
+        "text": "43430a1-roml/sdio-g-pool-idsup-idauth-keepalive-txbf-pktfilter-mchan-proptxstatus Version: 7.10.48.2 CRC: 396141be Date: Thu 2016-05-19 16:51:41 KST Ucode Ver: 997.0 FWID: 01-b37064e2\n"
+      },
+      "B_pdi": {
+        "name": "wlan_version_record_B_pdi",
+        "start": "0x524800",
+        "end_exclusive": "0x5248b8",
+        "length": 184,
+        "sha256": "f4e1ac510590c3636b88a2b99470b0b19a038fc245edde03cc62d7f328392fa8",
+        "boundary_evidence": "38-byte prefix + NUL-terminated ASCII version/CRC/date/Ucode/FWID record; exact NUL boundary. This record boundary does not prove the surrounding range is a payload.",
+        "boundary_proven": true,
+        "text": "43430a1-roml/sdio-g-pool-apcs-idsup-idauth Version: 7.10.48.2 CRC: 6164d53b Date: Tue 2016-04-05 10:19:38 KST Ucode Ver: 997.0 FWID: 01-42ffb713\n"
+      },
+      "A_equal": true,
+      "B_equal": true
+    },
+    "nvram_text": {
+      "name": "wlan_nvram_text",
+      "start": "0x9afb80",
+      "end_exclusive": "0x9afdea",
+      "length": 618,
+      "sha256": "adc793e251d196d76f104e5772fc69d29899a6cea9cfe7d548272b3d1d32e6d3",
+      "boundary_evidence": "Exact 0x26a-byte NVRAM text blob; main .text 0x43f404 sets pointer 0x009afb80 and length 0x26a; caller 0x43a5c8 consumes it. This is a record boundary inside the candidate range, not proof of image start.",
+      "boundary_proven": true,
+      "referenced_by": [
+        "0x43f404 (sets pointer/length)",
+        "0x43a5c8 (NVRAM path)"
+      ],
+      "first_text": "manfid=0x2d0"
+    },
+    "patch_tables": [
+      {
+        "name": "wlan_patch_table_a",
+        "start": "0x91b858",
+        "end_exclusive": "0x91c058",
+        "length": 2048,
+        "sha256": "3b21dba5123ddd4a008d6b6f0b89e87dfdfc8a29f49618930c7a9bb4d45ccd96",
+        "boundary_evidence": "0x800-byte table bounded by zero run at 0x91c058; role unproven.",
+        "boundary_proven": true
+      },
+      {
+        "name": "wlan_patch_table_b",
+        "start": "0x966ad0",
+        "end_exclusive": "0x9672d0",
+        "length": 2048,
+        "sha256": "f6a987c6c094fc268d73cc2ce34df80c5da4ea8aca4c0b7cf1cc877c64db7449",
+        "boundary_evidence": "0x800-byte table bounded by zero run at 0x9672d0; role unproven.",
+        "boundary_proven": true
+      }
+    ],
+    "data_pointer_notes": {
+      "api_table": "0xc0a00ed0: XC_WLAN_*/fns* host API names and main .text pointers; not an image descriptor.",
+      "patch_pointer_table": "0xc0a02e40: {0x91b858,0x966ad0,0,0x58921f71}; two 0x800-byte tables, no length; role unproven.",
+      "rodata_phytable_0x776164": "Only true 0x950000 value in .rodata; PHY parameter table next to 0x00010000; no loader/length.",
+      "pdi_descriptor": "0xc0a020f0: PDI load descriptor; not a WLAN image descriptor."
+    },
+    "conclusion": "0x950000 is offset +0x34868 inside the near-identical candidate range; it is not a start. The range is not byte-identical and its boundary/loader remain unproven."
+  },
+  "pdi": {
+    "header_start": "0x440c00",
+    "payload_start": "0x440e00",
+    "end_exclusive": "0x527c00",
+    "payload_bytes": 945664,
+    "payload_sha256": "a48744ebf2e7f8c4fe895f8ddd7b4823dab82b7307acb19a185e31684579cc7a",
+    "magic": "@PDI",
+    "broadcom_wlan_evidence": [
+      {
+        "address": "0x4b8687",
+        "offset_in_pdi": "0x77a87",
+        "label": "Broadcom WLAN driver revision"
+      },
+      {
+        "address": "0x502a3f",
+        "offset_in_pdi": "0xc1e3f",
+        "label": "Broadcom WLAN driver revision"
+      },
+      {
+        "address": "0x4b869b",
+        "offset_in_pdi": "0x77a9b",
+        "label": "Broadcom heap diagnostic"
+      },
+      {
+        "address": "0x502a53",
+        "offset_in_pdi": "0xc1e53",
+        "label": "Broadcom heap diagnostic"
+      },
+      {
+        "address": "0x4b879d",
+        "offset_in_pdi": "0x77b9d",
+        "label": "Broadcom malloc diagnostic"
+      },
+      {
+        "address": "0x502b55",
+        "offset_in_pdi": "0xc1f55",
+        "label": "Broadcom malloc diagnostic"
+      },
+      {
+        "address": "0x4b8a1a",
+        "offset_in_pdi": "0x77e1a",
+        "label": "Broadcom AXI diagnostic"
+      },
+      {
+        "address": "0x502dd2",
+        "offset_in_pdi": "0xc21d2",
+        "label": "Broadcom AXI diagnostic"
+      },
+      {
+        "address": "0x48ff98",
+        "offset_in_pdi": "0x4f398",
+        "label": "BCM4343 string"
+      },
+      {
+        "address": "0x4cc758",
+        "offset_in_pdi": "0x8bb58",
+        "label": "WLAN wlc symbol"
+      },
+      {
+        "address": "0x5161f0",
+        "offset_in_pdi": "0xd55f0",
+        "label": "WLAN wlc symbol"
+      },
+      {
+        "address": "0x490514",
+        "offset_in_pdi": "0x4f914",
+        "label": "WLAN firmware version string"
+      },
+      {
+        "address": "0x490540",
+        "offset_in_pdi": "0x4f940",
+        "label": "WLAN firmware version string"
+      },
+      {
+        "address": "0x4db74e",
+        "offset_in_pdi": "0x9ab4e",
+        "label": "WLAN firmware version string"
+      },
+      {
+        "address": "0x524826",
+        "offset_in_pdi": "0xe3c26",
+        "label": "WLAN firmware version string"
+      }
+    ],
+    "note": "The PDI contains separate Broadcom WLAN material. These distant strings do NOT classify the local 0x8411c8 block, which is BT HCD based on the strict HCI parse. Full PDI function analysis is out of scope."
+  },
+  "bt_host_stack": "Main .text contains the BT host stack (btstack/bluesdk path strings, about 70 functions); the HCD stream is the separate chip patchram/config download.",
+  "aac": {
+    "descriptors": [
+      {
+        "name": "aacenc_319",
+        "address": "0x8ADB8C"
+      },
+      {
+        "name": "aacdec_315",
+        "address": "0x8C5034"
+      },
+      {
+        "name": "aacdec_318",
+        "address": "0x8D7E14"
+      }
+    ],
+    "zero_gaps": [
+      {
+        "start": "0x8C5068",
+        "end_exclusive": "0x8C7874",
+        "bytes": 10252
+      },
+      {
+        "start": "0x8D7E50",
+        "end_exclusive": "0x8DA654",
+        "bytes": 10244
+      }
+    ],
+    "function_references": "None in strings.tsv.",
+    "conclusion": "No proven AAC codec payload boundary or loader; descriptors only. Not extracted or parsed."
+  },
+  "extractions": [
+    {
+      "file": "bt_version_0x8411c8_0x8411e8.bin",
+      "source": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+      "start": "0x8411c8",
+      "end_exclusive": "0x8411e8",
+      "length": 32,
+      "sha256": "fdd2e25f58d9318d7ae2e995a19f676e040c66133df697c9c8faea4b07295e33",
+      "boundary_proven": true,
+      "boundary_evidence": "NUL-terminated version string immediately before the first HCI command; 32 bytes including NUL."
+    },
+    {
+      "file": "bt_hcd_patchram_0x8411e8_0x849e7d.bin",
+      "source": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+      "start": "0x8411e8",
+      "end_exclusive": "0x849e7d",
+      "length": 35989,
+      "sha256": "17954ada9a88b21a51f4f82896779407862a11079e974127729dc29f7e928f85",
+      "boundary_proven": true,
+      "boundary_evidence": "Strict HCI command stream parsed with scapy 2.8.0 HCI_Command_Hdr: every record has a valid 3-byte header and matching length; 166 vendor Write_RAM (0xFC4C) records, one final Launch_RAM (0xFC4E). Ends immediately after Launch_RAM; following bytes do not belong to this strict stream."
+    },
+    {
+      "file": "wlan_header_candidate_0x91b760_0x91b798.bin",
+      "source": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+      "start": "0x91b760",
+      "end_exclusive": "0x91b798",
+      "length": 56,
+      "sha256": "bf3ff1faf95a4add2a8d06ec7c9c1e9eda284ab1f3441adc28be568104a4d9cd",
+      "boundary_proven": false,
+      "boundary_evidence": "56 bytes immediately before the near-identical range; not identical in PDI; candidate only."
+    },
+    {
+      "file": "wlan_near_identical_candidate_0x91b798_0x9afe18.bin",
+      "source": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+      "start": "0x91b798",
+      "end_exclusive": "0x9afe18",
+      "length": 607872,
+      "sha256": "86b88705d7873e3cf920c1d63ca12814df23999a1060fc3b17bb250975896b4d",
+      "boundary_proven": false,
+      "boundary_evidence": "607,868 of 607,872 bytes match PDI 0x4904d4-0x524b54; 4 tail bytes differ (main 836b5f8c, PDI 00000000). This is a repeated near-identical window, NOT a byte-identical payload and NOT a proven image boundary; no main .data pointer/loader was found."
+    },
+    {
+      "file": "wlan_version_record_A_0x9669ec_0x966acb.bin",
+      "source": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+      "start": "0x9669ec",
+      "end_exclusive": "0x966acb",
+      "length": 223,
+      "sha256": "3e44a8eaa5061e578c20cb738eff28a32685c8c9afe82aeb9f51c0d798850744",
+      "boundary_proven": true,
+      "boundary_evidence": "38-byte prefix + NUL-terminated ASCII version/CRC/date/Ucode/FWID record; exact NUL boundary. This record boundary does not prove the surrounding range is a payload."
+    },
+    {
+      "file": "wlan_version_record_B_0x9afac4_0x9afb7c.bin",
+      "source": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+      "start": "0x9afac4",
+      "end_exclusive": "0x9afb7c",
+      "length": 184,
+      "sha256": "f4e1ac510590c3636b88a2b99470b0b19a038fc245edde03cc62d7f328392fa8",
+      "boundary_proven": true,
+      "boundary_evidence": "38-byte prefix + NUL-terminated ASCII version/CRC/date/Ucode/FWID record; exact NUL boundary. This record boundary does not prove the surrounding range is a payload."
+    },
+    {
+      "file": "wlan_nvram_text_0x9afb80_0x9afdea.bin",
+      "source": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+      "start": "0x9afb80",
+      "end_exclusive": "0x9afdea",
+      "length": 618,
+      "sha256": "adc793e251d196d76f104e5772fc69d29899a6cea9cfe7d548272b3d1d32e6d3",
+      "boundary_proven": true,
+      "boundary_evidence": "Exact 0x26a-byte NVRAM text blob; main .text 0x43f404 sets pointer 0x009afb80 and length 0x26a; caller 0x43a5c8 consumes it. This is a record boundary inside the candidate range, not proof of image start."
+    },
+    {
+      "file": "pdi_wlan_version_record_A_0x4db728_0x4db807.bin",
+      "source": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+      "start": "0x4db728",
+      "end_exclusive": "0x4db807",
+      "length": 223,
+      "sha256": "3e44a8eaa5061e578c20cb738eff28a32685c8c9afe82aeb9f51c0d798850744",
+      "boundary_proven": true,
+      "boundary_evidence": "38-byte prefix + NUL-terminated ASCII version/CRC/date/Ucode/FWID record; exact NUL boundary. This record boundary does not prove the surrounding range is a payload."
+    },
+    {
+      "file": "pdi_wlan_version_record_B_0x524800_0x5248b8.bin",
+      "source": "output/reference-decoded/body-3-2-cn/rodata.mapped.candidate.bin",
+      "start": "0x524800",
+      "end_exclusive": "0x5248b8",
+      "length": 184,
+      "sha256": "f4e1ac510590c3636b88a2b99470b0b19a038fc245edde03cc62d7f328392fa8",
+      "boundary_proven": true,
+      "boundary_evidence": "38-byte prefix + NUL-terminated ASCII version/CRC/date/Ucode/FWID record; exact NUL boundary. This record boundary does not prove the surrounding range is a payload."
+    }
+  ],
+  "checks": [
+    {
+      "id": "rodata_source",
+      "result": "pass",
+      "detail": "rodata.mapped.candidate.bin SHA-256 3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438"
+    },
+    {
+      "id": "hci_parse",
+      "result": "pass",
+      "detail": "167 records: 166 FC4C + 1 FC4E; all scapy headers/lengths valid"
+    },
+    {
+      "id": "hci_first_two",
+      "result": "pass",
+      "detail": "FC4C 0x211810 len 70 BRCMcfgS; FC4C 0x211852 len 255 BRCMcfgD"
+    },
+    {
+      "id": "hci_launch",
+      "result": "pass",
+      "detail": "terminal FC4E len 4 payload ffffffff at 0x849e76; stream ends 0x849e7d"
+    },
+    {
+      "id": "hcd_extraction",
+      "result": "pass",
+      "detail": "35989 bytes, SHA-256 17954ada9a88b21a51f4f82896779407862a11079e974127729dc29f7e928f85"
+    },
+    {
+      "id": "wlan_candidate_boundary",
+      "result": "not_proven",
+      "detail": "607,868/607,872 match; 4 tail bytes differ; boundary_proven=false"
+    },
+    {
+      "id": "aac_payload",
+      "result": "not_verified",
+      "detail": "No AAC payload boundary/loader; descriptors only"
+    }
+  ],
+  "limitations": [
+    "The BT HCD stream is strictly HCI-header/length/opcode validated, but Linux .hcd compatibility is not proven (no initial Reset; raw vendor stream).",
+    "Bytes after the terminal Launch_RAM are excluded; they may contain other data/commands but are outside the verified stream.",
+    "The 607,872-byte WLAN range is a near-identical candidate, not a byte-identical payload; 4 tail bytes differ and no loader/start proof exists.",
+    "WLAN version/NVRAM/patch-table records have exact local boundaries but do not prove the surrounding image boundary.",
+    "AAC remains unmapped; descriptors only, no boundary/loader.",
+    "No camera, network, remote-control, flashing or external transmission was performed."
+  ]
+}

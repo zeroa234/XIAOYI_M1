@@ -1,0 +1,295 @@
+{
+  "date": "2026-10-29",
+  "failedSha256": "6c247d53e127d0a3b3442f38b438afb15d24a7bb16fe51e6bf060fc635bc2b35",
+  "containerChecksPassed": true,
+  "vectorBlockUnchanged": true,
+  "tableChanges": [
+    {
+      "record": ".ROM.text",
+      "field": "size",
+      "old": 3117324,
+      "new": 3117385
+    },
+    {
+      "record": ".ROM.rodata",
+      "field": "size",
+      "old": 4124532,
+      "new": 4050675
+    }
+  ],
+  "unchangedNd1IplPtbl": true,
+  "decoderArgumentsUnchanged": true,
+  "traces": [
+    {
+      "label": "official",
+      "trace": {
+        "callStubs": {
+          "0x832c": "File-backed NAND read",
+          "0x702c": "Suppress print",
+          "0x6ab4": "Timer",
+          "0x6b28": "Timer",
+          "0x6e08": "Timer",
+          "0x7b64": "Skip BSS DMA",
+          "0x107ac": "Record decoder configuration arguments; no decode",
+          "0x108d0": "Skip hardware wait; no completion or output claim"
+        },
+        "nandReads": [
+          {
+            "sector": 66048,
+            "count": 10,
+            "bodyOffset": 0,
+            "destination": 1073741824
+          },
+          {
+            "sector": 66058,
+            "count": 2,
+            "bodyOffset": 5120,
+            "destination": 1073746944
+          },
+          {
+            "sector": 66060,
+            "count": 4,
+            "bodyOffset": 6144,
+            "destination": 1073747968
+          },
+          {
+            "sector": 66064,
+            "count": 4,
+            "bodyOffset": 8192,
+            "destination": 1124073472
+          },
+          {
+            "sector": 66068,
+            "count": 6086,
+            "bodyOffset": 10240,
+            "destination": 1124075520
+          },
+          {
+            "sector": 72156,
+            "count": 4,
+            "bodyOffset": 3127296,
+            "destination": 1124073472
+          },
+          {
+            "sector": 72160,
+            "count": 8053,
+            "bodyOffset": 3129344,
+            "destination": 1124075520
+          },
+          {
+            "sector": 80212,
+            "count": 4,
+            "bodyOffset": 7251968,
+            "destination": 1124073472
+          },
+          {
+            "sector": 80216,
+            "count": 226,
+            "bodyOffset": 7254016,
+            "destination": 1124075520
+          }
+        ],
+        "decoderArguments": [
+          [
+            8,
+            1124073472,
+            1073750016,
+            4445240
+          ],
+          [
+            8,
+            1124073472,
+            1078196224,
+            5703192
+          ],
+          [
+            8,
+            1124073472,
+            3231383552,
+            339536
+          ]
+        ],
+        "returned": 0,
+        "actualHardwareDecoded": false
+      },
+      "segmentChecks": [
+        {
+          "section": ".text",
+          "packedBytes": 3117324,
+          "readBytes": 3118080,
+          "readExcessBytes": 756,
+          "decoderArgs": [
+            "0x8",
+            "0x43000000",
+            "0x40002000",
+            "0x43d438"
+          ],
+          "coversPackedStream": true
+        },
+        {
+          "section": ".rodata",
+          "packedBytes": 4124532,
+          "readBytes": 4125184,
+          "readExcessBytes": 652,
+          "decoderArgs": [
+            "0x8",
+            "0x43000000",
+            "0x4043f800",
+            "0x570618"
+          ],
+          "coversPackedStream": true
+        },
+        {
+          "section": ".data",
+          "packedBytes": 116761,
+          "readBytes": 117760,
+          "readExcessBytes": 999,
+          "decoderArgs": [
+            "0x8",
+            "0x43000000",
+            "0xc09b0000",
+            "0x52e50"
+          ],
+          "coversPackedStream": true
+        }
+      ]
+    },
+    {
+      "label": "failed",
+      "trace": {
+        "callStubs": {
+          "0x832c": "File-backed NAND read",
+          "0x702c": "Suppress print",
+          "0x6ab4": "Timer",
+          "0x6b28": "Timer",
+          "0x6e08": "Timer",
+          "0x7b64": "Skip BSS DMA",
+          "0x107ac": "Record decoder configuration arguments; no decode",
+          "0x108d0": "Skip hardware wait; no completion or output claim"
+        },
+        "nandReads": [
+          {
+            "sector": 66048,
+            "count": 10,
+            "bodyOffset": 0,
+            "destination": 1073741824
+          },
+          {
+            "sector": 66058,
+            "count": 2,
+            "bodyOffset": 5120,
+            "destination": 1073746944
+          },
+          {
+            "sector": 66060,
+            "count": 4,
+            "bodyOffset": 6144,
+            "destination": 1073747968
+          },
+          {
+            "sector": 66064,
+            "count": 4,
+            "bodyOffset": 8192,
+            "destination": 1124073472
+          },
+          {
+            "sector": 66068,
+            "count": 6086,
+            "bodyOffset": 10240,
+            "destination": 1124075520
+          },
+          {
+            "sector": 72156,
+            "count": 4,
+            "bodyOffset": 3127296,
+            "destination": 1124073472
+          },
+          {
+            "sector": 72160,
+            "count": 7909,
+            "bodyOffset": 3129344,
+            "destination": 1124075520
+          },
+          {
+            "sector": 80212,
+            "count": 4,
+            "bodyOffset": 7251968,
+            "destination": 1124073472
+          },
+          {
+            "sector": 80216,
+            "count": 226,
+            "bodyOffset": 7254016,
+            "destination": 1124075520
+          }
+        ],
+        "decoderArguments": [
+          [
+            8,
+            1124073472,
+            1073750016,
+            4445240
+          ],
+          [
+            8,
+            1124073472,
+            1078196224,
+            5703192
+          ],
+          [
+            8,
+            1124073472,
+            3231383552,
+            339536
+          ]
+        ],
+        "returned": 0,
+        "actualHardwareDecoded": false
+      },
+      "segmentChecks": [
+        {
+          "section": ".text",
+          "packedBytes": 3117385,
+          "readBytes": 3118080,
+          "readExcessBytes": 695,
+          "decoderArgs": [
+            "0x8",
+            "0x43000000",
+            "0x40002000",
+            "0x43d438"
+          ],
+          "coversPackedStream": true
+        },
+        {
+          "section": ".rodata",
+          "packedBytes": 4050675,
+          "readBytes": 4051456,
+          "readExcessBytes": 781,
+          "decoderArgs": [
+            "0x8",
+            "0x43000000",
+            "0x4043f800",
+            "0x570618"
+          ],
+          "coversPackedStream": true
+        },
+        {
+          "section": ".data",
+          "packedBytes": 116761,
+          "readBytes": 117760,
+          "readExcessBytes": 999,
+          "decoderArgs": [
+            "0x8",
+            "0x43000000",
+            "0xc09b0000",
+            "0x52e50"
+          ],
+          "coversPackedStream": true
+        }
+      ]
+    }
+  ],
+  "hardwareDecodeVerified": false,
+  "rootCauseConfirmed": false,
+  "qualification": "Stubbed NAND source and decoder setup/wait; demonstrates table traversal, arguments and input coverage only, not NAND integrity or hardware decompression."
+}

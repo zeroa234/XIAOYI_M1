@@ -1,0 +1,282 @@
+{
+  "fixture": "Unicorn ARM926; original driver execution, modeled SPI ack; bounded wrapper reads",
+  "patchManifestSha256": "f00bc74ca988ba7197ea0ebb690e7bf366e70d41a9d2c7fe5fcb58c1eb6cfee9",
+  "wrapper_sha256": "44cef90c5b7275dd908a425ed43773aafc87739aa1a185e62b217f716e5961bc",
+  "wrapper_bytes": 104,
+  "hook_hex": "b71100eb",
+  "baseline": {
+    "r0": "0x8229",
+    "cpsr": "0x20000013",
+    "events": [
+      [
+        566231060,
+        1794
+      ],
+      [
+        566231064,
+        1
+      ],
+      [
+        566231060,
+        2050
+      ],
+      [
+        566231064,
+        0
+      ],
+      [
+        566231060,
+        770
+      ],
+      [
+        566231064,
+        0
+      ],
+      [
+        566231060,
+        1026
+      ],
+      [
+        566231064,
+        0
+      ]
+    ],
+    "state_38": 33333
+  },
+  "cases": [
+    {
+      "kind": "non_m",
+      "mode": 0,
+      "ev": 20,
+      "time": 33333,
+      "r0": "0x8229",
+      "behavior_same": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "non_m",
+      "mode": 2,
+      "ev": 20,
+      "time": 33333,
+      "r0": "0x8229",
+      "behavior_same": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "non_m",
+      "mode": 3,
+      "ev": 20,
+      "time": 33333,
+      "r0": "0x8229",
+      "behavior_same": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "non_m",
+      "mode": 4,
+      "ev": 20,
+      "time": 33333,
+      "r0": "0x8229",
+      "behavior_same": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "non_m",
+      "mode": 5,
+      "ev": 20,
+      "time": 33333,
+      "r0": "0x8229",
+      "behavior_same": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "m",
+      "mode": 1,
+      "ev": 0,
+      "time": 33333,
+      "r0": "0x8229",
+      "events_changed": false,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "m",
+      "mode": 1,
+      "ev": 20,
+      "time": 33333,
+      "r0": "0x2090a",
+      "events_changed": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "m",
+      "mode": 1,
+      "ev": -20,
+      "time": 33333,
+      "r0": "0x2081",
+      "events_changed": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "m",
+      "mode": 1,
+      "ev": 50,
+      "time": 33333,
+      "r0": "0x1046d6",
+      "events_changed": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "m",
+      "mode": 1,
+      "ev": -50,
+      "time": 33333,
+      "r0": "0x3fd",
+      "events_changed": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "m",
+      "mode": 1,
+      "ev": 2147483647,
+      "time": 33333,
+      "r0": "0x36",
+      "events_changed": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "m",
+      "mode": 1,
+      "ev": -2147483648,
+      "time": 33333,
+      "r0": "0x36",
+      "events_changed": true,
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "time",
+      "mode": 1,
+      "ev": 20,
+      "time": 1,
+      "r0": "0x36",
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "time",
+      "mode": 1,
+      "ev": -20,
+      "time": 1,
+      "r0": "0x36",
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "time",
+      "mode": 1,
+      "ev": 20,
+      "time": 250,
+      "r0": "0x3dc",
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "time",
+      "mode": 1,
+      "ev": -20,
+      "time": 250,
+      "r0": "0x36",
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "time",
+      "mode": 1,
+      "ev": 20,
+      "time": 33333,
+      "r0": "0x2090a",
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "time",
+      "mode": 1,
+      "ev": -20,
+      "time": 33333,
+      "r0": "0x2081",
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "time",
+      "mode": 1,
+      "ev": 20,
+      "time": 1300000,
+      "r0": "0x4f5882",
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "time",
+      "mode": 1,
+      "ev": -20,
+      "time": 1300000,
+      "r0": "0x4f579",
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "time",
+      "mode": 1,
+      "ev": 20,
+      "time": 60000000,
+      "r0": "0xe4e1bf4",
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    },
+    {
+      "kind": "time",
+      "mode": 1,
+      "ev": -20,
+      "time": 60000000,
+      "r0": "0xe4e1a3",
+      "stable_regs_same": true,
+      "state_38_same": true,
+      "caller_saved_restored": true
+    }
+  ],
+  "failures": [],
+  "note": "Synthetic frame/MMIO; no camera; non-M comparison covers r4-r11/SP/LR/CPSR and r0/MMIO; r1-r3/ip are additionally restored."
+}

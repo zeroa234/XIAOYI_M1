@@ -1,0 +1,791 @@
+{
+  "schema": 1,
+  "generated_at": "2026-10-29T04:26:07.279365+00:00",
+  "qualification": "Static analysis of the firmware-embedded @PDI image; not a runtime memory image, not a flashable image.",
+  "scope": {
+    "firmware": "official 3.2-cn reference-decoded candidate",
+    "image": "embedded @PDI payload in .rodata, payload VA 0x440e00, load address 0xdfc90000",
+    "not_analyzed": [
+      "main-program functions",
+      "other ND1 images",
+      "runtime memory",
+      "camera/network state"
+    ]
+  },
+  "method": [
+    "verify reference-decoded .rodata/.data/.text hashes",
+    "verify @PDI header 0x200 and payload 0xe6e00",
+    "verify loader 0x42eb90 instruction words and literal pool",
+    "extract payload byte-for-byte to temp/pi-embedded-subcpu/payload.bin",
+    "import raw payload into an isolated Ghidra project at 0xdfc90000",
+    "seed seven vector functions, run auto-analysis, export all recognized functions",
+    "decompile each function with 30 s timeout; disassembly fallback on failure"
+  ],
+  "inputs": {
+    "sha256": {
+      ".rodata": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+      ".data": "0c7bc4e420b8b24ad6ca36f0c931d415add9a56a23cf70537e9b79e545c5df98",
+      ".text": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992"
+    },
+    "container": {
+      "magic": "@PDI",
+      "header_va": "00440c00",
+      "header_bytes": 512,
+      "header_version": "Ver0.0.00",
+      "payload_va": "00440e00",
+      "payload_end": "00527c00",
+      "payload_bytes": 945664,
+      "payload_sha256": "a48744ebf2e7f8c4fe895f8ddd7b4823dab82b7307acb19a185e31684579cc7a",
+      "payload_last_nonzero_offset": "000e6c93",
+      "payload_zero_tail_bytes": 364,
+      "load_address": "dfc90000",
+      "descriptor_words": {
+        "c0a020f0": 2,
+        "c0a020f4": 114,
+        "c0a020f8": 3145728,
+        "c0a020fc": 3754491904
+      },
+      "loader_words": {
+        "0042ebd0": "e59f005c",
+        "0042ebd4": "e59f1060",
+        "0042ebd8": "e0411000",
+        "0042ebdc": "e2412c02",
+        "0042ebe0": "e2801c02",
+        "0042ebe4": "e595000c",
+        "0042ebe8": "ebf57be7"
+      },
+      "loader_literals": {
+        "0042ec34": "00440c00",
+        "0042ec38": "c0a020f0",
+        "0042ec3c": "00527c00"
+      }
+    },
+    "extracted_payload": {
+      "path": "temp\\pi-embedded-subcpu\\payload.bin",
+      "sha256": "a48744ebf2e7f8c4fe895f8ddd7b4823dab82b7307acb19a185e31684579cc7a"
+    }
+  },
+  "analysis": {
+    "project": "temp\\pi-embedded-subcpu\\ghidra-project-1793247523392467400",
+    "language": "ARM:LE:32:v5t",
+    "loader": "BinaryLoader",
+    "loader_base": "0xdfc90000",
+    "payload_size": 945664,
+    "analysis_timeout_per_file_seconds": 180,
+    "decompile_timeout_per_function_seconds": 30,
+    "max_cpu": 2,
+    "java_xmx": "2G",
+    "priority": "IDLE_PRIORITY_CLASS (host supported)",
+    "outline_helpers_applied": false,
+    "note": "Ghidra image base remains 0 after raw BinaryLoader import; the memory block is at 0xdfc90000 and exported addresses are block addresses.",
+    "command": [
+      "./vendor\\java25\\jdk-25.0.4.1+1\\bin\\java.exe",
+      "-Djava.system.class.loader=ghidra.GhidraClassLoader",
+      "-Dfile.encoding=UTF8",
+      "-Duser.country=US",
+      "-Duser.language=en",
+      "-Duser.variant=",
+      "-Dsun.java2d.opengl=false",
+      "-Dsun.java2d.d3d=false",
+      "-Djdk.tls.client.protocols=TLSv1.2,TLSv1.3",
+      "-Dcpu.core.limit=",
+      "-Dcpu.core.override=",
+      "-Dfont.size.override=",
+      "-Dpython.console.encoding=UTF-8",
+      "-Dlog4j.skipJansi=true",
+      "-Xshare:off",
+      "-XX:+UseCompactObjectHeaders",
+      "-Djavax.xml.accessExternalDTD=",
+      "-Djavax.xml.accessExternalSchema=",
+      "-Djavax.xml.accessExternalStylesheet=",
+      "--enable-native-access=ALL-UNNAMED",
+      "--sun-misc-unsafe-memory-access=allow",
+      "-Xmx2G",
+      "-Djava.awt.headless=true",
+      "-Duser.home=./temp\\pi-embedded-subcpu\\ghidra-user",
+      "-Dapplication.settingsdir=./temp\\pi-embedded-subcpu\\ghidra-settings",
+      "-Dapplication.cachedir=./temp\\pi-embedded-subcpu\\ghidra-cache",
+      "-Dapplication.tempdir=./temp\\pi-embedded-subcpu\\ghidra-tmp",
+      "-Djava.io.tmpdir=./temp\\pi-embedded-subcpu\\ghidra-tmp",
+      "-Djava.util.prefs.userRoot=./temp\\pi-embedded-subcpu\\ghidra-settings\\prefs",
+      "-XX:ParallelGCThreads=2",
+      "-XX:CICompilerCount=2",
+      "-cp",
+      "./vendor\\ghidra\\ghidra_12.2_PUBLIC\\Ghidra\\Framework\\Utility\\lib\\Utility.jar",
+      "ghidra.Ghidra",
+      "ghidra.app.util.headless.AnalyzeHeadless",
+      "./temp\\pi-embedded-subcpu\\ghidra-project-1793247523392467400",
+      "embedded-subcpu",
+      "-import",
+      "./temp\\pi-embedded-subcpu\\payload.bin",
+      "-processor",
+      "ARM:LE:32:v5t",
+      "-loader",
+      "BinaryLoader",
+      "-loader-baseAddr",
+      "0xdfc90000",
+      "-scriptPath",
+      "./scripts\\ghidra",
+      "-preScript",
+      "PrepareEmbeddedSubcpu.java",
+      "0xdfc90000",
+      "0xe6e00",
+      "-postScript",
+      "ExportEmbeddedSubcpu.java",
+      "./output\\embedded-subcpu-2026-10-29",
+      "0xdfc90000",
+      "0xe6e00",
+      "30",
+      "0",
+      "-analysisTimeoutPerFile",
+      "180",
+      "-max-cpu",
+      "2",
+      "-log",
+      "./output\\embedded-subcpu-2026-10-29\\ghidra.log",
+      "-scriptlog",
+      "./output\\embedded-subcpu-2026-10-29\\ghidra-script.log"
+    ],
+    "image_base": "00000000",
+    "block_name": "embedded_subcpu"
+  },
+  "counts": {
+    "functions_recognized": 12940,
+    "functions_decompiled_ok": 12869,
+    "functions_decompile_failed": 71,
+    "decompiled_c_files": 12940,
+    "decompile_coverage_complete": true,
+    "strings": 20647,
+    "strings_with_function_refs": 1903,
+    "unrecognized_call_targets": 445,
+    "thumb_bit_call_targets": 9382,
+    "instructions_in_recognized_functions": 191101,
+    "body_bytes_in_recognized_functions": 541533,
+    "catalog_seconds": 1.7117467,
+    "postscript_elapsed_seconds": 122.2685787,
+    "wrapper_wall_seconds": 289.11708784103394,
+    "analysis_timed_out": false,
+    "script_error": false,
+    "vector_seed_functions": 7,
+    "unrecognized_call_targets_single_callsite": 421,
+    "unrecognized_call_targets_multi_callsite": 24
+  },
+  "vectors": [
+    {
+      "slot": "dfc90020",
+      "word": "dfc90100",
+      "target": "dfc90100",
+      "function": "dfc90100"
+    },
+    {
+      "slot": "dfc90024",
+      "word": "dfc9011c",
+      "target": "dfc9011c",
+      "function": "dfc9011c"
+    },
+    {
+      "slot": "dfc90028",
+      "word": "dfc90120",
+      "target": "dfc90120",
+      "function": "dfc90120"
+    },
+    {
+      "slot": "dfc9002c",
+      "word": "dfc90124",
+      "target": "dfc90124",
+      "function": "dfc90124"
+    },
+    {
+      "slot": "dfc90030",
+      "word": "dfc90128",
+      "target": "dfc90128",
+      "function": "dfc90128"
+    },
+    {
+      "slot": "dfc90038",
+      "word": "dfc94e04",
+      "target": "dfc94e04",
+      "function": "dfc94e04"
+    },
+    {
+      "slot": "dfc9003c",
+      "word": "dfc9012c",
+      "target": "dfc9012c",
+      "function": "dfc9012c"
+    }
+  ],
+  "top_functions_by_instructions": [
+    {
+      "entry": "dfcd8cf8",
+      "end": "dfcda3ef",
+      "body_bytes": 5660,
+      "instructions": 1415,
+      "callers": 1,
+      "callees": 4,
+      "name": "FUN_dfcd8cf8",
+      "string_count": 83,
+      "payload_count": 297,
+      "strings": "dfcd9294:\\t | dfcd93d4:C | dfcda094:} | dfcda0d8:l | dfcda10c:_ | dfcda140:R | dfcda1f8:M | dfcda240:O | dfcdf1a0:manf=%s | dfcdf1a8:aa2g=%d | dfcdf1b0:aa5g=%d | dfcdf1b8:cc=%d | dfcdf1c0:opo=%d | dfcdf1c8:ag0=%d | dfcdf1d0:ccode= | dfcdf1d8:ag1=%d | dfcdf1e0:\\n | dfcdf1e4:d | dfcdf204:\\n | dfcdf20c:\\r | dfcdf220:# | dfcdf224:( | dfcdf228:- | dfcdf22c:2 | dfcdf230:7 | dfcdf234:< | dfcdf238:F | dfcdf23c:P | dfcdf240:boardflags=0x%x | dfcdf250:manfid=0x%x"
+    },
+    {
+      "entry": "dfd1e786",
+      "end": "dfd1f08d",
+      "body_bytes": 2312,
+      "instructions": 1156,
+      "callers": 1,
+      "callees": 49,
+      "name": "FUN_dfd1e786",
+      "string_count": 51,
+      "payload_count": 102,
+      "strings": "dfd1eef8:b | dfd1ef00:^ | dfd1ef08:Y | dfd1ef10:U | dfd1ef18:Q | dfd1ef20:M | dfd1ef28:J | dfd1ef30:G | dfd1ef38:D | dfd1ef40:A | dfd1ef48:> | dfd1ef50:< | dfd1ef58:: | dfd1ef60:7 | dfd1ef68:5 | dfd1ef70:3 | dfd1ef78:2 | dfd1ef80:0 | dfd1ef88:. | dfd1ef90:. | dfd1ef98:/ | dfd1efa0:- | dfd1efa8:, | dfd1efb0:, | dfd1efb8:+ | dfd1efc0:* | dfd1efc8:) | dfd1efd0:( | dfd1efd8:( | dfd1efe0:("
+    },
+    {
+      "entry": "dfcbc840",
+      "end": "dfcbdc07",
+      "body_bytes": 4492,
+      "instructions": 1123,
+      "callers": 0,
+      "callees": 25,
+      "name": "FUN_dfcbc840",
+      "string_count": 16,
+      "payload_count": 79,
+      "strings": "dfcbc954:p | dfcbc9c4:p | dfcbc9f4:p | dfcbcbe4:\\\\ | dfcbcc94:\\\\ | dfcbce84:\\\\ | dfcbcee8:\\\\ | dfcbd3e8:$ | dfcbd5dc:$ | dfcbda28:\\\\ | dfcbda7c:\\t | dfcbda84:\\\\ | dfcbdacc:\\\\ | dfcbdb34:\\t | dfcbdb98:\\\\ | dfcbdbfc:\\\\"
+    },
+    {
+      "entry": "dfcbfd00",
+      "end": "dfcc0d47",
+      "body_bytes": 4128,
+      "instructions": 1032,
+      "callers": 5,
+      "callees": 15,
+      "name": "FUN_dfcbfd00",
+      "string_count": 4,
+      "payload_count": 51,
+      "strings": "dfcc0ca0:L | dfcc0ccc:x | dfcc0d10:4 | dfcc0d28:T"
+    },
+    {
+      "entry": "dfd66f3c",
+      "end": "dfd67593",
+      "body_bytes": 1624,
+      "instructions": 812,
+      "callers": 1,
+      "callees": 0,
+      "name": "FUN_dfd66f3c",
+      "string_count": 1,
+      "payload_count": 3,
+      "strings": "dfd6747f:Invalid/Unsupported xtal value %d"
+    },
+    {
+      "entry": "dfd0862c",
+      "end": "dfd08b65",
+      "body_bytes": 1338,
+      "instructions": 669,
+      "callers": 1,
+      "callees": 0,
+      "name": "FUN_dfd0862c",
+      "string_count": 0,
+      "payload_count": 5,
+      "strings": ""
+    },
+    {
+      "entry": "dfccaf24",
+      "end": "dfccb93b",
+      "body_bytes": 2584,
+      "instructions": 646,
+      "callers": 1,
+      "callees": 5,
+      "name": "FUN_dfccaf24",
+      "string_count": 0,
+      "payload_count": 18,
+      "strings": ""
+    },
+    {
+      "entry": "dfd092be",
+      "end": "dfd09779",
+      "body_bytes": 1212,
+      "instructions": 606,
+      "callers": 1,
+      "callees": 0,
+      "name": "FUN_dfd092be",
+      "string_count": 2,
+      "payload_count": 6,
+      "strings": "dfd096f9:Inc Data: %s\\nInc Compiler: %s\\nInc %s\\n | dfd0971f:Inc Customization: %s\\n"
+    },
+    {
+      "entry": "dfc9eb50",
+      "end": "dfc9f503",
+      "body_bytes": 2412,
+      "instructions": 603,
+      "callers": 0,
+      "callees": 20,
+      "name": "caseD_3",
+      "string_count": 11,
+      "payload_count": 62,
+      "strings": "dfc9ecd8:0 | dfc9ee70:$ | dfc9ee80:$ | dfc9f120:$ | dfc9f130:$ | dfc9f1b8:$ | dfc9f334:X | dfc9f3a4:0 | dfc9f3b8:\\\\ | dfc9f484:\\n | dfc9f4e4:\\n"
+    },
+    {
+      "entry": "dfd08e10",
+      "end": "dfd092bd",
+      "body_bytes": 1197,
+      "instructions": 599,
+      "callers": 1,
+      "callees": 1,
+      "name": "FUN_dfd08e10",
+      "string_count": 3,
+      "payload_count": 11,
+      "strings": "dfd09242:N | dfd0931b:p2p  | dfd09370:bsstrans "
+    },
+    {
+      "entry": "dfd1f08e",
+      "end": "dfd1f513",
+      "body_bytes": 1158,
+      "instructions": 579,
+      "callers": 1,
+      "callees": 85,
+      "name": "FUN_dfd1f08e",
+      "string_count": 0,
+      "payload_count": 185,
+      "strings": ""
+    },
+    {
+      "entry": "dfd53778",
+      "end": "dfd53bdd",
+      "body_bytes": 1125,
+      "instructions": 563,
+      "callers": 1,
+      "callees": 0,
+      "name": "FUN_dfd53778",
+      "string_count": 2,
+      "payload_count": 4,
+      "strings": "dfd53b5d:Inc Data: %s\\nInc Compiler: %s\\nInc %s\\n | dfd53b83:Inc Customization: %s\\n"
+    }
+  ],
+  "top_functions_by_callers": [
+    {
+      "entry": "dfcb5670",
+      "end": "dfcb56b3",
+      "body_bytes": 68,
+      "instructions": 17,
+      "callers": 204,
+      "callees": 2,
+      "name": "FUN_dfcb5670",
+      "string_count": 0,
+      "payload_count": 5,
+      "strings": ""
+    },
+    {
+      "entry": "dfcc82f0",
+      "end": "dfcc831b",
+      "body_bytes": 44,
+      "instructions": 11,
+      "callers": 194,
+      "callees": 1,
+      "name": "FUN_dfcc82f0",
+      "string_count": 0,
+      "payload_count": 1,
+      "strings": ""
+    },
+    {
+      "entry": "dfcb56b4",
+      "end": "dfcb56db",
+      "body_bytes": 40,
+      "instructions": 10,
+      "callers": 164,
+      "callees": 0,
+      "name": "FUN_dfcb56b4",
+      "string_count": 0,
+      "payload_count": 2,
+      "strings": ""
+    },
+    {
+      "entry": "dfd2c7dc",
+      "end": "dfd2c89b",
+      "body_bytes": 68,
+      "instructions": 32,
+      "callers": 91,
+      "callees": 1,
+      "name": "FUN_dfd2c7dc",
+      "string_count": 0,
+      "payload_count": 4,
+      "strings": ""
+    },
+    {
+      "entry": "dfcc831c",
+      "end": "dfcc834b",
+      "body_bytes": 48,
+      "instructions": 12,
+      "callers": 89,
+      "callees": 1,
+      "name": "FUN_dfcc831c",
+      "string_count": 0,
+      "payload_count": 1,
+      "strings": ""
+    },
+    {
+      "entry": "dfce1558",
+      "end": "dfce1617",
+      "body_bytes": 68,
+      "instructions": 32,
+      "callers": 80,
+      "callees": 1,
+      "name": "FUN_dfce1558",
+      "string_count": 0,
+      "payload_count": 4,
+      "strings": ""
+    },
+    {
+      "entry": "dfc9b2d8",
+      "end": "dfc9b2f7",
+      "body_bytes": 32,
+      "instructions": 8,
+      "callers": 69,
+      "callees": 1,
+      "name": "FUN_dfc9b2d8",
+      "string_count": 0,
+      "payload_count": 1,
+      "strings": ""
+    },
+    {
+      "entry": "dfc95670",
+      "end": "dfc9567f",
+      "body_bytes": 16,
+      "instructions": 4,
+      "callers": 62,
+      "callees": 0,
+      "name": "FUN_dfc95670",
+      "string_count": 0,
+      "payload_count": 0,
+      "strings": ""
+    },
+    {
+      "entry": "dfc96284",
+      "end": "dfc964c3",
+      "body_bytes": 576,
+      "instructions": 144,
+      "callers": 59,
+      "callees": 0,
+      "name": "FUN_dfc96284",
+      "string_count": 0,
+      "payload_count": 0,
+      "strings": ""
+    },
+    {
+      "entry": "dfce4b5e",
+      "end": "dfce4b63",
+      "body_bytes": 6,
+      "instructions": 3,
+      "callers": 59,
+      "callees": 0,
+      "name": "FUN_dfce4b5e",
+      "string_count": 0,
+      "payload_count": 1,
+      "strings": ""
+    },
+    {
+      "entry": "dfce4b64",
+      "end": "dfce4b67",
+      "body_bytes": 4,
+      "instructions": 2,
+      "callers": 55,
+      "callees": 0,
+      "name": "FUN_dfce4b64",
+      "string_count": 0,
+      "payload_count": 1,
+      "strings": ""
+    },
+    {
+      "entry": "dfd2fde2",
+      "end": "dfd2fde7",
+      "body_bytes": 6,
+      "instructions": 3,
+      "callers": 53,
+      "callees": 0,
+      "name": "FUN_dfd2fde2",
+      "string_count": 0,
+      "payload_count": 1,
+      "strings": ""
+    }
+  ],
+  "key_functions": [
+    {
+      "entry": "dfc90100",
+      "end": "dfc9011b",
+      "body_bytes": 28,
+      "instructions": 7,
+      "callers": 0,
+      "callees": 5,
+      "name": "subcpu_vec_20",
+      "string_count": 0,
+      "payload_count": 5,
+      "strings": ""
+    },
+    {
+      "entry": "dfc94e04",
+      "end": "dfc94e07",
+      "body_bytes": 4,
+      "instructions": 1,
+      "callers": 0,
+      "callees": 0,
+      "name": "thunk_FUN_dfc9d5d4",
+      "string_count": 0,
+      "payload_count": 0,
+      "strings": ""
+    },
+    {
+      "entry": "dfc9d5d4",
+      "end": "dfc9d657",
+      "body_bytes": 132,
+      "instructions": 33,
+      "callers": 0,
+      "callees": 3,
+      "name": "FUN_dfc9d5d4",
+      "string_count": 0,
+      "payload_count": 6,
+      "strings": ""
+    },
+    {
+      "entry": "dfc90ac4",
+      "end": "dfc90c93",
+      "body_bytes": 236,
+      "instructions": 59,
+      "callers": 1,
+      "callees": 5,
+      "name": "FUN_dfc90ac4",
+      "string_count": 16,
+      "payload_count": 66,
+      "strings": "dfc90ba4:8 | dfc90ba8:cpu | dfc90bb0:tkdev | dfc90bbc:task | dfc90bc8:semaphore | dfc90bd8:eventflag | dfc90be8:mailbox | dfc90bf4:messagebuffer | dfc90c08:rendezvous | dfc90c18:mutex | dfc90c24:memorypool | dfc90c34:fix_memorypool | dfc90c48:cyclichandler | dfc90c5c:alarmhandler | dfc90c70:subsystem | dfc90c80:timer"
+    },
+    {
+      "entry": "dfcb4ebc",
+      "end": "dfcb555f",
+      "body_bytes": 1640,
+      "instructions": 410,
+      "callers": 1,
+      "callees": 18,
+      "name": "FUN_dfcb4ebc",
+      "string_count": 4,
+      "payload_count": 42,
+      "strings": "dfcb535c:BAD SOCKET CALL | dfcb536c:SET SOCKET OPTIONS CALL | dfcb55d0:select error | dfcdeb80:fnsSendTo failed"
+    },
+    {
+      "entry": "dfcb5670",
+      "end": "dfcb56b3",
+      "body_bytes": 68,
+      "instructions": 17,
+      "callers": 204,
+      "callees": 2,
+      "name": "FUN_dfcb5670",
+      "string_count": 0,
+      "payload_count": 5,
+      "strings": ""
+    },
+    {
+      "entry": "dfcc82f0",
+      "end": "dfcc831b",
+      "body_bytes": 44,
+      "instructions": 11,
+      "callers": 194,
+      "callees": 1,
+      "name": "FUN_dfcc82f0",
+      "string_count": 0,
+      "payload_count": 1,
+      "strings": ""
+    },
+    {
+      "entry": "dfcb56b4",
+      "end": "dfcb56db",
+      "body_bytes": 40,
+      "instructions": 10,
+      "callers": 164,
+      "callees": 0,
+      "name": "FUN_dfcb56b4",
+      "string_count": 0,
+      "payload_count": 2,
+      "strings": ""
+    },
+    {
+      "entry": "dfc9a4bc",
+      "end": "dfc9aa87",
+      "body_bytes": 1484,
+      "instructions": 371,
+      "callers": 0,
+      "callees": 17,
+      "name": "FUN_dfc9a4bc",
+      "string_count": 4,
+      "payload_count": 52,
+      "strings": "dfc9ad3c:0u | dfcdea1c:eth0 | dfcdea21:eth0 | dfcdea26:eth0"
+    },
+    {
+      "entry": "dfc9acd8",
+      "end": "dfc9ad83",
+      "body_bytes": 76,
+      "instructions": 19,
+      "callers": 1,
+      "callees": 1,
+      "name": "FUN_dfc9acd8",
+      "string_count": 1,
+      "payload_count": 5,
+      "strings": "dfc9b11c:eth0"
+    },
+    {
+      "entry": "dfc9ad98",
+      "end": "dfc9aec7",
+      "body_bytes": 304,
+      "instructions": 76,
+      "callers": 2,
+      "callees": 5,
+      "name": "FUN_dfc9ad98",
+      "string_count": 2,
+      "payload_count": 9,
+      "strings": "dfc9ad3c:0u | dfc9b11c:eth0"
+    }
+  ],
+  "key_strings": [
+    {
+      "address": "dfc90bbc",
+      "text": "task",
+      "functions": "dfc90ac4"
+    },
+    {
+      "address": "dfc90bc8",
+      "text": "semaphore",
+      "functions": "dfc90ac4"
+    },
+    {
+      "address": "dfc90bd8",
+      "text": "eventflag",
+      "functions": "dfc90ac4"
+    },
+    {
+      "address": "dfc90c18",
+      "text": "mutex",
+      "functions": "dfc90ac4"
+    },
+    {
+      "address": "dfc90c70",
+      "text": "subsystem",
+      "functions": "dfc90ac4"
+    },
+    {
+      "address": "dfc90c80",
+      "text": "timer",
+      "functions": "dfc90ac4"
+    },
+    {
+      "address": "dfc9b11c",
+      "text": "eth0",
+      "functions": "dfc9acd8;dfc9ad98"
+    },
+    {
+      "address": "dfcb535c",
+      "text": "BAD SOCKET CALL",
+      "functions": "dfcb4ebc"
+    },
+    {
+      "address": "dfcb536c",
+      "text": "SET SOCKET OPTIONS CALL",
+      "functions": "dfcb4ebc"
+    },
+    {
+      "address": "dfcb55d0",
+      "text": "select error",
+      "functions": "dfcb4ebc"
+    },
+    {
+      "address": "dfcdeb80",
+      "text": "fnsSendTo failed",
+      "functions": "dfcb4ebc"
+    },
+    {
+      "address": "dfcde914",
+      "text": "inittsk",
+      "functions": ""
+    },
+    {
+      "address": "dfcdeb0c",
+      "text": "ICMP",
+      "functions": ""
+    },
+    {
+      "address": "dfd74a08",
+      "text": "XC_WLAN_CoreInitializeBody",
+      "functions": "dfd34a02"
+    },
+    {
+      "address": "dfd74840",
+      "text": "XC_WLAN_DrvStaGetRssiBody",
+      "functions": "dfd05826"
+    },
+    {
+      "address": "dfd1d9e7",
+      "text": "Invalid/Unsupported xtal value %d",
+      "functions": "dfd1d6c8"
+    }
+  ],
+  "failures": {
+    "count": 71,
+    "reasons": {
+      "bad_instruction_count": 71
+    },
+    "samples": {
+      "bad_instruction_count": [
+        "dfce6f86",
+        "dfce6fc0",
+        "dfce7088",
+        "dfce70ca",
+        "dfce96ca"
+      ]
+    }
+  },
+  "ghidra_log": {
+    "error_count": 29,
+    "errors": {
+      "failed_create_function": 8,
+      "function_body_overlap": 21
+    },
+    "error_samples": {
+      "failed_create_function": [
+        "ERROR Failed to create function at dfce8ff4 since its body contains referring thunk at dfce8fea (CreateFunctionCmd)",
+        "ERROR Failed to create function at dfcebcfe since its body contains referring thunk at dfcebcee (CreateFunctionCmd)",
+        "ERROR Failed to create function at dfd036de since its body contains referring thunk at dfd036b6 (CreateFunctionCmd)"
+      ],
+      "function_body_overlap": [
+        "ERROR ... function body repair failed due to overlap with another function: dfd358be (ClearFlowAndRepairCmd)",
+        "ERROR ... function body repair failed due to overlap with another function: dfd358d0 (ClearFlowAndRepairCmd)",
+        "ERROR ... function body repair failed due to overlap with another function: dfd358d8 (ClearFlowAndRepairCmd)"
+      ]
+    },
+    "decompiler_warning_count": 7345,
+    "decompiler_warnings": {
+      "flow_outside_memory": 147,
+      "unresolved_constructor": 6995,
+      "other_pcode": 191,
+      "unreadable_memory": 12
+    }
+  },
+  "outputs": {
+    "directory": "output\\embedded-subcpu-2026-10-29",
+    "functions_tsv": "functions.tsv",
+    "strings_tsv": "strings.tsv",
+    "unrecognized_call_targets_tsv": "unrecognized-call-targets.tsv",
+    "vectors_tsv": "vectors.tsv",
+    "decompiled_dir": "decompiled/",
+    "run_inputs": "run-inputs.json",
+    "run_verification": "run-verification.json",
+    "console_log": "console.log",
+    "ghidra_log": "ghidra.log",
+    "ghidra_script_log": "ghidra-script.log"
+  },
+  "limitations": [
+    "Raw binary has no symbols; only Ghidra-recognized function entries are catalogued; unreachable or indirect-only code may be absent.",
+    "The ARM/Thumb mixture is real: 9,382 call flows carried the Thumb low bit; odd targets were normalized to even function entries for lookup.",
+    "445 call targets remain unresolved (even addresses not contained in a recognized function); see unrecognized-call-targets.tsv.",
+    "71 functions failed decompilation with Bad instruction count exceeded / No pcode could be generated; their .c files contain disassembly fallback, not C.",
+    "7,345 decompiler warnings (6,995 unresolved constructors, 147 flow outside mapped memory, 12 unreadable bytes, 191 other pcode) limit semantic confidence.",
+    "Ghidra emitted 29 ERROR lines: 8 failed function creations caused by referring thunks and 21 function-body repair overlaps.",
+    "String scan covers the whole raw block including code bytes; short or binary-coincidental strings are possible. Only 1,903 of 20,647 strings have function references.",
+    "Vector slots +0x24..+0x30 and +0x3c are self-loops; reset (+0x20) and IRQ (+0x38 -> 0xdfc94e04 -> 0xdfc9d5d4) appear active.",
+    "No runtime execution, camera access, network access, firmware modification or repack was performed.",
+    "The embedded image may be a different core/ABI than the main ARM926 candidate; ARM:LE:32:v5t is the selected analysis model, not a hardware identity proof."
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-29",
+  "failedSha256": "6c247d53e127d0a3b3442f38b438afb15d24a7bb16fe51e6bf060fc635bc2b35",
+  "gateExecutions": [
+    {
+      "image": "official",
+      "visited": [
+        "0x369d50",
+        "0x369d54",
+        "0x369d58",
+        "0x369d5c",
+        "0xf880",
+        "0xf884",
+        "0x369d60",
+        "0x369d64",
+        "0x369e18"
+      ],
+      "wrapperRegionEntered": false,
+      "reached": "0x369e18"
+    },
+    {
+      "image": "failed",
+      "visited": [
+        "0x369d50",
+        "0x369d54",
+        "0x369d58",
+        "0x369d5c",
+        "0xf880",
+        "0xf884",
+        "0x369d60",
+        "0x369d64",
+        "0x369e18"
+      ],
+      "wrapperRegionEntered": false,
+      "reached": "0x369e18"
+    }
+  ],
+  "originalHelperBytes": "0000a0e31eff2fe1",
+  "originalHelperAddress": "0xf880",
+  "enclosingFunction": "0x369d50",
+  "reusedRegion": [
+    "0x369d68",
+    "0x369dd0"
+  ],
+  "nativeExposureCasesPreviouslyPassed": 22,
+  "originalExposureFailures": [],
+  "audioPreparation": {
+    "sourceSha256": "c65e5b132a1d11567ce2237da36a0a58fa320cc592d7605914e315aa020db772",
+    "originalResourceVa": "0x62102c",
+    "originalSha256": "caf241ad8aa6c89228c5f531d2ab0a2b67b495c9e86fda899bf95d5c6068055b",
+    "outputSha256": "55f760205e80058eb28871eb1e25f2c5e7a3983ee9ecaa9c6a3440bfdae1f84b",
+    "resourceBytes": 288594,
+    "pcmClipBytes": 127896,
+    "sampleRate": 48000,
+    "bits": 16,
+    "channels": 1,
+    "clipSeconds": 1.33225,
+    "paddedSeconds": 1.33225,
+    "paddingOutsideRIFFBytes": 160654,
+    "truncated": false,
+    "speedChanged": false,
+    "cameraPlaybackValidated": false,
+    "command": [
+      "<user-profile>\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-9.0.1-full_build\\bin\\ffmpeg.EXE",
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-i",
+      "./data\\input\\custom-sounds\\shutter-selected.mp3",
+      "-map_metadata",
+      "-1",
+      "-ac",
+      "1",
+      "-ar",
+      "48000",
+      "-c:a",
+      "pcm_s16le",
+      "-f",
+      "s16le",
+      "./output\\custom-shutter-demo\\shutter-0062102c-48000-1ch-16bit\\converted.pcm"
+    ],
+    "ffmpegVersion": "ffmpeg version 9.0.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers"
+  },
+  "rootCauseConfirmed": false,
+  "cameraAccessed": false,
+  "firmwareWritten": false,
+  "limits": [
+    "Reused bytes belong to a statically unreachable branch, not padding.",
+    "This executes the recorded constant-return gate, not every possible entry or runtime modification.",
+    "Local ABI tests do not prove that AE callbacks cannot run before the screen appears.",
+    "Audio routing is based on static analysis and separate final-image checks, not speaker playback."
+  ]
+}

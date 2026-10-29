@@ -1,0 +1,497 @@
+{
+  "passed": true,
+  "textSha256": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+  "targets": [
+    {
+      "target": "0x417b8",
+      "catalogCalls": 1,
+      "callsites": [
+        {
+          "address": "0x45f50",
+          "raw": "18eeffeb",
+          "assembly": "bl #0x417b8"
+        }
+      ],
+      "evidenceBytes": "800181e0481a1fe5001191e7300051e20100a09130149f95000191970600009a020050e21b0050e320049f9520249fe520049f850101909702008080941a1fe5",
+      "snapshotWindowIdentical": true,
+      "disassembly": [
+        {
+          "address": "0x417b8",
+          "raw": "800181e0",
+          "assembly": "add r0, r1, r0, lsl #3"
+        },
+        {
+          "address": "0x417bc",
+          "raw": "481a1fe5",
+          "assembly": "ldr r1, [pc, #-0xa48]"
+        },
+        {
+          "address": "0x417c0",
+          "raw": "001191e7",
+          "assembly": "ldr r1, [r1, r0, lsl #2]"
+        },
+        {
+          "address": "0x417c4",
+          "raw": "300051e2",
+          "assembly": "subs r0, r1, #0x30"
+        },
+        {
+          "address": "0x417c8",
+          "raw": "0100a091",
+          "assembly": "movls r0, r1"
+        },
+        {
+          "address": "0x417cc",
+          "raw": "30149f95",
+          "assembly": "ldrls r1, [pc, #0x430]"
+        },
+        {
+          "address": "0x417d0",
+          "raw": "00019197",
+          "assembly": "ldrls r0, [r1, r0, lsl #2]"
+        },
+        {
+          "address": "0x417d4",
+          "raw": "0600009a",
+          "assembly": "bls #0x417f4"
+        },
+        {
+          "address": "0x417d8",
+          "raw": "020050e2",
+          "assembly": "subs r0, r0, #2"
+        },
+        {
+          "address": "0x417dc",
+          "raw": "1b0050e3",
+          "assembly": "cmp r0, #0x1b"
+        },
+        {
+          "address": "0x417e0",
+          "raw": "20049f95",
+          "assembly": "ldrls r0, [pc, #0x420]"
+        },
+        {
+          "address": "0x417e4",
+          "raw": "20249fe5",
+          "assembly": "ldr r2, [pc, #0x420]"
+        },
+        {
+          "address": "0x417e8",
+          "raw": "20049f85",
+          "assembly": "ldrhi r0, [pc, #0x420]"
+        },
+        {
+          "address": "0x417ec",
+          "raw": "01019097",
+          "assembly": "ldrls r0, [r0, r1, lsl #2]"
+        },
+        {
+          "address": "0x417f0",
+          "raw": "02008080",
+          "assembly": "addhi r0, r0, r2"
+        },
+        {
+          "address": "0x417f4",
+          "raw": "941a1fe5",
+          "assembly": "ldr r1, [pc, #-0xa94]"
+        }
+      ]
+    },
+    {
+      "target": "0x44bbc",
+      "catalogCalls": 1,
+      "callsites": [
+        {
+          "address": "0x45f58",
+          "raw": "17fbffeb",
+          "assembly": "bl #0x44bbc"
+        }
+      ],
+      "evidenceBytes": "04e02de583490beb042083e50100a0e1010000eadc0700eb010000aa28c01fe5f60700eb0903ffebf9ffffba04f09de4f34c2de935fdffeb5ca69fe50050a0e1",
+      "snapshotWindowIdentical": true,
+      "disassembly": [
+        {
+          "address": "0x44bbc",
+          "raw": "04e02de5",
+          "assembly": "str lr, [sp, #-4]!"
+        },
+        {
+          "address": "0x44bc0",
+          "raw": "83490beb",
+          "assembly": "bl #0x3171d4"
+        },
+        {
+          "address": "0x44bc4",
+          "raw": "042083e5",
+          "assembly": "str r2, [r3, #4]"
+        },
+        {
+          "address": "0x44bc8",
+          "raw": "0100a0e1",
+          "assembly": "mov r0, r1"
+        },
+        {
+          "address": "0x44bcc",
+          "raw": "010000ea",
+          "assembly": "b #0x44bd8"
+        },
+        {
+          "address": "0x44bd0",
+          "raw": "dc0700eb",
+          "assembly": "bl #0x46b48"
+        },
+        {
+          "address": "0x44bd4",
+          "raw": "010000aa",
+          "assembly": "bge #0x44be0"
+        },
+        {
+          "address": "0x44bd8",
+          "raw": "28c01fe5",
+          "assembly": "ldr ip, [pc, #-0x28]"
+        },
+        {
+          "address": "0x44bdc",
+          "raw": "f60700eb",
+          "assembly": "bl #0x46bbc"
+        },
+        {
+          "address": "0x44be0",
+          "raw": "0903ffeb",
+          "assembly": "bl #0x580c"
+        },
+        {
+          "address": "0x44be4",
+          "raw": "f9ffffba",
+          "assembly": "blt #0x44bd0"
+        },
+        {
+          "address": "0x44be8",
+          "raw": "04f09de4",
+          "assembly": "pop {pc}"
+        },
+        {
+          "address": "0x44bec",
+          "raw": "f34c2de9",
+          "assembly": "push {r0, r1, r4, r5, r6, r7, sl, fp, lr}"
+        },
+        {
+          "address": "0x44bf0",
+          "raw": "35fdffeb",
+          "assembly": "bl #0x440cc"
+        },
+        {
+          "address": "0x44bf4",
+          "raw": "5ca69fe5",
+          "assembly": "ldr sl, [pc, #0x65c]"
+        },
+        {
+          "address": "0x44bf8",
+          "raw": "0050a0e1",
+          "assembly": "mov r5, r0"
+        }
+      ]
+    },
+    {
+      "target": "0x46b48",
+      "catalogCalls": 2,
+      "callsites": [
+        {
+          "address": "0x44bd0",
+          "raw": "dc0700eb",
+          "assembly": "bl #0x46b48"
+        },
+        {
+          "address": "0x4563c",
+          "raw": "410500eb",
+          "assembly": "bl #0x46b48"
+        }
+      ],
+      "evidenceBytes": "040050e3865180a005519ca7ff5005a280a1a0a138a06aa2152a82a1042083a50ef0a0e100009be5010070e300009b150110a0130ef0a0e1000097e5010070e3",
+      "snapshotWindowIdentical": true,
+      "disassembly": [
+        {
+          "address": "0x46b48",
+          "raw": "040050e3",
+          "assembly": "cmp r0, #4"
+        },
+        {
+          "address": "0x46b4c",
+          "raw": "865180a0",
+          "assembly": "addge r5, r0, r6, lsl #3"
+        },
+        {
+          "address": "0x46b50",
+          "raw": "05519ca7",
+          "assembly": "ldrge r5, [ip, r5, lsl #2]"
+        },
+        {
+          "address": "0x46b54",
+          "raw": "ff5005a2",
+          "assembly": "andge r5, r5, #0xff"
+        },
+        {
+          "address": "0x46b58",
+          "raw": "80a1a0a1",
+          "assembly": "lslge sl, r0, #3"
+        },
+        {
+          "address": "0x46b5c",
+          "raw": "38a06aa2",
+          "assembly": "rsbge sl, sl, #0x38"
+        },
+        {
+          "address": "0x46b60",
+          "raw": "152a82a1",
+          "assembly": "orrge r2, r2, r5, lsl sl"
+        },
+        {
+          "address": "0x46b64",
+          "raw": "042083a5",
+          "assembly": "strge r2, [r3, #4]"
+        },
+        {
+          "address": "0x46b68",
+          "raw": "0ef0a0e1",
+          "assembly": "mov pc, lr"
+        },
+        {
+          "address": "0x46b6c",
+          "raw": "00009be5",
+          "assembly": "ldr r0, [fp]"
+        },
+        {
+          "address": "0x46b70",
+          "raw": "010070e3",
+          "assembly": "cmn r0, #1"
+        },
+        {
+          "address": "0x46b74",
+          "raw": "00009b15",
+          "assembly": "ldrne r0, [fp]"
+        },
+        {
+          "address": "0x46b78",
+          "raw": "0110a013",
+          "assembly": "movne r1, #1"
+        },
+        {
+          "address": "0x46b7c",
+          "raw": "0ef0a0e1",
+          "assembly": "mov pc, lr"
+        },
+        {
+          "address": "0x46b80",
+          "raw": "000097e5",
+          "assembly": "ldr r0, [r7]"
+        },
+        {
+          "address": "0x46b84",
+          "raw": "010070e3",
+          "assembly": "cmn r0, #1"
+        }
+      ]
+    },
+    {
+      "target": "0x46bbc",
+      "catalogCalls": 2,
+      "callsites": [
+        {
+          "address": "0x44bdc",
+          "raw": "f60700eb",
+          "assembly": "bl #0x46bbc"
+        },
+        {
+          "address": "0x45644",
+          "raw": "5c0500eb",
+          "assembly": "bl #0x46bbc"
+        }
+      ],
+      "evidenceBytes": "865180e005519ce7ff5005e280a1a0e118a06ae2151a81e1001083e50ef0a0e1040050e3845180a005519ca7ff5005a28061a0a1386066a2152682a1042083a5",
+      "snapshotWindowIdentical": true,
+      "disassembly": [
+        {
+          "address": "0x46bbc",
+          "raw": "865180e0",
+          "assembly": "add r5, r0, r6, lsl #3"
+        },
+        {
+          "address": "0x46bc0",
+          "raw": "05519ce7",
+          "assembly": "ldr r5, [ip, r5, lsl #2]"
+        },
+        {
+          "address": "0x46bc4",
+          "raw": "ff5005e2",
+          "assembly": "and r5, r5, #0xff"
+        },
+        {
+          "address": "0x46bc8",
+          "raw": "80a1a0e1",
+          "assembly": "lsl sl, r0, #3"
+        },
+        {
+          "address": "0x46bcc",
+          "raw": "18a06ae2",
+          "assembly": "rsb sl, sl, #0x18"
+        },
+        {
+          "address": "0x46bd0",
+          "raw": "151a81e1",
+          "assembly": "orr r1, r1, r5, lsl sl"
+        },
+        {
+          "address": "0x46bd4",
+          "raw": "001083e5",
+          "assembly": "str r1, [r3]"
+        },
+        {
+          "address": "0x46bd8",
+          "raw": "0ef0a0e1",
+          "assembly": "mov pc, lr"
+        },
+        {
+          "address": "0x46bdc",
+          "raw": "040050e3",
+          "assembly": "cmp r0, #4"
+        },
+        {
+          "address": "0x46be0",
+          "raw": "845180a0",
+          "assembly": "addge r5, r0, r4, lsl #3"
+        },
+        {
+          "address": "0x46be4",
+          "raw": "05519ca7",
+          "assembly": "ldrge r5, [ip, r5, lsl #2]"
+        },
+        {
+          "address": "0x46be8",
+          "raw": "ff5005a2",
+          "assembly": "andge r5, r5, #0xff"
+        },
+        {
+          "address": "0x46bec",
+          "raw": "8061a0a1",
+          "assembly": "lslge r6, r0, #3"
+        },
+        {
+          "address": "0x46bf0",
+          "raw": "386066a2",
+          "assembly": "rsbge r6, r6, #0x38"
+        },
+        {
+          "address": "0x46bf4",
+          "raw": "152682a1",
+          "assembly": "orrge r2, r2, r5, lsl r6"
+        },
+        {
+          "address": "0x46bf8",
+          "raw": "042083a5",
+          "assembly": "strge r2, [r3, #4]"
+        }
+      ]
+    },
+    {
+      "target": "0x168fc8",
+      "catalogCalls": 1,
+      "callsites": [
+        {
+          "address": "0x137044",
+          "raw": "dfc700eb",
+          "assembly": "bl #0x168fc8"
+        }
+      ],
+      "evidenceBytes": "0800d4e5b230c2e1001260e0811283e0b010c2e1f010d2e10ef0a0e110108de20c008de20ef0a0e10e60a0e1cd91ffebd810a0e30400a0e3ca91ffeb9243ffeb",
+      "snapshotWindowIdentical": true,
+      "disassembly": [
+        {
+          "address": "0x168fc8",
+          "raw": "0800d4e5",
+          "assembly": "ldrb r0, [r4, #8]"
+        },
+        {
+          "address": "0x168fcc",
+          "raw": "b230c2e1",
+          "assembly": "strh r3, [r2, #2]"
+        },
+        {
+          "address": "0x168fd0",
+          "raw": "001260e0",
+          "assembly": "rsb r1, r0, r0, lsl #4"
+        },
+        {
+          "address": "0x168fd4",
+          "raw": "811283e0",
+          "assembly": "add r1, r3, r1, lsl #5"
+        },
+        {
+          "address": "0x168fd8",
+          "raw": "b010c2e1",
+          "assembly": "strh r1, [r2]"
+        },
+        {
+          "address": "0x168fdc",
+          "raw": "f010d2e1",
+          "assembly": "ldrsh r1, [r2]"
+        },
+        {
+          "address": "0x168fe0",
+          "raw": "0ef0a0e1",
+          "assembly": "mov pc, lr"
+        },
+        {
+          "address": "0x168fe4",
+          "raw": "10108de2",
+          "assembly": "add r1, sp, #0x10"
+        },
+        {
+          "address": "0x168fe8",
+          "raw": "0c008de2",
+          "assembly": "add r0, sp, #0xc"
+        },
+        {
+          "address": "0x168fec",
+          "raw": "0ef0a0e1",
+          "assembly": "mov pc, lr"
+        },
+        {
+          "address": "0x168ff0",
+          "raw": "0e60a0e1",
+          "assembly": "mov r6, lr"
+        },
+        {
+          "address": "0x168ff4",
+          "raw": "cd91ffeb",
+          "assembly": "bl #0x14d730"
+        },
+        {
+          "address": "0x168ff8",
+          "raw": "d810a0e3",
+          "assembly": "mov r1, #0xd8"
+        },
+        {
+          "address": "0x168ffc",
+          "raw": "0400a0e3",
+          "assembly": "mov r0, #4"
+        },
+        {
+          "address": "0x169000",
+          "raw": "ca91ffeb",
+          "assembly": "bl #0x14d730"
+        },
+        {
+          "address": "0x169004",
+          "raw": "9243ffeb",
+          "assembly": "bl #0x139e54"
+        }
+      ]
+    }
+  ],
+  "qualification": "All five missing direct-call entries have raw instruction evidence; no ABI or reachability inference from a prologue alone.",
+  "limitations": [
+    "64-byte windows may contain several compiler outline fragments or inline data.",
+    "No new functions or source project changes; not complete indirect-call resolution.",
+    "Register and CPSR effects of these fragments require caller-specific analysis."
+  ]
+}

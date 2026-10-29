@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "functions": 27107,
+  "decompiledBytes": 28959543,
+  "strings": 107849,
+  "stringsBySection": {
+    "rodata": 99444,
+    "data": 8405
+  },
+  "slices": [
+    {
+      "folder": "slices",
+      "slices": 60,
+      "functions": 27107
+    },
+    {
+      "folder": "slices-320k",
+      "slices": 99,
+      "functions": 27107
+    }
+  ],
+  "candidateHashes": {
+    "text": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+    "rodata": "3b06a163647b6d986bbb5d20a44a1ef08de38517eb398a8517b2b59d51126438",
+    "data": "0c7bc4e420b8b24ad6ca36f0c931d415add9a56a23cf70537e9b79e545c5df98"
+  },
+  "currentSourceProjectMatches": true,
+  "functionHashIndexSha256": "228d52457c8e2599246726a46f18909bf108e6bc8c624634a7d40e105f23b9ca",
+  "reviewIndexFunctions": 2722,
+  "decompilerWarnings": 4925,
+  "textualEndlessLoops": 1509,
+  "completeIncomingCountsChecked": true,
+  "unresolvedCatalogEdges": 41,
+  "unresolvedCatalogTargets": [
+    "00000002",
+    "00000038",
+    "0000004c",
+    "00000050",
+    "00000080",
+    "000000f4",
+    "00000144",
+    "00000150",
+    "000002fe",
+    "00000a24",
+    "00000e1c",
+    "00001800",
+    "000417b8",
+    "00044bbc",
+    "00046b48",
+    "00046bbc",
+    "00168fc8",
+    "23000000",
+    "c09b066c",
+    "c140e808",
+    "c140e97c",
+    "c1410f1c",
+    "c144f214",
+    "fffffffe"
+  ],
+  "unrecognizedCallTargets": [
+    {
+      "target": "000417b8",
+      "callsite_count": "1",
+      "callsites": "00045f50",
+      "containing_function": "",
+      "status": "未创建函数"
+    },
+    {
+      "target": "00044bbc",
+      "callsite_count": "1",
+      "callsites": "00045f58",
+      "containing_function": "",
+      "status": "未创建函数"
+    },
+    {
+      "target": "00046b48",
+      "callsite_count": "2",
+      "callsites": "00044bd0;0004563c",
+      "containing_function": "",
+      "status": "未创建函数"
+    },
+    {
+      "target": "00046bbc",
+      "callsite_count": "2",
+      "callsites": "00044bdc;00045644",
+      "containing_function": "",
+      "status": "未创建函数"
+    },
+    {
+      "target": "00168fc8",
+      "callsite_count": "1",
+      "callsites": "00137044",
+      "containing_function": "",
+      "status": "未创建函数"
+    }
+  ],
+  "limitations": [
+    "Checks all exported functions, not all possible executable code or semantics.",
+    "Unresolved callee targets are recorded, not assumed to be missing functions or rejected as invalid.",
+    "Textual loops and decompiler warnings are review candidates, not defects.",
+    "Candidate decode and hardware behavior remain unverified on this offline run."
+  ]
+}

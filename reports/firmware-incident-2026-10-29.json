@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Kuala_Lumpur",
+  "status": "withdrawn-user-reported-no-boot",
+  "recovered": false,
+  "rootCause": "unknown",
+  "userReported": {
+    "batteryBeforePercent": 80,
+    "blackScreenAfterUpgrade": true,
+    "batteryRemovedAndReseated": true,
+    "noLedOnUsbInOffAndOn": true
+  },
+  "hostObservation": {
+    "cameraUsbInterfaceObserved": false,
+    "unknownUsbFaultInterfaceObserved": false,
+    "serialPortObserved": false,
+    "connectionDifferentialCaptured": false,
+    "method": "Read-only Get-PnpDevice -PresentOnly, USB and camera/disk/port classes",
+    "diagnosticLimit": "Absence of an enumerated interface does not establish a hardware fault or identify the boot stage"
+  },
+  "preservedFiles": [
+    {
+      "path": "output/demo-packages/firmware.bin",
+      "bytes": 11704832,
+      "sha256": "6c247d53e127d0a3b3442f38b438afb15d24a7bb16fe51e6bf060fc635bc2b35"
+    },
+    {
+      "path": "output/firmware-builds/integrated-demo-3-2cn-v1/firmware.bin",
+      "bytes": 11704832,
+      "sha256": "6c247d53e127d0a3b3442f38b438afb15d24a7bb16fe51e6bf060fc635bc2b35"
+    },
+    {
+      "path": "output/demo-packages/yi-m1-3-2-d1-demo.zip",
+      "bytes": 8542334,
+      "sha256": "b04ff831dbb8e9208e20f5852136acfbd1e5dbedddf9c504726a09e46f7d3613"
+    },
+    {
+      "path": "data/input/body-3-2-cn/firmware.bin",
+      "bytes": 11704832,
+      "sha256": "92b3f1fda39e37351432d19d0167879f477eb71713a8fbc94b3ba2141ca404e4"
+    }
+  ],
+  "withdrawalChecks": [
+    {
+      "script": "scripts/build-integrated-demo.py",
+      "exitCode": 1,
+      "blocked": true
+    },
+    {
+      "script": "scripts/package-integrated-demo.py",
+      "exitCode": 1,
+      "blocked": true
+    }
+  ],
+  "newFirmwareWritten": false,
+  "cameraWritesPerformed": false
+}

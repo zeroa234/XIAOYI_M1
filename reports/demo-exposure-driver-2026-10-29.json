@@ -1,0 +1,524 @@
+{
+  "schema": "yi-m1-demo-exposure-driver/1",
+  "generated_at": "2026-10-29",
+  "status": "experimental-offline-only; no camera, no firmware package, no git",
+  "patch_file": {
+    "path": "config/patches/demo-exposure-driver.json",
+    "sha256": "033ae215090cad791735dfceeedcc77eaeac52552afb39f79380f679bcfff5bf",
+    "id": "demo-exposure-driver"
+  },
+  "hook": {
+    "va": "0x365684",
+    "orig_hex": "34d7ffeb",
+    "new_hex": "b71100eb",
+    "disassembly": [
+      {
+        "address": "0x365684",
+        "bytes": "b71100eb",
+        "text": "bl #0x369d68"
+      }
+    ]
+  },
+  "wrapper": {
+    "va": "0x369d68",
+    "end_exclusive": "0x369dd0",
+    "length": 104,
+    "sha256": "44cef90c5b7275dd908a425ed43773aafc87739aa1a185e62b217f716e5961bc",
+    "hex": "10402de904d04de20f102de94c309fe54c30d3e5010053e30900001a40309fe5003093e5000053e30500000a00009de50310a0e12ccdffeb0010a0e36cc5ffeb020000ea00009de504109de568c5ffeb00008de50f10bde804d08de21080bde8949646c1f4f950c1",
+    "disassembly": [
+      {
+        "address": "0x369d68",
+        "bytes": "10402de9",
+        "text": "push {r4, lr}"
+      },
+      {
+        "address": "0x369d6c",
+        "bytes": "04d04de2",
+        "text": "sub sp, sp, #4"
+      },
+      {
+        "address": "0x369d70",
+        "bytes": "0f102de9",
+        "text": "push {r0, r1, r2, r3, ip}"
+      },
+      {
+        "address": "0x369d74",
+        "bytes": "4c309fe5",
+        "text": "ldr r3, [pc, #0x4c]"
+      },
+      {
+        "address": "0x369d78",
+        "bytes": "4c30d3e5",
+        "text": "ldrb r3, [r3, #0x4c]"
+      },
+      {
+        "address": "0x369d7c",
+        "bytes": "010053e3",
+        "text": "cmp r3, #1"
+      },
+      {
+        "address": "0x369d80",
+        "bytes": "0900001a",
+        "text": "bne #0x369dac"
+      },
+      {
+        "address": "0x369d84",
+        "bytes": "40309fe5",
+        "text": "ldr r3, [pc, #0x40]"
+      },
+      {
+        "address": "0x369d88",
+        "bytes": "003093e5",
+        "text": "ldr r3, [r3]"
+      },
+      {
+        "address": "0x369d8c",
+        "bytes": "000053e3",
+        "text": "cmp r3, #0"
+      },
+      {
+        "address": "0x369d90",
+        "bytes": "0500000a",
+        "text": "beq #0x369dac"
+      },
+      {
+        "address": "0x369d94",
+        "bytes": "00009de5",
+        "text": "ldr r0, [sp]"
+      },
+      {
+        "address": "0x369d98",
+        "bytes": "0310a0e1",
+        "text": "mov r1, r3"
+      },
+      {
+        "address": "0x369d9c",
+        "bytes": "2ccdffeb",
+        "text": "bl #0x35d254"
+      },
+      {
+        "address": "0x369da0",
+        "bytes": "0010a0e3",
+        "text": "mov r1, #0"
+      },
+      {
+        "address": "0x369da4",
+        "bytes": "6cc5ffeb",
+        "text": "bl #0x35b35c"
+      },
+      {
+        "address": "0x369da8",
+        "bytes": "020000ea",
+        "text": "b #0x369db8"
+      },
+      {
+        "address": "0x369dac",
+        "bytes": "00009de5",
+        "text": "ldr r0, [sp]"
+      },
+      {
+        "address": "0x369db0",
+        "bytes": "04109de5",
+        "text": "ldr r1, [sp, #4]"
+      },
+      {
+        "address": "0x369db4",
+        "bytes": "68c5ffeb",
+        "text": "bl #0x35b35c"
+      },
+      {
+        "address": "0x369db8",
+        "bytes": "00008de5",
+        "text": "str r0, [sp]"
+      },
+      {
+        "address": "0x369dbc",
+        "bytes": "0f10bde8",
+        "text": "pop {r0, r1, r2, r3, ip}"
+      },
+      {
+        "address": "0x369dc0",
+        "bytes": "04d08de2",
+        "text": "add sp, sp, #4"
+      },
+      {
+        "address": "0x369dc4",
+        "bytes": "1080bde8",
+        "text": "pop {r4, pc}"
+      },
+      {
+        "address": "0x369dc8",
+        "bytes": "949646c1",
+        "text": "swpbgt sb, r4, [r6]"
+      },
+      {
+        "address": "0x369dcc",
+        "bytes": "f4f950c1",
+        "text": "ldrshgt pc, [r0, #-0x94]"
+      }
+    ],
+    "dead_zone": {
+      "start": "0x369d68",
+      "end_exclusive": "0x369e18",
+      "bytes": 176,
+      "used": 104,
+      "free": 72
+    }
+  },
+  "call_site": {
+    "function": "0x365634 (AE callback id=4)",
+    "instructions": [
+      "0x36567c ldr r0,[r4,#0x38]",
+      "0x365680 mov r1,#0",
+      "0x365684 bl 0x35b35c",
+      "0x365688 strb r6,[r4,#0xe3]"
+    ],
+    "registers": "r4=state 0xc14707e0; r5=0xc14708d0; r6=from earlier callback code",
+    "note": "Only the BL at 0x365684 is replaced; original time argument and r1 are preserved/reloaded."
+  },
+  "gate": {
+    "address": "0xc1469694+0x4c",
+    "value": "1 = M",
+    "chain": [
+      "0x36e8b8: snapshot+0x1c <- ctrl+0x4c",
+      "0x361ad4: cfg+8 <- snapshot+0x1c"
+    ],
+    "writers_audited": [
+      {
+        "va": "0x354c04",
+        "source": "0x87f1c setting +0xb7",
+        "note": "mode update path"
+      },
+      {
+        "va": "0x35b678",
+        "source": "payload[2]",
+        "note": "ctrl field applier"
+      },
+      {
+        "va": "0x35f9d4",
+        "source": "AE debug param +0x20",
+        "note": "debug parameter consumer"
+      },
+      {
+        "va": "0x3580e4",
+        "source": "param_1[0x10]",
+        "note": "additional +0x4c store in ctrl-referencing function"
+      },
+      {
+        "va": "0x38c760",
+        "source": "constant 3",
+        "note": "additional +0x4c store in ctrl-referencing function"
+      },
+      {
+        "va": "0x3e9a4c",
+        "source": "computed",
+        "note": "additional +0x4c store in ctrl-referencing function"
+      },
+      {
+        "va": "0x3fa89c",
+        "source": "packed value",
+        "note": "additional +0x4c store in ctrl-referencing function"
+      }
+    ],
+    "limitation": "Static writer inventory, not exhaustive points-to/alias proof; wrapper reads current value at each call."
+  },
+  "ev_cache": {
+    "address": "0xc150f9f4",
+    "accessor": "0x85d30",
+    "units": "tenths EV (physical calibration unproven; measured to change with M shutter)"
+  },
+  "tests": {
+    "fixture": "scripts/check-exposure-preview-patch.py Unicorn ARM926 memory map/execute; read allowlist extended to 0x369dd0 for 104-byte wrapper",
+    "cases": [
+      {
+        "kind": "non_m",
+        "mode": 0,
+        "ev": 20,
+        "time": 33333,
+        "r0": "0x8229",
+        "behavior_same": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "non_m",
+        "mode": 2,
+        "ev": 20,
+        "time": 33333,
+        "r0": "0x8229",
+        "behavior_same": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "non_m",
+        "mode": 3,
+        "ev": 20,
+        "time": 33333,
+        "r0": "0x8229",
+        "behavior_same": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "non_m",
+        "mode": 4,
+        "ev": 20,
+        "time": 33333,
+        "r0": "0x8229",
+        "behavior_same": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "non_m",
+        "mode": 5,
+        "ev": 20,
+        "time": 33333,
+        "r0": "0x8229",
+        "behavior_same": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "m",
+        "mode": 1,
+        "ev": 0,
+        "time": 33333,
+        "r0": "0x8229",
+        "events_changed": false,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "m",
+        "mode": 1,
+        "ev": 20,
+        "time": 33333,
+        "r0": "0x2090a",
+        "events_changed": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "m",
+        "mode": 1,
+        "ev": -20,
+        "time": 33333,
+        "r0": "0x2081",
+        "events_changed": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "m",
+        "mode": 1,
+        "ev": 50,
+        "time": 33333,
+        "r0": "0x1046d6",
+        "events_changed": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "m",
+        "mode": 1,
+        "ev": -50,
+        "time": 33333,
+        "r0": "0x3fd",
+        "events_changed": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "m",
+        "mode": 1,
+        "ev": 2147483647,
+        "time": 33333,
+        "r0": "0x36",
+        "events_changed": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "m",
+        "mode": 1,
+        "ev": -2147483648,
+        "time": 33333,
+        "r0": "0x36",
+        "events_changed": true,
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "time",
+        "mode": 1,
+        "ev": 20,
+        "time": 1,
+        "r0": "0x36",
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "time",
+        "mode": 1,
+        "ev": -20,
+        "time": 1,
+        "r0": "0x36",
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "time",
+        "mode": 1,
+        "ev": 20,
+        "time": 250,
+        "r0": "0x3dc",
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "time",
+        "mode": 1,
+        "ev": -20,
+        "time": 250,
+        "r0": "0x36",
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "time",
+        "mode": 1,
+        "ev": 20,
+        "time": 33333,
+        "r0": "0x2090a",
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "time",
+        "mode": 1,
+        "ev": -20,
+        "time": 33333,
+        "r0": "0x2081",
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "time",
+        "mode": 1,
+        "ev": 20,
+        "time": 1300000,
+        "r0": "0x4f5882",
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "time",
+        "mode": 1,
+        "ev": -20,
+        "time": 1300000,
+        "r0": "0x4f579",
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "time",
+        "mode": 1,
+        "ev": 20,
+        "time": 60000000,
+        "r0": "0xe4e1bf4",
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      },
+      {
+        "kind": "time",
+        "mode": 1,
+        "ev": -20,
+        "time": 60000000,
+        "r0": "0xe4e1a3",
+        "stable_regs_same": true,
+        "state_38_same": true,
+        "caller_saved_restored": true
+      }
+    ],
+    "failures": [],
+    "baseline": {
+      "r0": "0x8229",
+      "cpsr": "0x20000013",
+      "events": [
+        [
+          566231060,
+          1794
+        ],
+        [
+          566231064,
+          1
+        ],
+        [
+          566231060,
+          2050
+        ],
+        [
+          566231064,
+          0
+        ],
+        [
+          566231060,
+          770
+        ],
+        [
+          566231064,
+          0
+        ],
+        [
+          566231060,
+          1026
+        ],
+        [
+          566231064,
+          0
+        ]
+      ],
+      "state_38": 33333
+    },
+    "summary": "22 cases, 0 failures; non-M and M+EV0 match baseline r0/MMIO/r4-r11/SP/LR/CPSR; state+0x38 unchanged; M+EV nonzero changes MMIO time words."
+  },
+  "alternative_direct_shutter": {
+    "considered": "setting +0xc / ctrl+0x70 -> 0x35b35c time units",
+    "status": "not used; mapping from user shutter to driver time/line units and frame-period behavior is not proven. EV-cache wrapper reuses original 0x35d254 scaling and 0x35b35c driver.",
+    "note": "A direct shutter path would need a separate proven conversion and would risk bypassing original limits."
+  },
+  "limits": [
+    "0xc150f9f4 的十分之一 EV 语义没有物理标定；本补丁不声称绝对曝光预览或精确 EV 倍率。",
+    "缩放后的时间可能超过帧周期；原 0x391fdc/0x35b35c 的帧期处理与原驱动限幅继续执行，未证明全部长快门/边界都正确。",
+    "M 门控读当前 ctrl+0x4c（0x36e8b8 复制到 snapshot+0x1c，0x361ad4 复制到 cfg+8）；静态已核对主要写入路径，但未做全程序别名穷举。",
+    "包装器占用 0x369d68-0x369dcf 共 104 字节，位于 176 字节候选死区；死区可达性仍是既有静态扫描结论，未重新做全量动态证明。",
+    "未在相机验证；非 M 仅由 Unicorn 局部夹具验证，不能外推整机所有模式/AF/闪光/录像/长曝光。",
+    "未实现用户快门直接映射到驱动；当前采用测光 EV 缓存，若需绝对快门预览需另行核实 setting+0xc 到时间单位的映射。",
+    "CPSR flags are not explicitly restored; the final original 0x35b35c call defines them, matching non-M original behavior. r1-r3/ip are restored more conservatively.",
+    "Unicorn MMIO model sets 0x30100590 to make the original delay/ready loop terminate; this is a synthetic hardware model, not camera evidence.",
+    "Event byte values are not interpreted as physical exposure; only equality/change of MMIO sequence is checked."
+  ]
+}

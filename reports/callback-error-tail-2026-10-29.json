@@ -1,0 +1,270 @@
+{
+  "passed": true,
+  "textSha256": "da781ebd70ce1cae6ded261e2e8e66d66c165ad1939c90bdc9a6eb7432610992",
+  "externalCallStubs": 0,
+  "cases": [
+    {
+      "signalReturn": 0,
+      "channel": 0,
+      "reached": "0x42a2fc",
+      "modeledRegister": "0x2b0003e0",
+      "modeledValue": "0xffffefff",
+      "writes": 1
+    },
+    {
+      "signalReturn": 0,
+      "channel": 1,
+      "reached": "0x42a2fc",
+      "modeledRegister": "0x2b0006e0",
+      "modeledValue": "0xffffefff",
+      "writes": 1
+    },
+    {
+      "signalReturn": 0,
+      "channel": 2,
+      "reached": "0x42a2fc",
+      "modeledRegister": "0x2b0009e0",
+      "modeledValue": "0xffffefff",
+      "writes": 1
+    },
+    {
+      "signalReturn": 0,
+      "channel": 3,
+      "reached": "0x42a2fc",
+      "modeledRegister": "0x2b000ce0",
+      "modeledValue": "0xffffefff",
+      "writes": 1
+    },
+    {
+      "signalReturn": -43,
+      "channel": 0,
+      "reached": "0x42a2fc",
+      "modeledRegister": "0x2b0003e0",
+      "modeledValue": "0xffffefff",
+      "writes": 1
+    },
+    {
+      "signalReturn": -43,
+      "channel": 1,
+      "reached": "0x42a2fc",
+      "modeledRegister": "0x2b0006e0",
+      "modeledValue": "0xffffefff",
+      "writes": 1
+    },
+    {
+      "signalReturn": -43,
+      "channel": 2,
+      "reached": "0x42a2fc",
+      "modeledRegister": "0x2b0009e0",
+      "modeledValue": "0xffffefff",
+      "writes": 1
+    },
+    {
+      "signalReturn": -43,
+      "channel": 3,
+      "reached": "0x42a2fc",
+      "modeledRegister": "0x2b000ce0",
+      "modeledValue": "0xffffefff",
+      "writes": 1
+    },
+    {
+      "signalReturn": -18,
+      "channel": 0,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0003e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -18,
+      "channel": 1,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0006e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -18,
+      "channel": 2,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0009e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -18,
+      "channel": 3,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b000ce0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -17,
+      "channel": 0,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0003e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -17,
+      "channel": 1,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0006e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -17,
+      "channel": 2,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0009e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -17,
+      "channel": 3,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b000ce0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -42,
+      "channel": 0,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0003e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -42,
+      "channel": 1,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0006e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -42,
+      "channel": 2,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0009e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -42,
+      "channel": 3,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b000ce0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": 1,
+      "channel": 0,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0003e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": 1,
+      "channel": 1,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0006e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": 1,
+      "channel": 2,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0009e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": 1,
+      "channel": 3,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b000ce0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": 2147483647,
+      "channel": 0,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0003e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": 2147483647,
+      "channel": 1,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0006e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": 2147483647,
+      "channel": 2,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0009e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": 2147483647,
+      "channel": 3,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b000ce0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -2147483648,
+      "channel": 0,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0003e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -2147483648,
+      "channel": 1,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0006e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -2147483648,
+      "channel": 2,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b0009e0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    },
+    {
+      "signalReturn": -2147483648,
+      "channel": 3,
+      "reached": "0x42a2f8",
+      "modeledRegister": "0x2b000ce0",
+      "modeledValue": "0xffffffff",
+      "writes": 0
+    }
+  ],
+  "qualification": "Original ARM tail 0x42a2d4 after synthetic signal returns; modeled registers are RAM.",
+  "proved": "Only 0/-43 clear bit 0x1000 and continue; other tested return values reach the original branch-to-self.",
+  "limitations": [
+    "Does not execute the semaphore signal or its object lifecycle.",
+    "Does not establish interrupt priority/context or that the camera ever returned these errors.",
+    "A branch-to-self may be an intentional fatal invariant; returning instead is not proven safe."
+  ]
+}

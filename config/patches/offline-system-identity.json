@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "offline-system-identity-v1",
+  "base_version": "3.2-cn",
+  "status": "offline-candidate-only",
+  "description": "3.2-s1: identifiable conservative system candidate; no speed or freeze-fix claim. Header VER and M1CN model identifiers remain original.",
+  "patches": [
+    {
+      "section": ".rodata",
+      "va": "0x61ce80",
+      "orig_hex": "332e322d636e00",
+      "new_hex": "332e322d733100",
+      "note": "Same-length version copy, 3.2-cn to 3.2-s1; no direct pointer reference established; keep adjacent M1CN unchanged."
+    },
+    {
+      "section": ".rodata",
+      "va": "0x6b7f54",
+      "orig_hex": "332e322d636e00",
+      "new_hex": "332e322d733100",
+      "note": "Visible version text used by 0x1509dc; identity only, not an HTTP version query."
+    },
+    {
+      "section": ".rodata",
+      "va": "0x834674",
+      "orig_hex": "332e322d636e00",
+      "new_hex": "332e322d733100",
+      "note": "Version drawing at 0x17904c copies seven bytes including NUL; same length identity marker."
+    }
+  ]
+}
